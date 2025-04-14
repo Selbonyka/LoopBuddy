@@ -48,7 +48,7 @@
     }
 
     .settings-container {
-      margin-top: 10px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -127,6 +127,24 @@
       font-family: "Courier Prime", monospace;
     }
 
+
+    .advanced-toggle {
+      font-family: 'Baumans', cursive;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 6px;
+      border-top: 2px solid black;
+      text-align: left;
+    }
+
+    .advanced-settings {
+      display: none;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+
     .route-button-container {
       margin-top: 10px;
       text-align: center;
@@ -200,6 +218,48 @@
         </select>
       </div>
 
+      <div class="advanced-toggle" onclick="toggleAdvanced()">
+        Advanced settings ▾
+      </div>
+
+      <div class="advanced-settings" id="advanced-settings"> <!-- look i don't even know if it's implemented -->
+
+        <div class="input-row">
+          <label for="distance_error"> Distance error (m):</label>
+          <input type="number" id="distance_error" name="distance_error" value = "60" min = "0">
+        </div>
+
+
+        <div class="input-row">
+          <label for="elevation_error">Elevation error (m):</label>
+          <input type="number" id="elevation_error" name="elevation_error" value = "10" min = "0">
+        </div>
+
+        <div class="input-row">
+          <label for="alpha">Smoothing factor:</label>
+          <input type="number" id="alpha" name="alpha" value = "0" min = "0" max = "1">
+        </div>
+
+        <div class="input-row">
+          <label for="sharing_allowance">Sharing allowance:</label>
+          <input type="number" id="sharing_allowance" name="sharing_allowance" value="0.3" step="0.1" min="0" max="1">
+        </div>
+
+        <div class="input-row">
+          <label for="stoplight_penalty">Stoplight penalty:</label>
+          <input type="number" id="stoplight_penalty" name="stoplight_penalty" value="1.1" step="0.1" min = "1">
+        </div>
+
+        <div class="input-row">
+          <label for="steps_penalty">Steps penalty:</label>
+          <input type="number" id="steps_penalty" name="steps_penalty" value="1.2" step="0.1" min="1">
+        </div>
+
+
+
+
+
+      </div>
 
 
     </div>
@@ -221,6 +281,21 @@
   </div>
 
 <script>
+
+
+  function toggleAdvanced() {
+  const advanced = document.getElementById("advanced-settings");
+  const toggleText = document.querySelector(".advanced-toggle");
+
+  if (advanced.style.display === "none" || advanced.style.display === "") {
+    advanced.style.display = "block";
+    toggleText.innerHTML = "Advanced settings ▴";
+  } else {
+    advanced.style.display = "none";
+    toggleText.innerHTML = "Advanced settings ▾";
+  }
+  }
+
   const map = L.map('map').setView([48.2082, 16.3738], 13); // Vienna coords
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -266,6 +341,12 @@
   const pavement_preference = document.getElementById("surface_preference").value;
   const stoplight_preference = document.getElementById("stoplight_preference").value;
   const steps_preference = document.getElementById("steps_preference").value;
+  const distance_error = document.getElementById("distance_error").value;
+  const elevation_error = document.getElementById("elevation_error").value;
+  const alpha = document.getElementById("alpha").value;
+  const sharing_allowance = document.getElementById("sharing_allowance").value;
+  const stoplight_penalty = document.getElementById("stoplight_penalty").value;
+  const steps_penalty = document.getElementById("steps_penalty").value;
 
   fetch("/create-route", {
     method: "POST",
@@ -277,7 +358,13 @@
       elevation_target: elevation_target,
       pavement_preference: pavement_preference,
       stoplight_preference: stoplight_preference,
-      steps_preference: steps_preference
+      steps_preference: steps_preference,
+      distance_error: distance_error,
+      elevation_error: elevation_error,
+      alpha: alpha,
+      sharing_allowance: sharing_allowance,
+      stoplight_penalty: stoplight_penalty,
+      steps_penalty: steps_penalty
     })
   })
     .then(res => res.json())
