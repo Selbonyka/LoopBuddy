@@ -12,9 +12,9 @@ def feature_penalizing(feature_handling, feature_status, feature_penalty_strengt
     :param feature_penalty_strength: user inputted strength of penalty
     :return: returns by how much the specific edge was penalized due to presence/absence of a feature
     """
-    if feature_handling == 'Neutral':  # no stoplight/stairs penalty
+    if feature_handling == 'neutral':  # no stoplight/stairs penalty
         feature_penalty = 1
-    elif feature_handling == 'Avoid':
+    elif feature_handling == 'avoid':
         # since feature_status is represented by 1 and 0 (True or False) we can use that instead of an if/else block
 
         feature_penalty = ((feature_status * feature_penalty_strength) + (feature_status * (-1))) + 1
@@ -38,22 +38,22 @@ def pavement_type_penalizing(pavement_handling, pavement_status, pavement_penalt
     :return:  returns by how much the specific edge was penalized due to pavement type
     """
 
-    if pavement_handling == 'Any':  # no pavement penalty
+    if pavement_handling == 'neutral':  # no pavement penalty
         pavement_penalty = 1
 
-    elif pavement_handling == 'Paved':
+    elif pavement_handling == 'paved':
 
-        if pavement_status == 'Paved':
+        if pavement_status == 'paved':
             pavement_penalty = 1
-        elif pavement_status == 'Unpaved':
+        elif pavement_status == 'unpaved':
             pavement_penalty = pavement_penalty_strength
         else:  # handling unknown/Null
             pavement_penalty = 1 + ( pavement_penalty_strength - 1) * 0.5  # since we don't know what is the state, we apply half the penalty to discourage use of unlabelled roads
 
     else:  # handling when we prefer unpaved routes
-        if pavement_status == 'Unpaved':
+        if pavement_status == 'unpaved':
             pavement_penalty = 1
-        elif pavement_status == 'Paved':
+        elif pavement_status == 'paved':
             pavement_penalty = pavement_penalty_strength
         else:
             pavement_penalty = 1 + (pavement_penalty_strength - 1) * 0.5  # since we don't know what is the state, we apply half the penalty to discourage use of unlabelled roads

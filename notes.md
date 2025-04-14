@@ -16,6 +16,3 @@
 - [ ] Make the paths that have the same edges filter themselves out
 - [ ] from uprimerings clean up the print statements
 - [ ] Maybe the sharing parametres could be made kinder in the uprime_rings.py
-- [ ] do i even have sharing?
-- [ ] Make elevation and distance errors scalable by default
-- [ ] Explain bounds in instructions
