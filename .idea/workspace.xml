@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="Issue was just in Capitalizing preferences lol">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/penalizing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/penalizing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +38,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="TestingSelectionAddition" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -74,7 +76,7 @@
     "Python.visualization.executor": "Run",
     "Python.website_main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#1 on TestingSelectionAddition",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -208,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744664889274</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finalize_path.py wasn't here for some reason">
+      <option name="closed" value="true" />
+      <created>1744741901926</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744741901926</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,14 +255,15 @@
     <MESSAGE value="this version isn't working that well but backing it up just in case" />
     <MESSAGE value="here main actually works" />
     <MESSAGE value="Issue was just in Capitalizing preferences lol" />
-    <option name="LAST_COMMIT_MESSAGE" value="Issue was just in Capitalizing preferences lol" />
+    <MESSAGE value="finalize_path.py wasn't here for some reason" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalize_path.py wasn't here for some reason" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LoopBuddy$views.coverage" NAME="views Coverage Results" MODIFIED="1744469823691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Designing the website" />
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1744741397413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744741283342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1744661101300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744741135004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744742148019" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/LoopBuddy$finalize_path.coverage" NAME="finalize_path Coverage Results" MODIFIED="1744661077416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/finalizing" />
   </component>
 </project>
