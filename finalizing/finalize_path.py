@@ -144,6 +144,8 @@ def select_paths (finalized_paths,paths_badness):
     return selected_paths
 
 
+
+
 # paths_trial = [[1,1,1,1,2,3],[1,1,1,1,2,4],[5,6,7]]
 # badness_trial=[8,4,8]
 #
