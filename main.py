@@ -137,10 +137,14 @@ def main(start_point, preferences, graph_filepath):
 
     finalized_paths,paths_badness,path_lengths, paths_elevation = concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, total_length_bounds, elevation_bounds)
 
-    # selected_paths = select_paths(finalized_paths,paths_badness)
+    print(len(finalized_paths))
+    print(finalized_paths)
+    selected_paths = select_paths(finalized_paths,paths_badness)
 
-    # return selected_paths
-    return finalized_paths
+
+    print(len(selected_paths))
+    return selected_paths
+    # return finalized_paths
 
 
 
