@@ -6,11 +6,11 @@ from itertools import islice
 import pickle
 import copy
 
-from finalizing.finalize_path import finalize_path
+from finalizing.finalize_path import concatenate_path,select_paths
 from utils.penalizing import edge_penalizing
 from rings.s_and_s_prime import ring_s_and_sprime_handling
 from rings.uprime_rings import generate_uprime_rings
-from scipy.constants import point
+
 
 """
 Note space
@@ -135,11 +135,16 @@ def main(start_point, preferences, graph_filepath):
     print("\nCompleted m generation and processing! \n")
 
 
-    finalized_paths,path_lengths, paths_elevation = finalize_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, total_length_bounds, elevation_bounds)
+    finalized_paths,paths_badness,path_lengths, paths_elevation = concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, total_length_bounds, elevation_bounds)
+
+    print(len(finalized_paths))
+    print(finalized_paths)
+    selected_paths = select_paths(finalized_paths,paths_badness)
 
 
-
-    return finalized_paths
+    print(len(selected_paths))
+    return selected_paths
+    # return finalized_paths
 
 
 
@@ -148,8 +153,10 @@ def main(start_point, preferences, graph_filepath):
 
 # sample call:
 # </editor-fold>
-preference_dict_sample = {"total_length":10000, "elevation_requested":0,"elevation_error":10,"pavement_preferences":"paved",
-                          "stoplights_preference":"avoid", "steps_preference":"avoid","sharing_allowance":0.3,
-                          "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": 1.1,"steps_penalty_strength":1.2,"pavement_penalty_strength":1.05, "error":80, "alpha":0.6}
+preference_dict_sample = {"total_length":10000, "elevation_requested":0,"elevation_error":10,"pavement_preferences":"Paved",
+                          "stoplights_preference":"Avoid", "steps_preference":"Avoid","sharing_allowance":0.3,
+                          "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": 1.1,"steps_penalty_strength":1.2,"pavement_penalty_strength":1.05, "error":70, "alpha":0.6}
 graph_filepath= "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/GraphSaves/Weighted1_8.pkl"
 finalized_Paths = main((16.3731269,48.2084923),preference_dict_sample, graph_filepath)
+
+print(finalized_Paths)
