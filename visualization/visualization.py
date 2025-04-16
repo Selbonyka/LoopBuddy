@@ -1,6 +1,7 @@
 
 import osmnx as ox
 import pickle
+import folium
 
 #
 # preference_dict_sample = {"total_length":10000, "elevation_requested":0,"elevation_error":10,"pavement_preferences":"paved",
@@ -29,14 +30,72 @@ def generate_pastel_colors(n):
 
 colors = generate_pastel_colors(len(gdfs))
 
-m = gdfs[0].explore(tiles="cartodbpositron", color=colors[0],
-                    style_kwds={"weight": 5, "opacity": 0.8})
+# Initialize folium map with first route
+m = gdfs[0].explore(
+    tiles="cartodbpositron",
+    color=colors[0],
+    style_kwds={"weight": 5, "opacity": 0.8}
+)
 
-for gdf, color in zip(gdfs[1:], colors[1:]):
+# Add marker with download link
+# start_point = gdfs[0].geometry.iloc[0].coords[0][::-1]  # (lat, lon)
+middle_node_id = finalized_Paths[0][int(len(finalized_Paths[0])/4)]
+middle_point = (G.nodes[middle_node_id]["y"], G.nodes[middle_node_id]["x"])
+folium.Marker(
+    location=middle_point,
+    popup=f'<a href="/download_gpx/{1}" target="_blank">Download Route {1}</a>',
+    icon=folium.DivIcon(html=f"""
+        <div style="
+            width: 28px;
+            height: 28px;
+            background: {colors[0]};
+            border: 2px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            font-size: 14px;
+            color: black;
+        ">
+            {1}
+        </div>
+    """)
+).add_to(m)
+
+
+# Add remaining routes and markers
+for i, (gdf, color) in enumerate(zip(gdfs[1:], colors[1:]), start=1):
+    middle_node_id = finalized_Paths[i][-int(len(finalized_Paths[i])/4)]
+    middle_point = (G.nodes[middle_node_id]["y"], G.nodes[middle_node_id]["x"])
     m = gdf.explore(m=m, color=color, style_kwds={"weight": 5, "opacity": 0.8})
 
+    # start_point = gdf.geometry.iloc[0].coords[0][::-1]
+    # diameter = 28+i # jus so overlaps are visible
+    # diameter = str(diameter)+"px"
+    folium.Marker(
+        location=middle_point,
+        popup=f'<a href="/download_gpx/{i}" target="_blank">Download Route {i + 1}</a>',
+        icon=folium.DivIcon(html=f"""
+            <div style="
+                width: 28px;
+                height: 28px;
+                background: {color};
+                border: 2px solid black;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 28px;
+                font-weight: bold;
+                font-size: 14px;
+                color: black;
+            ">
+                {i + 1}
+            </div>
+        """)
+    ).add_to(m)
 
-m.save("newtwst1.html")
+print(gdfs[0])
+# Save to HTML file
+m.save("/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/map.html")
 
 
 

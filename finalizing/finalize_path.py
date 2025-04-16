@@ -117,7 +117,7 @@ def select_paths (finalized_paths,paths_badness):
     selected_paths = []
     badness_selected = []
 
-    for i in range(len(finalized_paths)):
+    for i in tqdm(range(len(finalized_paths)), desc= "Selecting the best paths", total = len(finalized_paths)):
         path = finalized_paths[i]
         badness = paths_badness[i]
         # if len(selected_paths) == 0:
