@@ -1,6 +1,7 @@
 import networkx as nx
 from finalizing.sharing_filter import sharing_filter
 from utils.length import length
+from utils.elevation_calculation import compute_elevation_change
 from tqdm import tqdm
 from difflib import SequenceMatcher
 
@@ -16,12 +17,8 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
     # filtering out the nodes that only have both u and v
     valid_m_nodes = [m[0] for m in G.nodes(data=True) if "Mm" in m[1] and len(m[1]["Mm"]) > 1]
 
-
-
     for m in tqdm(valid_m_nodes,desc = "Concatenating and filtering paths", total=len(valid_m_nodes)):
-
         # create the full path:
-
         u, v = list((G.nodes[m].get("Mm")).keys())  # extracting the u,v values
 
         # s to u:
@@ -29,38 +26,23 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
         if path_s_u[0] != point_s:
             path_s_u.reverse()
 
-
-        # print("path su:", path_s_u)
-
         # u to m:
 
         path_u_m = m_paths_storage[m][u][1:]
         path_u_m.reverse()
-        # print("path_u_m:", path_u_m)
-
 
         # m to v:
         path_m_v = m_paths_storage[m][v]# [:-1] # no need to reverse, as it's already in this order
         # removing the last element to not cause issues again
-        # print("path_m_v:", path_m_v)
 
         # v to s:
         path_v_s = paths_R_s[v]
         if path_v_s[0] == point_s:
             path_v_s.reverse()
-        # print("path_v_s:", path_v_s)
 
-        # print("v value:", v)
 
         # concatenated path:
         combinedPath = path_s_u + path_u_m + path_m_v + path_v_s
-
-        # check if it's a valid path:
-        # if is_valid_path(G, combinedPath):
-        #     print('hi')
-
-        # print(all(G.has_edge(combinedPath[i], combinedPath[i+1]) for i in range(len(combinedPath) - 1)))
-
 
         for i in range(len(combinedPath) - 1): # raises error if no path between
             if G.has_edge(combinedPath[i], combinedPath[i+1]) is False:
@@ -74,62 +56,49 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
 
             if total_length_bounds[0]<=length_path <= total_length_bounds[1]: # checking if the path is in bounds
 
-                # checking elevation:
-                elevation_data = nx.get_edge_attributes(G.subgraph(combinedPath), "grade_abs")
-                elevation_path = length(G, combinedPath, elevation_data)
+                # checking elevation changes
+                pos_change, neg_change = compute_elevation_change(G, combinedPath)
 
-                if elevation_bounds[0]<=elevation_path <= elevation_bounds[1]:
+                # if neg_change >= elevation_bounds[0] and pos_change <= elevation_bounds[1]:
+                if elevation_bounds[0]<=pos_change<=elevation_bounds[1]: # based on the logic that since it's a looped route if you come up you must come down
                     badness_data = nx.get_edge_attributes(G.subgraph(combinedPath), "penalized_weight")
                     badness_path = length(G, combinedPath, badness_data)
 
                     finalized_paths.append(combinedPath)
                     paths_lengths.append(length_path)
-                    paths_elevations.append(elevation_path)
+                    paths_elevations.append([pos_change, neg_change])
                     paths_badness.append(badness_path)
 
 
     return finalized_paths,paths_badness, paths_lengths, paths_elevations
 
 
-def select_paths (finalized_paths,paths_badness):
-    """__len__ = {int} 0
-    Selects the best paths to display to the user, based on how distinct they are and how much they match the preferences
-    :param finalized_paths:
-    :param paths_badness:
-    :param paths_lengths:
-    :param paths_elevations:
-    :return:
+def select_paths (finalized_paths,paths_badness, similiarity_threshold):
     """
-    # selected_paths = {}
-    # print(len(finalized_paths))
-    # for i in range(len(finalized_paths)):
-    #     path = finalized_paths[i]
-    #     badness = paths_badness[i]
-    #     if len(selected_paths) ==0:
-    #         selected_paths[path] = badness
-    #     for key,value in list(selected_paths.items()):
-    #         if SequenceMatcher(None,path,key).ratio()<0.8:
-    #             selected_paths[path] = badness
-    #         if SequenceMatcher(None, path, key).ratio() >= 0.8 and badness > value:
-    #             selected_paths.pop(key)
-    #             selected_paths[path] = badness
-
+    Selects the best paths to display to the user removing those that are worse than the similar ones
+    :param finalized_paths: list of lists containing all finalized paths
+    :param paths_badness: list of integers containing the badnesses of the respective paths
+    :param similiarity_threshold: how similar to each other the paths could be
+    :return: a list of lists containing paths that are different enough
+    """
     selected_paths = []
     badness_selected = []
 
-    for i in tqdm(range(len(finalized_paths)), desc= "Selecting the best paths", total = len(finalized_paths)):
+    for i in tqdm(range(len(finalized_paths)), desc= "Selecting the best paths", total = len(finalized_paths)): # iterating over the paths we generated
         path = finalized_paths[i]
         badness = paths_badness[i]
-        # if len(selected_paths) == 0:
-        #     selected_paths = path
-        # else:
         unique = True
-        for j in range(len(selected_paths)):
-            if SequenceMatcher(None,selected_paths[j], path).ratio()>=0.8:
+
+        for j in range(len(selected_paths)): # iterating over all the paths we stored
+            # returns false if there are no pahts like this, so this path is added to selected_paths:
+            if SequenceMatcher(None,selected_paths[j], path).ratio()>=similiarity_threshold:  #threshold can be modified to change how similar the paths can be
                 unique = False
                 if badness < badness_selected[j]:
+                    # removing the path and the badness that are worse that the path we are currently analyzing:
                     selected_paths.pop(j)
                     badness_selected.pop(j)
+
+                    # adding the better path
                     selected_paths.append(path)
                     badness_selected.append(badness)
                     break
@@ -138,15 +107,6 @@ def select_paths (finalized_paths,paths_badness):
             selected_paths.append(path)
             badness_selected.append(badness)
 
-
-    # sorted_paths = sorted(selected_paths)
+    print(f"Removed {len(finalized_paths) - len(selected_paths)} redundant paths \n")
 
     return selected_paths
-
-
-
-
-# paths_trial = [[1,1,1,1,2,3],[1,1,1,1,2,4],[5,6,7]]
-# badness_trial=[8,4,8]
-#
-# print(select_paths(paths_trial,badness_trial))

@@ -1,6 +1,6 @@
 
 def length(G, path,edges_data):
-    # non cashed version of the functionm can't use it in the function below due to Rs calculation
+    # non cashed version of the function can't use it in the function below due to Rs calculation
     total_length = 0
 
     for i in range(len(path) - 1):  # -1 because edges and +1 on the line below, the last one is source

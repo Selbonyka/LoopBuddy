@@ -139,7 +139,7 @@ def main(start_point, preferences, graph_filepath):
 
     print(len(finalized_paths))
     print(finalized_paths)
-    selected_paths = select_paths(finalized_paths,paths_badness)
+    selected_paths = select_paths(finalized_paths,paths_badness, 0.8)
 
 
     print(len(selected_paths))
