@@ -237,7 +237,7 @@
 
         <div class="input-row">
           <label for="alpha">Smoothing factor:</label>
-          <input type="number" id="alpha" name="alpha" value = "0" min = "0" max = "1">
+          <input type="number" id="alpha" name="alpha" value = "0.6" min = "0" max = "1">
         </div>
 
         <div class="input-row">
@@ -253,6 +253,11 @@
         <div class="input-row">
           <label for="steps_penalty">Steps penalty:</label>
           <input type="number" id="steps_penalty" name="steps_penalty" value="1.2" step="0.1" min="1">
+        </div>
+
+        <div class="input-row">
+          <label for="pavement_penalty">Pavement type penalty:</label>
+          <input type="number" id="pavement_penalty" name="pavement_penalty" value="1.05" step="0.1" min="1">
         </div>
 
 
@@ -303,7 +308,7 @@
     attribution: '&copy; OpenStreetMap contributors'
   }).addTo(map);
 
-  let marker;  // put this outside the click handler
+  let marker;
   map.on('click', function(e) {
     const latlng = e.latlng;
 
@@ -313,7 +318,7 @@
 
     marker = L.marker(latlng).addTo(map);
 
-    // Enable button now that we have a location
+    // Enabling button now that we have a location
     document.getElementById("create-route").disabled = false;
 
     // Optional: Send to backend on click
@@ -347,6 +352,7 @@
   const sharing_allowance = document.getElementById("sharing_allowance").value;
   const stoplight_penalty = document.getElementById("stoplight_penalty").value;
   const steps_penalty = document.getElementById("steps_penalty").value;
+  const pavement_penalty = document.getElementById("pavement_penalty").value;
 
   fetch("/create-route", {
     method: "POST",
@@ -364,7 +370,8 @@
       alpha: alpha,
       sharing_allowance: sharing_allowance,
       stoplight_penalty: stoplight_penalty,
-      steps_penalty: steps_penalty
+      steps_penalty: steps_penalty,
+      pavement_penalty: pavement_penalty
     })
   })
     .then(res => res.json())

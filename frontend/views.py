@@ -47,18 +47,27 @@ def create_route():
     pavement_preference = data.get("pavement_preference")
     stoplight_preference = data.get("stoplight_preference")
     steps_preference = data.get("steps_preference")
+    elevation_error = float(data.get("elevation_error"))
+    sharing_allowance = float(data.get("sharing_allowance"))
+    distance_error = float(data.get("distance_error"))
+    stoplight_penalty = float(data.get("stoplight_penalty"))
+    steps_penalty = float(data.get("steps_penalty"))
+    pavement_penalty = float(data.get("pavement_penalty"))
+    alpha = float(data.get("alpha"))
+
+    print(type(stoplight_preference), type(steps_penalty), type(pavement_penalty), type(steps_penalty), type(alpha))
 
     print(f"Create route requested from: ({lat}, {lng})")
 
     # Calling main
     # add scaling for allowed distance between nodes
 
-    preference_dict_sample = {"total_length": distance, "elevation_requested": elevation_target, "elevation_error": 10,
+    preference_dict_sample = {"total_length": distance, "elevation_requested": elevation_target, "elevation_error": elevation_error,
                               "pavement_preferences": pavement_preference,
-                              "stoplights_preference": stoplight_preference, "steps_preference":steps_preference, "sharing_allowance": 0.3,
-                              "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": 1.1,
-                              "steps_penalty_strength": 1.2, "pavement_penalty_strength": 1.05, "error": 60,
-                              "alpha": 0.6}
+                              "stoplights_preference": stoplight_preference, "steps_preference":steps_preference, "sharing_allowance": sharing_allowance,
+                              "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": stoplight_penalty,
+                              "steps_penalty_strength": steps_penalty, "pavement_penalty_strength": pavement_penalty, "error": distance_error,
+                              "alpha": alpha}
     graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
     finalized_Paths = main((lng, lat), preference_dict_sample, graph_filepath)
 
