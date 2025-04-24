@@ -31,7 +31,6 @@ def store_clicked_point():
 
     print(f"Clicked point received: ({lat}, {lng})")
 
-    # Don't run main() here!
     return jsonify({"status": "clicked received"})
 
 @views.route("/create-route", methods=["POST"])
@@ -71,9 +70,18 @@ def create_route():
     graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
     finalized_Paths = main((lng, lat), preference_dict_sample, graph_filepath)
 
-    print(finalized_Paths)
+    generation_status = "fail"
+    if len(finalized_Paths)>0:
+        generation_status = "success"
 
-    return jsonify({"status": "generating route"})
+
+    return jsonify({"status": generation_status})
+
+
+# Displaying the results to the user
+@views.route("/result")
+def display_result():
+    return render_template("map.html")
 
 # from flask import Flask, send_file, request, abort
 # import io
