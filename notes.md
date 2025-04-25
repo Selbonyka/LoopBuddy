@@ -24,4 +24,3 @@
 
 ### Notes:
 - Doesn't work hat well on edges of the city where there are limited routes
-- Maybe it makes sense to pass G to main to avoid loading the graph 2 times

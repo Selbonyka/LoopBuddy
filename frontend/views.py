@@ -3,6 +3,7 @@ import uuid
 import pickle
 import os
 import time
+from cachetools import TTLCache
 
 
 from main import main
@@ -11,11 +12,13 @@ from utils.gpxing import paths_to_gpx
 
 
 
+
 views = Blueprint(__name__,"views")
 
 
 # Managing sessions:
-user_cache = {}
+user_cache = TTLCache(maxsize=1000, ttl=900)
+
 
 
 @views.route("/")
@@ -40,12 +43,12 @@ def store_clicked_point():
 @views.route("/create-route", methods=["POST"])
 def create_route():
     saving_directory = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
-
-
-    # Cleaning files from the directory if they exist there:
-    for file in os.listdir(saving_directory):
-        if file.endswith(".gpx"):
-            os.remove(os.path.join(saving_directory, file))
+    #
+    #
+    # # Cleaning files from the directory if they exist there:
+    # for file in os.listdir(saving_directory):
+    #     if file.endswith(".gpx"):
+    #         os.remove(os.path.join(saving_directory, file))
 
     graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
 
@@ -90,20 +93,38 @@ def create_route():
     finalized_Paths = main((lng, lat), preference_dict_sample, G)
 
 
+    # Session managment:
+
+    # Assign user ID
+    if "user_id" not in session:
+        session["user_id"] = str(uuid.uuid4())
+
+    user_id = session["user_id"]
+    user_folder = saving_directory+user_id+"/"
+
+    # Ensure the user's folder exists
+    os.makedirs(user_folder, exist_ok=True)
+
+    # Save GPX files in user's personal folder
+    generation_status = paths_to_gpx(G, finalized_Paths, user_folder)
+
+    # Save their folder path in cache
+    user_cache[user_id] = user_folder
 
     # Generating the html with the routes
-    save_path = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/map.html"
+    map_save_folder = f"/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/maps/{user_id}/"
+    os.makedirs(map_save_folder, exist_ok=True)
+    map_path = map_save_folder + "map.html"
 
-    route_visualization(finalized_Paths, G, save_path)
-
-    # Generating the gpx files
-    generation_status = paths_to_gpx(G,finalized_Paths,saving_directory)
+    route_visualization(finalized_Paths, G, map_path)
 
     # Checking if I generated all the paths
-    last_route_path = os.path.join(saving_directory, f'route_{len(finalized_Paths)}.gpx')
+    last_route_path = os.path.join(user_folder, f'route_{len(finalized_Paths)}.gpx')
     while not os.path.exists(last_route_path):
         time.sleep(0.1)
         print("Waiting for the files to finish generating")
+
+    print(user_cache)
 
     return jsonify({"status": generation_status})
 
@@ -111,20 +132,33 @@ def create_route():
 # Displaying the results to the user
 @views.route("/result")
 def display_result():
-    return render_template("map.html")
+    user_id = session.get("user_id")
+
+    if not user_id:
+        abort(403, description="Session expired or not found.")
+
+    user_map_path = f"maps/{user_id}/map.html"  # Relative to templates folder
+
+    return render_template(user_map_path)
 
 
 
 @views.route('/download_gpx/<int:route_id>')
 def download_gpx(route_id):
-    folder = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
+    user_id = session.get("user_id")
+
+    if not user_id or user_id not in user_cache:
+        abort(403, description="Session expired or not found.")
+
+
+    user_folder = user_cache[user_id]
     filename = f'route_{route_id}.gpx'
-    filepath = os.path.join(folder, filename)
+    filepath = os.path.join(user_folder, filename)
 
     if os.path.exists(filepath):
-        return send_from_directory(folder, filename, as_attachment=True)
+        return send_from_directory(user_folder, filename, as_attachment=True)
     else:
-        return abort(404, description="GPX file not found.")
+        abort(404, description="GPX file not found.")
 
 
 
@@ -155,3 +189,4 @@ def download_gpx(route_id):
 #     return send_file(gpx_bytes, as_attachment=True, download_name=f"route_{route_id + 1}.gpx", mimetype="application/gpx+xml")
 #
 #
+
