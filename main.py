@@ -19,7 +19,7 @@ Note space
 """
 
 
-def main(start_point, preferences, graph_filepath):
+def main(start_point, preferences, G):
 
     """
 
@@ -47,10 +47,7 @@ def main(start_point, preferences, graph_filepath):
 
 
     ### loading in the pre-generated graph that already has stoplights, elevation, pavement data:
-    print("\nLoading the graph!\n")
-    with open(graph_filepath, "rb") as f:
-        G = pickle.load(f)
-    print("Graph loaded succesfully!\n")
+
 
 
     # starting point:

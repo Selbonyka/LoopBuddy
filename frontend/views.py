@@ -1,9 +1,13 @@
-from flask import Blueprint, render_template,request, jsonify, session
-from main import main
+from flask import Blueprint, render_template,request, jsonify, session, send_from_directory, abort
 import uuid
+import pickle
+import os
+import time
 
 
-
+from main import main
+from visualization.visualization import route_visualization
+from utils.gpxing import paths_to_gpx
 
 
 
@@ -35,6 +39,22 @@ def store_clicked_point():
 
 @views.route("/create-route", methods=["POST"])
 def create_route():
+    saving_directory = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
+
+
+    # Cleaning files from the directory if they exist there:
+    for file in os.listdir(saving_directory):
+        if file.endswith(".gpx"):
+            os.remove(os.path.join(saving_directory, file))
+
+    graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
+
+    # Loading the graph
+    print("\nLoading the graph!\n")
+    with open(graph_filepath, "rb") as f:
+        G = pickle.load(f)
+    print("Graph loaded succesfully!\n")
+
     data = request.get_json()
     print("REQUEST DATA:", data)
 
@@ -67,13 +87,23 @@ def create_route():
                               "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": stoplight_penalty,
                               "steps_penalty_strength": steps_penalty, "pavement_penalty_strength": pavement_penalty, "error": distance_error,
                               "alpha": alpha}
-    graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
-    finalized_Paths = main((lng, lat), preference_dict_sample, graph_filepath)
+    finalized_Paths = main((lng, lat), preference_dict_sample, G)
 
-    generation_status = "fail"
-    if len(finalized_Paths)>0:
-        generation_status = "success"
 
+
+    # Generating the html with the routes
+    save_path = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/map.html"
+
+    route_visualization(finalized_Paths, G, save_path)
+
+    # Generating the gpx files
+    generation_status = paths_to_gpx(G,finalized_Paths,saving_directory)
+
+    # Checking if I generated all the paths
+    last_route_path = os.path.join(saving_directory, f'route_{len(finalized_Paths)}.gpx')
+    while not os.path.exists(last_route_path):
+        time.sleep(0.1)
+        print("Waiting for the files to finish generating")
 
     return jsonify({"status": generation_status})
 
@@ -82,6 +112,22 @@ def create_route():
 @views.route("/result")
 def display_result():
     return render_template("map.html")
+
+
+
+@views.route('/download_gpx/<int:route_id>')
+def download_gpx(route_id):
+    folder = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
+    filename = f'route_{route_id}.gpx'
+    filepath = os.path.join(folder, filename)
+
+    if os.path.exists(filepath):
+        return send_from_directory(folder, filename, as_attachment=True)
+    else:
+        return abort(404, description="GPX file not found.")
+
+
+
 
 # from flask import Flask, send_file, request, abort
 # import io
