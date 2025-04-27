@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="The waiting for the paths now works">
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="Ah, perfect, the sessions work and the height of the map box scales">
+      <change afterPath="$PROJECT_DIR$/Instructions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalizing/finalize_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalizing/finalize_path.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/gpxing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/gpxing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +177,9 @@
       <workItem from="1745446411010" duration="16000" />
       <workItem from="1745505140026" duration="17794000" />
       <workItem from="1745589180314" duration="5000" />
-      <workItem from="1745590764065" duration="4198000" />
+      <workItem from="1745590764065" duration="10337000" />
+      <workItem from="1745663416829" duration="7000" />
+      <workItem from="1745747390141" duration="2415000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -303,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745592401983</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Ah, perfect, the sessions work and the height of the map box scales">
+      <option name="closed" value="true" />
+      <created>1745595323241</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1745595323241</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,20 +361,41 @@
     <MESSAGE value="fixed the input from frontend to backend" />
     <MESSAGE value="now there is a loading popup as well as a Generation failed button. as well the resulting map now pops up (for now static)" />
     <MESSAGE value="The waiting for the paths now works" />
-    <option name="LAST_COMMIT_MESSAGE" value="The waiting for the paths now works" />
+    <MESSAGE value="Ah, perfect, the sessions work and the height of the map box scales" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ah, perfect, the sessions work and the height of the map box scales" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/gpxing.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="NONE" type="python-line">
           <url>file://$PROJECT_DIR$/frontend/views.py</url>
           <log-expression expression="views = Blueprint(__name__,&quot;views&quot;)&#10;&#10;&#10;## Managing sessions:&#10;user_cache = {}&#10;&#10;&#10;@views.route(&quot;/&quot;)&#10;def home():&#10;    return render_template(&quot;home.html&quot;)&#10;&#10;## Handle map clicks&#10;@views.route('/clicked', methods=['POST'])&#10;def store_clicked_point():&#10;&#10;    data = request.get_json()&#10;    lat = data.get(&quot;lat&quot;)&#10;    lng = data.get(&quot;lng&quot;)&#10;    ## session['data'] = request.get_json()&#10;    ## lat =  session['data'].get(&quot;lat&quot;)&#10;    ## lng =  session['data'].get(&quot;lng&quot;)&#10;&#10;    print(f&quot;Clicked point received: ({lat}, {lng})&quot;)&#10;&#10;    return jsonify({&quot;status&quot;: &quot;clicked received&quot;})&#10;&#10;@views.route(&quot;/create-route&quot;, methods=[&quot;POST&quot;])&#10;def create_route():&#10;    saving_directory = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/&quot;&#10;&#10;&#10;    ## Cleaning files from the directory if they exist there:&#10;    for file in os.listdir(saving_directory):&#10;        if file.endswith(&quot;.gpx&quot;):&#10;            os.remove(os.path.join(saving_directory, file))&#10;&#10;    graph_filepath = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl&quot;&#10;&#10;    ## Loading the graph&#10;    print(&quot;\nLoading the graph!\n&quot;)&#10;    with open(graph_filepath, &quot;rb&quot;) as f:&#10;        G = pickle.load(f)&#10;    print(&quot;Graph loaded succesfully!\n&quot;)&#10;&#10;    data = request.get_json()&#10;    print(&quot;REQUEST DATA:&quot;, data)&#10;&#10;    lat = data.get(&quot;lat&quot;)&#10;    lng = data.get(&quot;lng&quot;)&#10;&#10;    distance = float(data.get(&quot;distance&quot;))&#10;    elevation_target = float(data.get(&quot;elevation_target&quot;))&#10;    pavement_preference = data.get(&quot;pavement_preference&quot;)&#10;    stoplight_preference = data.get(&quot;stoplight_preference&quot;)&#10;    steps_preference = data.get(&quot;steps_preference&quot;)&#10;    elevation_error = float(data.get(&quot;elevation_error&quot;))&#10;    sharing_allowance = float(data.get(&quot;sharing_allowance&quot;))&#10;    distance_error = float(data.get(&quot;distance_error&quot;))&#10;    stoplight_penalty = float(data.get(&quot;stoplight_penalty&quot;))&#10;    steps_penalty = float(data.get(&quot;steps_penalty&quot;))&#10;    pavement_penalty = float(data.get(&quot;pavement_penalty&quot;))&#10;    alpha = float(data.get(&quot;alpha&quot;))&#10;&#10;    print(type(stoplight_preference), type(steps_penalty), type(pavement_penalty), type(steps_penalty), type(alpha))&#10;&#10;    print(f&quot;Create route requested from: ({lat}, {lng})&quot;)&#10;&#10;    ## Calling main&#10;    ## add scaling for allowed distance between nodes&#10;&#10;    preference_dict_sample = {&quot;total_length&quot;: distance, &quot;elevation_requested&quot;: elevation_target, &quot;elevation_error&quot;: elevation_error,&#10;                              &quot;pavement_preferences&quot;: pavement_preference,&#10;                              &quot;stoplights_preference&quot;: stoplight_preference, &quot;steps_preference&quot;:steps_preference, &quot;sharing_allowance&quot;: sharing_allowance,&#10;                              &quot;allowed_distance_between_nodes&quot;: 300, &quot;stoplight_penalty_strength&quot;: stoplight_penalty,&#10;                              &quot;steps_penalty_strength&quot;: steps_penalty, &quot;pavement_penalty_strength&quot;: pavement_penalty, &quot;error&quot;: distance_error,&#10;                              &quot;alpha&quot;: alpha}&#10;    finalized_Paths = main((lng, lat), preference_dict_sample, G)&#10;&#10;&#10;&#10;    ## Generating the html with the routes&#10;    save_path = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/map.html&quot;&#10;&#10;    route_visualization(finalized_Paths, G, save_path)&#10;&#10;    ## Generating the gpx files&#10;    generation_status = paths_to_gpx(G,finalized_Paths,saving_directory)&#10;&#10;    ## Checking if I generated all the paths&#10;    last_route_path = os.path.join(saving_directory, f'route_{len(finalized_Paths)}.gpx')&#10;    while not os.path.exists(last_route_path):&#10;        time.sleep(0.1)&#10;        print(&quot;Waiting for the files to finish generating&quot;)&#10;&#10;    return jsonify({&quot;status&quot;: generation_status})&#10;&#10;&#10;## Displaying the results to the user&#10;@views.route(&quot;/result&quot;)&#10;def display_result():&#10;    return render_template(&quot;map.html&quot;)&#10;&#10;&#10;&#10;@views.route('/download_gpx/&lt;int:route_id&gt;')&#10;def download_gpx(route_id):&#10;    folder = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/&quot;&#10;    filename = f'route_{route_id}.gpx'&#10;    filepath = os.path.join(folder, filename)&#10;&#10;    if os.path.exists(filepath):&#10;        return send_from_directory(folder, filename, as_attachment=True)&#10;    else:&#10;        return abort(404, description=&quot;GPX file not found.&quot;)" language="Python" />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/finalizing/finalize_path.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/finalizing/finalize_path.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/finalizing/finalize_path.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/finalizing/finalize_path.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/finalizing/finalize_path.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -370,7 +405,7 @@
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1744743301619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1745593676607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1745752360043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/LoopBuddy$finalize_path.coverage" NAME="finalize_path Coverage Results" MODIFIED="1744661077416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/finalizing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

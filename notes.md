@@ -14,11 +14,15 @@
 
 ### TO DO:
 - [ ] Figure out if you wanna use node simplification, if yes, maybe make it based on badness?
-- [ ] Make the paths that have the same edges filter themselves out
-- [ ] from uprimerings clean up the print statements
+- [x] Make the paths that have the same edges filter themselves out
+- [x] from uprimerings clean up the print statements
 - [ ] Maybe the sharing parametres could be made kinder in the uprime_rings.py
 - [ ] Add message for when the route with selected elevation was not found
-- [ ] Remove the elevation grade
+- [ ] Remove the elevation grade ?
+- [ ] Go over the code
+- [ ] implement instructions
+- [ ] test optimal settings
+
 
 
 

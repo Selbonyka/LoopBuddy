@@ -4,16 +4,20 @@ import pickle
 import os
 import time
 from cachetools import TTLCache
+import shutil
+
 
 
 from main import main
 from visualization.visualization import route_visualization
 from utils.gpxing import paths_to_gpx
 
-
+# im annoyed will fix the autodelete later - i don't even care that much i might as well just ignore it but sure
+# i need to separate the error functions
 
 
 views = Blueprint(__name__,"views")
+
 
 
 # Managing sessions:
@@ -43,12 +47,6 @@ def store_clicked_point():
 @views.route("/create-route", methods=["POST"])
 def create_route():
     saving_directory = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
-    #
-    #
-    # # Cleaning files from the directory if they exist there:
-    # for file in os.listdir(saving_directory):
-    #     if file.endswith(".gpx"):
-    #         os.remove(os.path.join(saving_directory, file))
 
     graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
 
@@ -90,41 +88,54 @@ def create_route():
                               "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": stoplight_penalty,
                               "steps_penalty_strength": steps_penalty, "pavement_penalty_strength": pavement_penalty, "error": distance_error,
                               "alpha": alpha}
-    finalized_Paths = main((lng, lat), preference_dict_sample, G)
+    finalized_Paths, elevation_failure = main((lng, lat), preference_dict_sample, G)
+
+    if elevation_failure:
+        generation_status = "elevation_failure"
+    elif len(finalized_Paths) == 0:
+            generation_status = "failed"
+    else:
+        generation_status = "success"
 
 
-    # Session managment:
 
-    # Assign user ID
-    if "user_id" not in session:
-        session["user_id"] = str(uuid.uuid4())
+    print("Generation status:", generation_status)
 
-    user_id = session["user_id"]
-    user_folder = saving_directory+user_id+"/"
+    if generation_status != "elevation_failure":
 
-    # Ensure the user's folder exists
-    os.makedirs(user_folder, exist_ok=True)
+        # Assign user ID
+        if "user_id" not in session:
+            session["user_id"] = str(uuid.uuid4())
 
-    # Save GPX files in user's personal folder
-    generation_status = paths_to_gpx(G, finalized_Paths, user_folder)
+        user_id = session["user_id"]
+        gpx_user_folder = saving_directory + user_id + "/"
 
-    # Save their folder path in cache
-    user_cache[user_id] = user_folder
+        # Ensure the user's folder exists
+        os.makedirs(gpx_user_folder, exist_ok=True)
 
-    # Generating the html with the routes
-    map_save_folder = f"/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/maps/{user_id}/"
-    os.makedirs(map_save_folder, exist_ok=True)
-    map_path = map_save_folder + "map.html"
+        # Save GPX files in user's personal folder
+        paths_to_gpx(G, finalized_Paths, gpx_user_folder)
 
-    route_visualization(finalized_Paths, G, map_path)
+        # Generating the html with the routes
+        map_save_folder = f"/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/maps/{user_id}/"
+        os.makedirs(map_save_folder, exist_ok=True)
+        map_path = map_save_folder + "map.html"
 
-    # Checking if I generated all the paths
-    last_route_path = os.path.join(user_folder, f'route_{len(finalized_Paths)}.gpx')
-    while not os.path.exists(last_route_path):
-        time.sleep(0.1)
-        print("Waiting for the files to finish generating")
+        route_visualization(finalized_Paths, G, map_path)
 
-    print(user_cache)
+        # Saving the folders in cache:
+        user_cache[user_id] = {
+            "gpx_folder": gpx_user_folder,
+            "map_folder": map_save_folder
+        }
+
+        print(user_cache[user_id])
+
+        # Checking if I generated all the paths
+        last_route_path = os.path.join(gpx_user_folder, f'route_{len(finalized_Paths)}.gpx')
+        while not os.path.exists(last_route_path):
+            time.sleep(0.1)
+            print("Waiting for the files to finish generating")
 
     return jsonify({"status": generation_status})
 
@@ -161,32 +172,4 @@ def download_gpx(route_id):
         abort(404, description="GPX file not found.")
 
 
-
-
-# from flask import Flask, send_file, request, abort
-# import io
-# import gpxpy.gpx
-#
-#
-# # Assuming you have gdfs globally or stored in the session
-# @app.route("/download_gpx/<int:route_id>")
-# def download_gpx(route_id):
-#     if route_id < 0 or route_id >= len(gdfs):
-#         abort(404)
-#
-#     gdf = gdfs[route_id]
-#     gpx = gpxpy.gpx.GPX()
-#     gpx_track = gpxpy.gpx.GPXTrack()
-#     gpx.tracks.append(gpx_track)
-#     gpx_segment = gpxpy.gpx.GPXTrackSegment()
-#     gpx_track.segments.append(gpx_segment)
-#
-#     for point in gdf.geometry.iloc[0].coords:
-#         gpx_segment.points.append(gpxpy.gpx.GPXTrackPoint(point[1], point[0]))
-#
-#     gpx_str = gpx.to_xml()
-#     gpx_bytes = io.BytesIO(gpx_str.encode("utf-8"))
-#     return send_file(gpx_bytes, as_attachment=True, download_name=f"route_{route_id + 1}.gpx", mimetype="application/gpx+xml")
-#
-#
 

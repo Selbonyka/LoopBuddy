@@ -132,15 +132,13 @@ def main(start_point, preferences, G):
     print("\nCompleted m generation and processing! \n")
 
 
-    finalized_paths,paths_badness,path_lengths, paths_elevation = concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, total_length_bounds, elevation_bounds)
+    finalized_paths,paths_badness,path_lengths, paths_elevation, elevation_failure = concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, total_length_bounds, elevation_bounds)
 
-    print(len(finalized_paths))
-    print(finalized_paths)
     selected_paths = select_paths(finalized_paths,paths_badness, 0.8)
 
 
     print(len(selected_paths))
-    return selected_paths
+    return selected_paths, elevation_failure
     # return finalized_paths
 
 

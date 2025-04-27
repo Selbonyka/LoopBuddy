@@ -14,6 +14,8 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
     paths_lengths = []
     paths_elevations = []
     paths_badness = []
+    elevation_appropriate = 0
+
     # filtering out the nodes that only have both u and v
     valid_m_nodes = [m[0] for m in G.nodes(data=True) if "Mm" in m[1] and len(m[1]["Mm"]) > 1]
 
@@ -48,6 +50,9 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
             if G.has_edge(combinedPath[i], combinedPath[i+1]) is False:
                 print("no edge between:", combinedPath[i], combinedPath[i+1])
 
+        # checking if the path fails due to elevation
+
+
 
         # checking for sharing:
         if sharing_filter(combinedPath, sharing_allowance):
@@ -58,7 +63,7 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
 
                 # checking elevation changes
                 pos_change, neg_change = compute_elevation_change(G, combinedPath)
-
+                elevation_appropriate += 1 # this needs to be placed here, otherwise paths that don't count based on length will still count as appropriate
                 # if neg_change >= elevation_bounds[0] and pos_change <= elevation_bounds[1]:
                 if elevation_bounds[0]<=pos_change<=elevation_bounds[1]: # based on the logic that since it's a looped route if you come up you must come down
                     badness_data = nx.get_edge_attributes(G.subgraph(combinedPath), "penalized_weight")
@@ -68,9 +73,17 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
                     paths_lengths.append(length_path)
                     paths_elevations.append([pos_change, neg_change])
                     paths_badness.append(badness_path)
+                else:
+                    elevation_appropriate -=1 # the path did not path the elevation condution
+
+    # this is needed for the appropriate error statement
+    if elevation_appropriate == 0:
+        elevation_failure = True
+    else:
+        elevation_failure = False
 
 
-    return finalized_paths,paths_badness, paths_lengths, paths_elevations
+    return finalized_paths,paths_badness, paths_lengths, paths_elevations, elevation_failure
 
 
 def select_paths (finalized_paths,paths_badness, similiarity_threshold):

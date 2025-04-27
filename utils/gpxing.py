@@ -27,4 +27,3 @@ def paths_to_gpx(G, paths, saving_directory):
         with open(filename, 'w') as f:
             f.write(gpx.to_xml())
 
-    return "success"

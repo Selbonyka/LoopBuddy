@@ -345,7 +345,16 @@
       <button onclick="hideFailure()" class="button-clean">Close</button>
     </div>
   </div>
-</div>
+  </div>
+
+  <div id="elevation-failure-overlay" class="fullscreen-overlay" style="display: none;">
+    <div class="loading-content" style="text-align: center;">
+      Generation Failed <br> Reason: Elevation bounds
+      <div style="margin-top: 10px;">
+        <button onclick="hideFailure()" class="button-clean">Close</button>
+      </div>
+    </div>
+
 
 
 <script>
@@ -410,7 +419,13 @@
 
   function hideFailure() {
   document.getElementById('failure-overlay').style.display = 'none';
+  document.getElementById('elevation-failure-overlay').style.display = 'none';
+
   }
+
+   function showFailureElevation() {
+  document.getElementById('elevation-failure-overlay').style.display = 'flex';
+}
 
   document.getElementById("create-route").addEventListener("click", async function () {
     if (!marker) {
@@ -436,46 +451,48 @@
     showLoading();
 
     try {
-    const res = await fetch("/create-route", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        lat: latlng.lat,
-        lng: latlng.lng,
-        distance: distance,
-        elevation_target: elevation_target,
-        pavement_preference: pavement_preference,
-        stoplight_preference: stoplight_preference,
-        steps_preference: steps_preference,
-        distance_error: distance_error,
-        elevation_error: elevation_error,
-        alpha: alpha,
-        sharing_allowance: sharing_allowance,
-        stoplight_penalty: stoplight_penalty,
-        steps_penalty: steps_penalty,
-        pavement_penalty: pavement_penalty
-      })
-    });
+      const res = await fetch("/create-route", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          lat: latlng.lat,
+          lng: latlng.lng,
+          distance: distance,
+          elevation_target: elevation_target,
+          pavement_preference: pavement_preference,
+          stoplight_preference: stoplight_preference,
+          steps_preference: steps_preference,
+          distance_error: distance_error,
+          elevation_error: elevation_error,
+          alpha: alpha,
+          sharing_allowance: sharing_allowance,
+          stoplight_penalty: stoplight_penalty,
+          steps_penalty: steps_penalty,
+          pavement_penalty: pavement_penalty
+        })
+      });
 
-    const text = await res.text(); // get raw text
-    console.log("Raw response text:", text);
+      const text = await res.text(); // get raw text
+      console.log("Raw response text:", text);
 
-    let data;
-    try {
-      data = JSON.parse(text); // manually parse JSON
-    } catch (parseError) {
-      console.error("Failed to parse JSON response:", parseError);
-      showFailure();
-      return;
-    }
+      let data;
+      try {
+        data = JSON.parse(text); // manually parse JSON
+      } catch (parseError) {
+        console.error("Failed to parse JSON response:", parseError);
+        showFailure();
+        return;
+      }
 
-    console.log("Parsed response data:", data);
-    console.log("Type of status:", typeof data.status);
+      console.log("Parsed response data:", data);
+      console.log("Type of status:", typeof data.status);
 
-    if (data.status === "success") {
-      window.location.href = "/result";
-    } else {
-      showFailure();
+      if (data.status === "success") {
+        window.location.href = "/result";
+      } else if(data.status === "elevation_failure"){
+        showFailureElevation();
+      }else {
+        showFailure();
     }
 
   } catch (err) {
@@ -483,6 +500,7 @@
     alert("Something went wrong while generating the route.");
   } finally {
     hideLoading();
+
   }
 
   });
