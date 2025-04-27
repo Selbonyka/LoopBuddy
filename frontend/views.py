@@ -74,6 +74,9 @@ def create_route():
     steps_penalty = float(data.get("steps_penalty"))
     pavement_penalty = float(data.get("pavement_penalty"))
     alpha = float(data.get("alpha"))
+    node_simplification_status = data.get("node_simplification_status")
+    print('node_simplification_status',node_simplification_status)
+    allowed_distance_between_nodes = int(data.get("allowed_distance_between_nodes"))
 
     print(type(stoplight_preference), type(steps_penalty), type(pavement_penalty), type(steps_penalty), type(alpha))
 
@@ -85,8 +88,9 @@ def create_route():
     preference_dict_sample = {"total_length": distance, "elevation_requested": elevation_target, "elevation_error": elevation_error,
                               "pavement_preferences": pavement_preference,
                               "stoplights_preference": stoplight_preference, "steps_preference":steps_preference, "sharing_allowance": sharing_allowance,
-                              "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": stoplight_penalty,
-                              "steps_penalty_strength": steps_penalty, "pavement_penalty_strength": pavement_penalty, "error": distance_error,
+                              "node_simplification_status":node_simplification_status, "allowed_distance_between_nodes": allowed_distance_between_nodes,
+                              "stoplight_penalty_strength": stoplight_penalty, "steps_penalty_strength": steps_penalty,
+                              "pavement_penalty_strength": pavement_penalty, "error": distance_error,
                               "alpha": alpha}
     finalized_Paths, elevation_failure = main((lng, lat), preference_dict_sample, G)
 

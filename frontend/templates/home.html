@@ -52,14 +52,14 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      width: 80%;
+      width: 95%;
       gap: 40px; /* spacing between columns */
     }
 
     .map-box {
       width: 100%;
-      max-width: 2500px;
-      height: 70vh;
+      max-width: 3000px;
+      height: 75vh;
       border: 4px solid black;
       border-radius: 15px;
       padding: 20px;
@@ -75,7 +75,7 @@
     }
 
     .settings-box {
-      width: 200px;
+      width: 270px;
       border: 4px solid black;
       border-radius: 15px;
       padding: 10px;
@@ -237,7 +237,7 @@
       <div class="label">Settings:</div>
       <div class="input-row">
         <label for="distance">Distance (m):</label>
-        <input type="number" id="distance" name="distance" value = "0" min = "0">
+        <input type="number" id="distance" name="distance" value = "5000" min = "0">
       </div>
 
       <div class="input-row">
@@ -276,7 +276,7 @@
         Advanced settings ▾
       </div>
 
-      <div class="advanced-settings" id="advanced-settings"> <!-- look i don't even know if it's implemented -->
+      <div class="advanced-settings" id="advanced-settings">
 
         <div class="input-row">
           <label for="distance_error"> Distance error (m):</label>
@@ -312,6 +312,19 @@
         <div class="input-row">
           <label for="pavement_penalty">Pavement type penalty:</label>
           <input type="number" id="pavement_penalty" name="pavement_penalty" value="1.05" step="0.1" min="1">
+        </div>
+
+        <div class="input-row">
+        <label for="node_simplification_status">Node simplification status:</label>
+        <select id="node_simplification_status" name="node_simplification_status">
+          <option value="False">Deactivated</option>
+          <option value="True">Activated</option>
+        </select>
+        </div>
+
+        <div class="input-row">
+          <label for="allowed_distance_between_nodes">Allowed distance between node:</label>
+          <input type="number" id="allowed_distance_between_nodes" name="allowed_distance_between_nodes" value="25" step="5" min="1">
         </div>
 
 
@@ -354,6 +367,7 @@
         <button onclick="hideFailure()" class="button-clean">Close</button>
       </div>
     </div>
+  </div>
 
 
 
@@ -447,6 +461,8 @@
     const stoplight_penalty = document.getElementById("stoplight_penalty").value;
     const steps_penalty = document.getElementById("steps_penalty").value;
     const pavement_penalty = document.getElementById("pavement_penalty").value;
+    const node_simplification_status = document.getElementById("node_simplification_status").value;
+    const allowed_distance_between_nodes = document.getElementById("allowed_distance_between_nodes").value;
 
     showLoading();
 
@@ -468,7 +484,9 @@
           sharing_allowance: sharing_allowance,
           stoplight_penalty: stoplight_penalty,
           steps_penalty: steps_penalty,
-          pavement_penalty: pavement_penalty
+          pavement_penalty: pavement_penalty,
+          node_simplification_status: node_simplification_status,
+          allowed_distance_between_nodes: allowed_distance_between_nodes
         })
       });
 

@@ -22,6 +22,7 @@
 - [ ] Go over the code
 - [ ] implement instructions
 - [ ] test optimal settings
+- [ ] add node simplification settings
 
 
 

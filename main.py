@@ -10,7 +10,7 @@ from finalizing.finalize_path import concatenate_path,select_paths
 from utils.penalizing import edge_penalizing
 from rings.s_and_s_prime import ring_s_and_sprime_handling
 from rings.uprime_rings import generate_uprime_rings
-
+from utils.simplification import node_simplification
 
 """
 Note space
@@ -105,6 +105,7 @@ def main(start_point, preferences, G):
 
     # tweaks
     # space for node closeness if decided to be imported
+    node_simplification_status = eval(preferences['node_simplification_status'])
     allowed_distance_between_nodes = preferences['allowed_distance_between_nodes']
     sharing_allowance = preferences['sharing_allowance']
 
@@ -123,6 +124,12 @@ def main(start_point, preferences, G):
     print("\nGenerating the Rs and Rs' prime")
     R_s, R_s_prime, pen_dist_Rs,paths_R_s = ring_s_and_sprime_handling(G, point_s,bounds_Rs_penalized, bounds_Rs_prime_traversing, bounds_Rs)
     print("\nGeneration of Rs and R's prime complete!\n")
+
+    print('node simplificatioin status:', node_simplification_status)
+    if node_simplification_status:
+        R_s_prime = node_simplification(G, R_s_prime, allowed_distance_between_nodes)
+
+    print(R_s_prime)
 
 
     # Generate ring uprime and append to nodes the Mm data
@@ -143,15 +150,3 @@ def main(start_point, preferences, G):
 
 
 
-
-# <editor-fold desc="Test Runs">
-
-# sample call:
-# </editor-fold>
-# preference_dict_sample = {"total_length":10000, "elevation_requested":0,"elevation_error":10,"pavement_preferences":"Paved",
-#                           "stoplights_preference":"Avoid", "steps_preference":"Avoid","sharing_allowance":0.3,
-#                           "allowed_distance_between_nodes": 300, "stoplight_penalty_strength": 1.1,"steps_penalty_strength":1.2,"pavement_penalty_strength":1.05, "error":70, "alpha":0.6}
-# graph_filepath= "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/GraphSaves/Weighted1_8.pkl"
-# finalized_Paths = main((16.3731269,48.2084923),preference_dict_sample, graph_filepath)
-#
-# print(finalized_Paths)
