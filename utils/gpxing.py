@@ -5,7 +5,12 @@ import gpxpy.gpx
 import os
 
 def paths_to_gpx(G, paths, saving_directory):
-
+    """
+    Turns paths into gpx files and saves them in the chosen directory
+    :param G: Graph of the area
+    :param paths: List of lists containing paths
+    :param saving_directory: Directory to save to
+    """
 
     gpx = gpxpy.gpx.GPX()
 
@@ -26,4 +31,3 @@ def paths_to_gpx(G, paths, saving_directory):
 
         with open(filename, 'w') as f:
             f.write(gpx.to_xml())
-

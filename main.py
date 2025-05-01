@@ -12,17 +12,10 @@ from rings.s_and_s_prime import ring_s_and_sprime_handling
 from rings.uprime_rings import generate_uprime_rings
 from utils.simplification import node_simplification
 
-"""
-Note space
-- node closeness not imported, as simplification is still not decided upon
-
-"""
-
 
 def main(start_point, preferences, G):
 
     """
-
     :param start_point: starting point, as (longitude, latitude)
     :param preferences: contains the dictionary containing the following user preferences:
         total_length
@@ -32,23 +25,19 @@ def main(start_point, preferences, G):
         stoplights_preference: one from: avoid, neutral, prefer
         steps_preference: one from: avoid, neutral, prefer
         sharing_allowance: [0-1] - amount of sharing acceptable
+        node_simplification_status: (boolean) if True: node simplification will be executed
         allowed_distance_between_nodes: limits how close via-vertices could be to each other
         stoplight_penalty_strength: bounds: [1:]
         steps_penalty_strength: bounds: [1:]
         pavement_penalty_strength: bounds: [1:]
         error: error term for length calculations
         alpha: smoothing factor
-    :param graph_filepath: path to the file containing the pre-processed graph
+    :param G: MultiDiGraph of the area to be worked on
 
     :return: returns a list of lists with path options
     """
 
     # <editor-fold desc="Setup">
-
-
-    ### loading in the pre-generated graph that already has stoplights, elevation, pavement data:
-
-
 
     # starting point:
     point_s = ox.distance.nearest_nodes(G,start_point[0], start_point[1])
@@ -78,8 +67,7 @@ def main(start_point, preferences, G):
 
     bounds_Rs = [quarter_length - error, quarter_length + error]
 
-    bounds_Rs_penalized = [bounds_Rs[0], bounds_Rs[
-        1] * length_adjustment]  # we are penalizing the upper bound because it could be higher, but keeping the lower one the same
+    bounds_Rs_penalized = [bounds_Rs[0], bounds_Rs[1] * length_adjustment]  # we are penalizing the upper bound because it could be higher, but keeping the lower one the same
 
     # For Ring R_s_prime
     alpha = preferences['alpha']  # scaling parameter, values should be between [0.5,1]
@@ -94,8 +82,6 @@ def main(start_point, preferences, G):
 
     # For Ring R_u_prime
     bounds_Ru_prime = [((2 - alpha) * quarter_length) - error, ((2 - alpha) * quarter_length) + error]
-    # print(bounds_Ru_prime)
-
     bounds_Ru_prime_penalized = [bounds_Ru_prime[0], bounds_Ru_prime[1] * length_adjustment]
 
     # elevation module
@@ -103,37 +89,31 @@ def main(start_point, preferences, G):
     elevation_error = preferences['elevation_error']
     elevation_bounds = [elevation_requested-elevation_error, elevation_requested+elevation_error]
 
-    # tweaks
-    # space for node closeness if decided to be imported
+    # node simplification
     node_simplification_status = eval(preferences['node_simplification_status'])
     allowed_distance_between_nodes = preferences['allowed_distance_between_nodes']
+
+    # sharing
     sharing_allowance = preferences['sharing_allowance']
 
 
     # </editor-fold>
 
-    # <editor-fold desc="Setup">
 
     # adds the penalties to the edges based on user's inputs and the edge status
 
     G = edge_penalizing(G, stoplights_preference, steps_preference,pavement_preference,stoplight_penalty_strength, steps_penalty_strength, pavement_penalty_strength)
-
-    # ring_s_and_sprime_handling(G, point_s, bounds_Rs_penalized, bounds_Rs_prime_traversing, bounds_Rs)
 
     # Generate Rings S and S':
     print("\nGenerating the Rs and Rs' prime")
     R_s, R_s_prime, pen_dist_Rs,paths_R_s = ring_s_and_sprime_handling(G, point_s,bounds_Rs_penalized, bounds_Rs_prime_traversing, bounds_Rs)
     print("\nGeneration of Rs and R's prime complete!\n")
 
-    print('node simplificatioin status:', node_simplification_status)
     if node_simplification_status:
         R_s_prime = node_simplification(G, R_s_prime, allowed_distance_between_nodes)
 
-    print(R_s_prime)
-
 
     # Generate ring uprime and append to nodes the Mm data
-
     print("Starting to generate rings around u' and processing possible m nodes\n")
     m_paths_storage = generate_uprime_rings(G, R_s_prime, bounds_Ru_prime_penalized, bounds_Ru_prime, pen_dist_Rs)
     print("\nCompleted m generation and processing! \n")
@@ -143,10 +123,8 @@ def main(start_point, preferences, G):
 
     selected_paths = select_paths(finalized_paths,paths_badness, 0.8)
 
-
-    print(len(selected_paths))
     return selected_paths, elevation_failure
-    # return finalized_paths
+
 
 
 

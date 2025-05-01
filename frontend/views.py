@@ -12,16 +12,14 @@ from main import main
 from visualization.visualization import route_visualization
 from utils.gpxing import paths_to_gpx
 
-# im annoyed will fix the autodelete later - i don't even care that much i might as well just ignore it but sure
-# i need to separate the error functions
-
+# session stuff is not reliable, get back to prev version
 
 views = Blueprint(__name__,"views")
 
 
 
 # Managing sessions:
-user_cache = TTLCache(maxsize=1000, ttl=900)
+user_cache = TTLCache(maxsize=1000, ttl=10000)
 
 
 
@@ -36,9 +34,6 @@ def store_clicked_point():
     data = request.get_json()
     lat = data.get("lat")
     lng = data.get("lng")
-    # session['data'] = request.get_json()
-    # lat =  session['data'].get("lat")
-    # lng =  session['data'].get("lng")
 
     print(f"Clicked point received: ({lat}, {lng})")
 
@@ -51,7 +46,7 @@ def create_route():
     graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
 
     # Loading the graph
-    print("\nLoading the graph!\n")
+    print("\nLoading the graph!\n") # loading it separately for each user to avoid potential data loss
     with open(graph_filepath, "rb") as f:
         G = pickle.load(f)
     print("Graph loaded succesfully!\n")
@@ -101,10 +96,6 @@ def create_route():
     else:
         generation_status = "success"
 
-
-
-    print("Generation status:", generation_status)
-
     if generation_status != "elevation_failure":
 
         # Assign user ID
@@ -114,13 +105,11 @@ def create_route():
         user_id = session["user_id"]
         gpx_user_folder = saving_directory + user_id + "/"
 
-        # Ensure the user's folder exists
-        os.makedirs(gpx_user_folder, exist_ok=True)
-
-        # Save GPX files in user's personal folder
+        # Making GPX files:
+        os.makedirs(gpx_user_folder, exist_ok=True) # ensures that the user folder exists
         paths_to_gpx(G, finalized_Paths, gpx_user_folder)
 
-        # Generating the html with the routes
+        # Generating the html with the routes:
         map_save_folder = f"/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/maps/{user_id}/"
         os.makedirs(map_save_folder, exist_ok=True)
         map_path = map_save_folder + "map.html"
@@ -132,10 +121,9 @@ def create_route():
             "gpx_folder": gpx_user_folder,
             "map_folder": map_save_folder
         }
+        # print("user cache creation:", user_cache)
 
-        print(user_cache[user_id])
-
-        # Checking if I generated all the paths
+        # Checking if I generated all the paths:
         last_route_path = os.path.join(gpx_user_folder, f'route_{len(finalized_Paths)}.gpx')
         while not os.path.exists(last_route_path):
             time.sleep(0.1)
@@ -152,7 +140,7 @@ def display_result():
     if not user_id:
         abort(403, description="Session expired or not found.")
 
-    user_map_path = f"maps/{user_id}/map.html"  # Relative to templates folder
+    user_map_path = f"maps/{user_id}/map.html"  # relative to templates folder (full path from cache didn't work)
 
     return render_template(user_map_path)
 
@@ -161,12 +149,13 @@ def display_result():
 @views.route('/download_gpx/<int:route_id>')
 def download_gpx(route_id):
     user_id = session.get("user_id")
+    # print(user_id)
+    # print(user_cache)
 
     if not user_id or user_id not in user_cache:
         abort(403, description="Session expired or not found.")
 
-
-    user_folder = user_cache[user_id]
+    user_folder = user_cache[user_id]["gpx_folder"]
     filename = f'route_{route_id}.gpx'
     filepath = os.path.join(user_folder, filename)
 
@@ -174,6 +163,3 @@ def download_gpx(route_id):
         return send_from_directory(user_folder, filename, as_attachment=True)
     else:
         abort(404, description="GPX file not found.")
-
-
-

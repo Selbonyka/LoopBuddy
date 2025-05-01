@@ -1,6 +1,17 @@
 
+
+# just a note on why length is separate from path_lengths_and_rs_prime: it makes more sense to split these into two due to the cashing mechanism used to optimize Rs,
+# which is not as essential, or could be even dangerous (for example for looped paths) when used for purely legth/calculation of other attributes
+
 def length(G, path,edges_data):
-    # non cashed version of the function can't use it in the function below due to Rs calculation
+    """
+    Efficiently sums the values of a particulae attribute throughout the whoe path. Intended for length, however can be used with any numerical attribute.
+
+    :param G: MultiDiGraph to be worked with
+    :param path: path for which the length is to be calculaed
+    :param edges_data: the length of the edges acquired through the following or similar: "nx.get_edge_attributes(G.subgraph(combinedPath), "length")"
+    :return:
+    """
     total_length = 0
 
     for i in range(len(path) - 1):  # -1 because edges and +1 on the line below, the last one is source
@@ -25,8 +36,10 @@ def length(G, path,edges_data):
 
 def path_lengths_and_rs_prime (G, source, paths, lengths_edges_Rs, bounds_Rs_prime_traversing=[], mode =""):
     """
+    Helper function to find out the true lengths of the Rs-generated paths, as well as find out the Ring S' simultaneously.
+    Additionally used in Ru' due to its caching mechanism.
 
-    :param G: main graph with which we work
+    :param G: MultiDiGraph to be worked on
     :param source: starting point
     :param paths: list of paths that lead to points in Rs (mode: reversed)
     :param lengths_edges_Rs: dictionary storing edges and the length values in the format {(u,v,key):length}
@@ -40,9 +53,7 @@ def path_lengths_and_rs_prime (G, source, paths, lengths_edges_Rs, bounds_Rs_pri
     R_s_prime_options = {}
 
     for node in paths:  # reminder: node is the end node that djinkstra found
-        if mode == "Rs" or mode == "Ru":
-            path = paths[node]
-
+        path = paths[node]
         total_length = 0
 
         for i in range(len(path) - 1):  # -1 because edges and +1 on the line below, the last one is source

@@ -5,7 +5,6 @@ from views import views
 from secretkey import stored_secret_key # importing the secret key to hash user sessions
 
 
-
 app = Flask(__name__)
 
 app.register_blueprint(views, url_prefix="/")

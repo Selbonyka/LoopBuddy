@@ -10,6 +10,19 @@ def is_valid_path(G, path):
 
 
 def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, total_length_bounds, elevation_bounds):
+    """
+    Concatenates paths and evaluates them based on sharing, length and elevation
+
+    :param G: MultiDiGraph of the geographical area
+    :param m_paths_storage: storage in the format {m:{u: path to m that goes through this u}}
+    :param paths_R_s: Paths from s to u in the format: {node: path}
+    :param sharing_allowance: % of (max value of how many edges can be visited more than once/total edges) expressed in bounds [0,1]
+    :param point_s: starting point
+    :param total_length_bounds: original length bounds adjusted for error
+    :param elevation_bounds: original elevation bounds adjusted for error
+    :return: finalized_paths,paths_badness, paths_lengths, paths_elevations, elevation_failure
+    """
+
     finalized_paths = []
     paths_lengths = []
     paths_elevations = []
@@ -29,7 +42,6 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
             path_s_u.reverse()
 
         # u to m:
-
         path_u_m = m_paths_storage[m][u][1:]
         path_u_m.reverse()
 
@@ -49,10 +61,6 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
         for i in range(len(combinedPath) - 1): # raises error if no path between
             if G.has_edge(combinedPath[i], combinedPath[i+1]) is False:
                 print("no edge between:", combinedPath[i], combinedPath[i+1])
-
-        # checking if the path fails due to elevation
-
-
 
         # checking for sharing:
         if sharing_filter(combinedPath, sharing_allowance):
@@ -74,7 +82,7 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
                     paths_elevations.append([pos_change, neg_change])
                     paths_badness.append(badness_path)
                 else:
-                    elevation_appropriate -=1 # the path did not path the elevation condution
+                    elevation_appropriate -=1 # the path did not path the elevation condition
 
     # this is needed for the appropriate error statement
     if elevation_appropriate == 0:
@@ -103,7 +111,7 @@ def select_paths (finalized_paths,paths_badness, similiarity_threshold):
         unique = True
 
         for j in range(len(selected_paths)): # iterating over all the paths we stored
-            # returns false if there are no pahts like this, so this path is added to selected_paths:
+            # returns false if there are no paths like this, so this path is added to selected_paths:
             if SequenceMatcher(None,selected_paths[j], path).ratio()>=similiarity_threshold:  #threshold can be modified to change how similar the paths can be
                 unique = False
                 if badness < badness_selected[j]:
