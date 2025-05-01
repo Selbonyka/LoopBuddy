@@ -6,28 +6,21 @@ import time
 from cachetools import TTLCache
 import shutil
 
-
-
 from main import main
 from visualization.visualization import route_visualization
 from utils.gpxing import paths_to_gpx
-
-# session stuff is not reliable, get back to prev version
-
 views = Blueprint(__name__,"views")
-
 
 
 # Managing sessions:
 user_cache = TTLCache(maxsize=1000, ttl=10000)
 
 
-
 @views.route("/")
 def home():
     return render_template("home.html")
 
-# Handle map clicks
+# Handling map clicks:
 @views.route('/clicked', methods=['POST'])
 def store_clicked_point():
 
@@ -39,24 +32,27 @@ def store_clicked_point():
 
     return jsonify({"status": "clicked received"})
 
+# Creating routes:
 @views.route("/create-route", methods=["POST"])
 def create_route():
-    saving_directory = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
 
+    # Setting directories:
+    saving_directory = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
     graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
 
     # Loading the graph
-    print("\nLoading the graph!\n") # loading it separately for each user to avoid potential data loss
+    print("\nLoading the graph!\n") # loading it separately for each user to avoid potential data overwrite
     with open(graph_filepath, "rb") as f:
         G = pickle.load(f)
     print("Graph loaded succesfully!\n")
 
+
+    # Requesting data from the html:
     data = request.get_json()
-    print("REQUEST DATA:", data)
+    # print("REQUEST DATA:", data)
 
     lat = data.get("lat")
     lng = data.get("lng")
-
     distance = float(data.get("distance"))
     elevation_target = float(data.get("elevation_target"))
     pavement_preference = data.get("pavement_preference")
@@ -73,13 +69,9 @@ def create_route():
     print('node_simplification_status',node_simplification_status)
     allowed_distance_between_nodes = int(data.get("allowed_distance_between_nodes"))
 
-    print(type(stoplight_preference), type(steps_penalty), type(pavement_penalty), type(steps_penalty), type(alpha))
-
     print(f"Create route requested from: ({lat}, {lng})")
 
-    # Calling main
-    # add scaling for allowed distance between nodes
-
+    # Calling main:
     preference_dict_sample = {"total_length": distance, "elevation_requested": elevation_target, "elevation_error": elevation_error,
                               "pavement_preferences": pavement_preference,
                               "stoplights_preference": stoplight_preference, "steps_preference":steps_preference, "sharing_allowance": sharing_allowance,
@@ -89,39 +81,34 @@ def create_route():
                               "alpha": alpha}
     finalized_Paths, elevation_failure = main((lng, lat), preference_dict_sample, G)
 
+    # Displaying the right failure message:
     if elevation_failure:
-        generation_status = "elevation_failure"
-    elif len(finalized_Paths) == 0:
+        generation_status = "elevation_failure" # elevation failure caused by none of the paths passing through the elevation boundaries
+
+    elif len(finalized_Paths) == 0: # if length was 0 we stop here
             generation_status = "failed"
     else:
         generation_status = "success"
 
-    if generation_status != "elevation_failure":
+    if generation_status == "success":
 
-        # Assign user ID
+        # User session managment:
+        session.permanent = True
         if "user_id" not in session:
             session["user_id"] = str(uuid.uuid4())
-
         user_id = session["user_id"]
-        gpx_user_folder = saving_directory + user_id + "/"
 
-        # Making GPX files:
-        os.makedirs(gpx_user_folder, exist_ok=True) # ensures that the user folder exists
+        # Making the GPX files:
+        gpx_user_folder = saving_directory + user_id + "/"
+        os.makedirs(gpx_user_folder, exist_ok=True) # ensures that the user gpx folder exists
         paths_to_gpx(G, finalized_Paths, gpx_user_folder)
 
-        # Generating the html with the routes:
+        # Generating the visualization html with the routes:
         map_save_folder = f"/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/maps/{user_id}/"
-        os.makedirs(map_save_folder, exist_ok=True)
+        os.makedirs(map_save_folder, exist_ok=True) # ensures that the user map folder exists
         map_path = map_save_folder + "map.html"
 
         route_visualization(finalized_Paths, G, map_path)
-
-        # Saving the folders in cache:
-        user_cache[user_id] = {
-            "gpx_folder": gpx_user_folder,
-            "map_folder": map_save_folder
-        }
-        # print("user cache creation:", user_cache)
 
         # Checking if I generated all the paths:
         last_route_path = os.path.join(gpx_user_folder, f'route_{len(finalized_Paths)}.gpx')
@@ -132,7 +119,7 @@ def create_route():
     return jsonify({"status": generation_status})
 
 
-# Displaying the results to the user
+# Displaying the results to the user:
 @views.route("/result")
 def display_result():
     user_id = session.get("user_id")
@@ -148,14 +135,11 @@ def display_result():
 
 @views.route('/download_gpx/<int:route_id>')
 def download_gpx(route_id):
+    saving_directory = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/"
+
     user_id = session.get("user_id")
-    # print(user_id)
-    # print(user_cache)
 
-    if not user_id or user_id not in user_cache:
-        abort(403, description="Session expired or not found.")
-
-    user_folder = user_cache[user_id]["gpx_folder"]
+    user_folder = saving_directory + user_id + "/"
     filename = f'route_{route_id}.gpx'
     filepath = os.path.join(user_folder, filename)
 
@@ -163,3 +147,4 @@ def download_gpx(route_id):
         return send_from_directory(user_folder, filename, as_attachment=True)
     else:
         abort(404, description="GPX file not found.")
+

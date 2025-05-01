@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="added node closeness simplification">
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="cleaning up code but broke session managment :(">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalizing/finalize_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalizing/finalize_path.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/website_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/website_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rings/s_and_s_prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/rings/s_and_s_prime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rings/uprime_rings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rings/uprime_rings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/gpxing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/gpxing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/length.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/length.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/path_recreation.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/path_recreation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/simplification.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/simplification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/visualization.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +180,7 @@
       <workItem from="1745747390141" duration="7488000" />
       <workItem from="1745934911157" duration="1156000" />
       <workItem from="1746004303421" duration="5293000" />
-      <workItem from="1746097484794" duration="4212000" />
+      <workItem from="1746097484794" duration="5684000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -344,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745765775480</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="cleaning up code but broke session managment :(">
+      <option name="closed" value="true" />
+      <created>1746103094469</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1746103094469</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +389,8 @@
     <MESSAGE value="Ah, perfect, the sessions work and the height of the map box scales" />
     <MESSAGE value="fixed the elevation failure and reworked the failure system :D (note: i also tried to do user sessions but gave up so there might be some leftover code)" />
     <MESSAGE value="added node closeness simplification" />
-    <option name="LAST_COMMIT_MESSAGE" value="added node closeness simplification" />
+    <MESSAGE value="cleaning up code but broke session managment :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning up code but broke session managment :(" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

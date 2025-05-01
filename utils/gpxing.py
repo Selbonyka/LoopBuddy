@@ -1,8 +1,7 @@
 
-
 import gpxpy
 import gpxpy.gpx
-import os
+
 
 def paths_to_gpx(G, paths, saving_directory):
     """
