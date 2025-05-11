@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="cleaning up code but broke session managment :(">
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="Cleaned up and i think the sessions are working">
+      <change afterPath="$PROJECT_DIR$/evaluation/overall_eval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation/processingresults.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation/simplification_eval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation/smoothing_eval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/templates/evaluation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/collect_attribute.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalizing/finalize_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalizing/finalize_path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/website_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/website_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rings/uprime_rings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rings/uprime_rings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/length.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/length.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/penalizing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/penalizing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +70,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -75,6 +87,10 @@
     &quot;JavaScript Debug.home.html.executor&quot;: &quot;Run&quot;,
     &quot;Python.finalize_path.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.overall_eval.executor&quot;: &quot;Run&quot;,
+    &quot;Python.processingresults.executor&quot;: &quot;Run&quot;,
+    &quot;Python.simplification_eval.executor&quot;: &quot;Run&quot;,
+    &quot;Python.smoothing_eval.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;Python.testing_elevation.executor&quot;: &quot;Run&quot;,
     &quot;Python.views.executor&quot;: &quot;Run&quot;,
@@ -97,7 +113,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.website_main">
-    <configuration name="visualization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="overall_eval" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LoopBuddy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,12 +122,81 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/visualization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/visualization/visualization.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/overall_eval.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="processingresults" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LoopBuddy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/processingresults.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="simplification_eval" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LoopBuddy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/simplification_eval.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="smoothing_eval" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LoopBuddy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/smoothing_eval.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,8 +231,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.website_main" />
-        <item itemvalue="Python.visualization" />
-        <item itemvalue="Python.visualization" />
+        <item itemvalue="Python.overall_eval" />
+        <item itemvalue="Python.smoothing_eval" />
+        <item itemvalue="Python.simplification_eval" />
+        <item itemvalue="Python.processingresults" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +267,26 @@
       <workItem from="1745747390141" duration="7488000" />
       <workItem from="1745934911157" duration="1156000" />
       <workItem from="1746004303421" duration="5293000" />
-      <workItem from="1746097484794" duration="5684000" />
+      <workItem from="1746097484794" duration="5984000" />
+      <workItem from="1746196496230" duration="9030000" />
+      <workItem from="1746363413179" duration="1922000" />
+      <workItem from="1746371732869" duration="1007000" />
+      <workItem from="1746372795787" duration="6154000" />
+      <workItem from="1746379046773" duration="838000" />
+      <workItem from="1746380283074" duration="11280000" />
+      <workItem from="1746398439891" duration="1510000" />
+      <workItem from="1746433173880" duration="68000" />
+      <workItem from="1746433378532" duration="1979000" />
+      <workItem from="1746435956922" duration="61000" />
+      <workItem from="1746436079420" duration="1278000" />
+      <workItem from="1746446156048" duration="318000" />
+      <workItem from="1746447476105" duration="9204000" />
+      <workItem from="1746537760385" duration="577000" />
+      <workItem from="1746547563070" duration="79000" />
+      <workItem from="1746565069336" duration="9000" />
+      <workItem from="1746609365640" duration="3618000" />
+      <workItem from="1746691485548" duration="5000" />
+      <workItem from="1746980974637" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -342,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746103094469</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Cleaned up and i think the sessions are working">
+      <option name="closed" value="true" />
+      <created>1746104540368</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1746104540368</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,26 +504,20 @@
     <MESSAGE value="fixed the elevation failure and reworked the failure system :D (note: i also tried to do user sessions but gave up so there might be some leftover code)" />
     <MESSAGE value="added node closeness simplification" />
     <MESSAGE value="cleaning up code but broke session managment :(" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaning up code but broke session managment :(" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="NONE" type="python-line">
-          <url>file://$PROJECT_DIR$/frontend/views.py</url>
-          <log-expression expression="views = Blueprint(__name__,&quot;views&quot;)&#10;&#10;&#10;## Managing sessions:&#10;user_cache = {}&#10;&#10;&#10;@views.route(&quot;/&quot;)&#10;def home():&#10;    return render_template(&quot;home.html&quot;)&#10;&#10;## Handle map clicks&#10;@views.route('/clicked', methods=['POST'])&#10;def store_clicked_point():&#10;&#10;    data = request.get_json()&#10;    lat = data.get(&quot;lat&quot;)&#10;    lng = data.get(&quot;lng&quot;)&#10;    ## session['data'] = request.get_json()&#10;    ## lat =  session['data'].get(&quot;lat&quot;)&#10;    ## lng =  session['data'].get(&quot;lng&quot;)&#10;&#10;    print(f&quot;Clicked point received: ({lat}, {lng})&quot;)&#10;&#10;    return jsonify({&quot;status&quot;: &quot;clicked received&quot;})&#10;&#10;@views.route(&quot;/create-route&quot;, methods=[&quot;POST&quot;])&#10;def create_route():&#10;    saving_directory = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/&quot;&#10;&#10;&#10;    ## Cleaning files from the directory if they exist there:&#10;    for file in os.listdir(saving_directory):&#10;        if file.endswith(&quot;.gpx&quot;):&#10;            os.remove(os.path.join(saving_directory, file))&#10;&#10;    graph_filepath = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl&quot;&#10;&#10;    ## Loading the graph&#10;    print(&quot;\nLoading the graph!\n&quot;)&#10;    with open(graph_filepath, &quot;rb&quot;) as f:&#10;        G = pickle.load(f)&#10;    print(&quot;Graph loaded succesfully!\n&quot;)&#10;&#10;    data = request.get_json()&#10;    print(&quot;REQUEST DATA:&quot;, data)&#10;&#10;    lat = data.get(&quot;lat&quot;)&#10;    lng = data.get(&quot;lng&quot;)&#10;&#10;    distance = float(data.get(&quot;distance&quot;))&#10;    elevation_target = float(data.get(&quot;elevation_target&quot;))&#10;    pavement_preference = data.get(&quot;pavement_preference&quot;)&#10;    stoplight_preference = data.get(&quot;stoplight_preference&quot;)&#10;    steps_preference = data.get(&quot;steps_preference&quot;)&#10;    elevation_error = float(data.get(&quot;elevation_error&quot;))&#10;    sharing_allowance = float(data.get(&quot;sharing_allowance&quot;))&#10;    distance_error = float(data.get(&quot;distance_error&quot;))&#10;    stoplight_penalty = float(data.get(&quot;stoplight_penalty&quot;))&#10;    steps_penalty = float(data.get(&quot;steps_penalty&quot;))&#10;    pavement_penalty = float(data.get(&quot;pavement_penalty&quot;))&#10;    alpha = float(data.get(&quot;alpha&quot;))&#10;&#10;    print(type(stoplight_preference), type(steps_penalty), type(pavement_penalty), type(steps_penalty), type(alpha))&#10;&#10;    print(f&quot;Create route requested from: ({lat}, {lng})&quot;)&#10;&#10;    ## Calling main&#10;    ## add scaling for allowed distance between nodes&#10;&#10;    preference_dict_sample = {&quot;total_length&quot;: distance, &quot;elevation_requested&quot;: elevation_target, &quot;elevation_error&quot;: elevation_error,&#10;                              &quot;pavement_preferences&quot;: pavement_preference,&#10;                              &quot;stoplights_preference&quot;: stoplight_preference, &quot;steps_preference&quot;:steps_preference, &quot;sharing_allowance&quot;: sharing_allowance,&#10;                              &quot;allowed_distance_between_nodes&quot;: 300, &quot;stoplight_penalty_strength&quot;: stoplight_penalty,&#10;                              &quot;steps_penalty_strength&quot;: steps_penalty, &quot;pavement_penalty_strength&quot;: pavement_penalty, &quot;error&quot;: distance_error,&#10;                              &quot;alpha&quot;: alpha}&#10;    finalized_Paths = main((lng, lat), preference_dict_sample, G)&#10;&#10;&#10;&#10;    ## Generating the html with the routes&#10;    save_path = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/frontend/templates/map.html&quot;&#10;&#10;    route_visualization(finalized_Paths, G, save_path)&#10;&#10;    ## Generating the gpx files&#10;    generation_status = paths_to_gpx(G,finalized_Paths,saving_directory)&#10;&#10;    ## Checking if I generated all the paths&#10;    last_route_path = os.path.join(saving_directory, f'route_{len(finalized_Paths)}.gpx')&#10;    while not os.path.exists(last_route_path):&#10;        time.sleep(0.1)&#10;        print(&quot;Waiting for the files to finish generating&quot;)&#10;&#10;    return jsonify({&quot;status&quot;: generation_status})&#10;&#10;&#10;## Displaying the results to the user&#10;@views.route(&quot;/result&quot;)&#10;def display_result():&#10;    return render_template(&quot;map.html&quot;)&#10;&#10;&#10;&#10;@views.route('/download_gpx/&lt;int:route_id&gt;')&#10;def download_gpx(route_id):&#10;    folder = &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/gpx_files/&quot;&#10;    filename = f'route_{route_id}.gpx'&#10;    filepath = os.path.join(folder, filename)&#10;&#10;    if os.path.exists(filepath):&#10;        return send_from_directory(folder, filename, as_attachment=True)&#10;    else:&#10;        return abort(404, description=&quot;GPX file not found.&quot;)" language="Python" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Cleaned up and i think the sessions are working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up and i think the sessions are working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LoopBuddy$views.coverage" NAME="views Coverage Results" MODIFIED="1745530801718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1744743301619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$simplification_eval.coverage" NAME="simplification_eval Coverage Results" MODIFIED="1746393726206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1746378386122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1746452277900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1746101593318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1746980989098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/LoopBuddy$finalize_path.coverage" NAME="finalize_path Coverage Results" MODIFIED="1744661077416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/finalizing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval.coverage" NAME="overall_eval Coverage Results" MODIFIED="1746609658080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
   </component>
 </project>

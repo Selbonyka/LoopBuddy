@@ -24,7 +24,8 @@
 - [ ] test optimal settings
 - [x] add node simplification settings
 - [ ] Consider if it possible to load the graph beforehand? the thing is the deepcopy would take longer than graph loading, maybe we could just put it in clicked? or maybe it doesn't matter
-
+- [ ] comment out badness selected
+- [ ] Cleanup the pre-processing code :D
 
 
 

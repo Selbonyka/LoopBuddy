@@ -1,3 +1,5 @@
+import pprint
+
 from flask import Blueprint, render_template,request, jsonify, session, send_from_directory, abort
 import uuid
 import pickle
@@ -46,6 +48,7 @@ def create_route():
         G = pickle.load(f)
     print("Graph loaded succesfully!\n")
 
+    print(f"Graph has {len(G.nodes)} nodes and {len(G.edges)} edges.")
 
     # Requesting data from the html:
     data = request.get_json()
@@ -72,14 +75,14 @@ def create_route():
     print(f"Create route requested from: ({lat}, {lng})")
 
     # Calling main:
-    preference_dict_sample = {"total_length": distance, "elevation_requested": elevation_target, "elevation_error": elevation_error,
+    preference_dict = {"total_length": distance, "elevation_requested": elevation_target, "elevation_error": elevation_error,
                               "pavement_preferences": pavement_preference,
                               "stoplights_preference": stoplight_preference, "steps_preference":steps_preference, "sharing_allowance": sharing_allowance,
                               "node_simplification_status":node_simplification_status, "allowed_distance_between_nodes": allowed_distance_between_nodes,
                               "stoplight_penalty_strength": stoplight_penalty, "steps_penalty_strength": steps_penalty,
                               "pavement_penalty_strength": pavement_penalty, "error": distance_error,
                               "alpha": alpha}
-    finalized_Paths, elevation_failure = main((lng, lat), preference_dict_sample, G)
+    finalized_Paths, elevation_failure, _ = main((lng, lat), preference_dict, G)
 
     # Displaying the right failure message:
     if elevation_failure:
@@ -148,3 +151,80 @@ def download_gpx(route_id):
     else:
         abort(404, description="GPX file not found.")
 
+#
+# @views.route("/eval")
+# def eval():
+#     ### evaluating
+#
+#     smoothing_factor = 0.5
+#     results = {}
+#     starting_point = (16.3725042,48.2083537) # Historical center of Vienna - Stephansdom. Chosen due to a dense street network
+#     distance = 5000
+#     # preference_dict = {"total_length": distance, "elevation_requested": 0, "elevation_error": 50,
+#     #                               "pavement_preferences": "Neutral",
+#     #                               "stoplights_preference": "Neutral", "steps_preference":"Neutral", "sharing_allowance": 0.3,
+#     #                               "node_simplification_status":"False", "allowed_distance_between_nodes": 0,
+#     #                               "stoplight_penalty_strength": 1.1, "steps_penalty_strength": 1.2,
+#     #                               "pavement_penalty_strength": 1.05, "error": 60,
+#     #                               "alpha": smoothing_factor}
+#
+#     # preference_dict = {'lat': 48.208723707400644, 'lng': 16.37237546748309, 'distance': '5000', 'elevation_target': '0', 'pavement_preference': 'Neutral', 'stoplight_preference': 'Neutral', 'steps_preference': 'Neutral', 'distance_error': '60', 'elevation_error': '50', 'alpha': smoothing_factor, 'sharing_allowance': '0.3', 'stoplight_penalty': '1.1', 'steps_penalty': '1.2', 'pavement_penalty': '1.05', 'node_simplification_status': 'False', 'allowed_distance_between_nodes': '25'}}
+#
+#     while smoothing_factor <= 1:
+#         # For clarity when analyzing:
+#         dashes = "".join(["-"]*200)
+#         print(dashes)
+#         print("Analyzing smoothing factor " , smoothing_factor)
+#
+#         print(dashes)
+#         # preference_dict = {'lat': 48.208723707400644, 'lng': 16.37237546748309, 'distance': '5000',
+#         #                    'elevation_target': '0', 'pavement_preferences': 'Neutral', 'stoplight_preference': 'Neutral',
+#         #                    'steps_preference': 'Neutral', 'distance_error': '60', 'elevation_error': '50',
+#         #                    'alpha': smoothing_factor, 'sharing_allowance': '0.3', 'stoplight_penalty': '1.1',
+#         #                    'steps_penalty': '1.2', 'pavement_penalty': '1.05', 'node_simplification_status': 'False',
+#         #                    'allowed_distance_between_nodes': '25'}
+#
+#         preference_dict = {"total_length": distance, "elevation_requested": 0, "elevation_error": 50,
+#                            "pavement_preferences": "Neutral",
+#                            "stoplights_preference": "Neutral", "steps_preference": "Neutral", "sharing_allowance": 0.3,
+#                            "node_simplification_status": "False", "allowed_distance_between_nodes": 25,
+#                            "stoplight_penalty_strength": 1.1, "steps_penalty_strength": 1.2,
+#                            "pavement_penalty_strength": 1.05, "error": 60,
+#                            "alpha": smoothing_factor}
+#         # Loading the graph:
+#         graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
+#
+#         print("\nLoading the graph!\n")
+#         with open(graph_filepath, "rb") as f:
+#             G = pickle.load(f)
+#         print("Graph loaded succesfully!\n")
+#         print(f"Graph has {len(G.nodes)} nodes and {len(G.edges)} edges.")
+#
+#         paths, _, badness  = main(starting_point, preference_dict, G)
+#         print(badness)
+#         results[smoothing_factor] = {}
+#         results[smoothing_factor]["Number of paths"] = len(paths)
+#
+#         # Getting the badness values:
+#         true_badness_sum = 0 # sum of badness values with lengths removed
+#
+#         # for i in range(len(paths)):
+#         #     path = paths[i]
+#         #     lengths_data = nx.get_edge_attributes(G.subgraph(path), "length")
+#         #     path_length = length(G, path, lengths_data)
+#         #
+#         #     print(path_length)
+#         #
+#         #
+#         #     true_badness = badness[i]-path_length # bbg if its neutral there isnt any badness
+#         #     true_badness_sum+=true_badness
+#
+#         # results[smoothing_factor]["Average paths badness"] = true_badness_sum/len(paths)
+#
+#         smoothing_factor = smoothing_factor + 0.05
+#         print(dashes)
+#
+#
+#     pprint.pprint(results)
+#
+#     return render_template("evaluation.html")

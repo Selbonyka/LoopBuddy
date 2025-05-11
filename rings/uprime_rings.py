@@ -103,6 +103,7 @@ def generate_uprime_rings(G, R_s_prime, bounds_Ru_prime_penalized, bounds_Ru_pri
                             print(e)
                             print("m value:", m)
                             print("path storage state:", m_paths_storage[m])
+                            continue
 
 
                         valid_u_candidates = {}

@@ -130,4 +130,4 @@ def select_paths (finalized_paths,paths_badness, similiarity_threshold):
 
     print(f"Removed {len(finalized_paths) - len(selected_paths)} redundant paths \n")
 
-    return selected_paths
+    return selected_paths, badness_selected # badness_selected necessary for evaluation purposes only

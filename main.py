@@ -121,9 +121,9 @@ def main(start_point, preferences, G):
 
     finalized_paths,paths_badness,path_lengths, paths_elevation, elevation_failure = concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, total_length_bounds, elevation_bounds)
 
-    selected_paths = select_paths(finalized_paths,paths_badness, 0.8)
+    selected_paths, badness_selected = select_paths(finalized_paths,paths_badness, 0.8) # badness_selected necessary for evaluation purposes only
 
-    return selected_paths, elevation_failure
+    return selected_paths, elevation_failure, badness_selected # badness_selected necessary for evaluation purposes only
 
 
 

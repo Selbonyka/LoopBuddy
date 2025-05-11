@@ -43,17 +43,17 @@ def pavement_type_penalizing(pavement_handling, pavement_status, pavement_penalt
 
     elif pavement_handling == 'Paved':
 
-        if pavement_status == 'Paved':
+        if pavement_status == 'paved':
             pavement_penalty = 1
-        elif pavement_status == 'Unpaved':
+        elif pavement_status == 'unpaved':
             pavement_penalty = pavement_penalty_strength
         else:  # handling unknown/Null
             pavement_penalty = 1 + ( pavement_penalty_strength - 1) * 0.5  # since we don't know what is the state, we apply half the penalty to discourage use of unlabelled roads
 
     else:  # handling when we prefer unpaved routes
-        if pavement_status == 'Unpaved':
+        if pavement_status == 'unpaved':
             pavement_penalty = 1
-        elif pavement_status == 'Paved':
+        elif pavement_status == 'paved':
             pavement_penalty = pavement_penalty_strength
         else:
             pavement_penalty = 1 + (pavement_penalty_strength - 1) * 0.5  # since we don't know what is the state, we apply half the penalty to discourage use of unlabelled roads
