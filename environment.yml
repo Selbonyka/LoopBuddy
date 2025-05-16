@@ -1,0 +1,13 @@
+name: thesis_RunningRoutes
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - jupyterlab
+  - osmnx
+  - python=3.12
+  - sqlite
+  - tqdm
+  - gpxpy
+  - cachetools
+prefix: /opt/anaconda3/envs/thesis_RunningRoutes
