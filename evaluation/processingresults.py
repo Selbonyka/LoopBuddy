@@ -85,3 +85,7 @@ def dash_printer(text):
     print(text)
     print("\n\n",dashes)
 
+def saving_intermediate(result,name, savedir):
+    os.makedirs(savedir, exist_ok=True)
+    result = pd.DataFrame.from_dict(result)
+    result.to_csv(os.path.join(savedir, name + ".csv"))

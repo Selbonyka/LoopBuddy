@@ -7,7 +7,7 @@ import networkx as nx
 
 from main import main
 from utils.length import length
-from evaluation.processingresults import processing_smoothing_and_simplification_eval
+from evaluation.processingresults import processing_smoothing_and_simplification_eval, saving_intermediate
 from evaluation.processingresults import dash_printer
 
 """
@@ -94,26 +94,37 @@ def preferenced_smoothing_eval(distance, smoothing_increase, pavement_pref, stop
 
 
 
-dash_printer("*****************************************Analyzing 5k!*****************************************")
-distance = 5000
-smoothing_increase = 0.05
-results_neutral5k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
-results_avoid5k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
-results_prefer5k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-results_paved5k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
 
-dash_printer("*****************************************Results 5k!*****************************************")
-name = "5ksmoothing005"
-processing_smoothing_and_simplification_eval(results_neutral5k, results_avoid5k, results_prefer5k, results_paved5k, name)
 
+# dash_printer("*****************************************Analyzing 5k!*****************************************")
+# distance = 5000
+# smoothing_increase = 0.05
+# results_neutral5k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+# results_avoid5k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+# results_prefer5k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+# results_paved5k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
+#
+# dash_printer("*****************************************Results 5k!*****************************************")
+# name = "5ksmoothing005"
+# processing_smoothing_and_simplification_eval(results_neutral5k, results_avoid5k, results_prefer5k, results_paved5k, name)
+#
 
 dash_printer("*****************************************Analyzing 10k!*****************************************")
 distance = 10000
 smoothing_increase = 0.05
+
 results_neutral10k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+saving_intermediate(results_neutral10k, "neutral_10k", "intermediate_10k")
+
 results_avoid10k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+saving_intermediate(results_neutral10k, "avoid_10k", "intermediate_10k")
+
 results_prefer10k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+saving_intermediate(results_prefer10k, "prefer_10k", "intermediate_10k")
+
+
 results_paved10k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
+saving_intermediate(results_prefer10k, "paved_10k", "intermediate_10k")
 
 
 dash_printer("*****************************************Results 10k!*****************************************")
@@ -124,9 +135,16 @@ dash_printer("*****************************************Analyzing 15k!***********
 distance = 15000
 smoothing_increase = 0.05
 results_neutral15k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+saving_intermediate(results_neutral15k, "neutral_15k", "intermediate_15k")
+
 results_avoid15k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+saving_intermediate(results_avoid15k, "avoid_15k", "intermediate_15k")
+
 results_prefer15k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+saving_intermediate(results_prefer15k, "prefer_15k", "intermediate_15k")
+
 results_paved15k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
+saving_intermediate(results_prefer15k, "prefer_15k", "intermediate_15k")
 
 
 dash_printer("*****************************************Results 15k!*****************************************")
