@@ -44,7 +44,8 @@ def preferenced_smoothing_eval(distance, smoothing_increase, pavement_pref, stop
                            "alpha": smoothing_factor}
 
         # Loading the graph:
-        graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
+        graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
+        # graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
 
         # Normal execution:
         print("\nLoading the graph!\n")

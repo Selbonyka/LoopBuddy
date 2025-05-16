@@ -7,7 +7,6 @@ dependencies:
   - networkx
   - osmnx
   - python=3.12
-  - sqlite
   - folium
   - tqdm
   - cachetools

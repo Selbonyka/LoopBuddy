@@ -31,3 +31,8 @@
 
 ### Notes:
 - Doesn't work hat well on edges of the city where there are limited routes
+- Basically only need stuff in env yml, but osmnx needs a new conda lol
+  - used this command: conda create -n thesis_RunningRoutes -c conda-forge --strict-channel-priority \
+  python=3.12 pandas networkx osmnx sqlite tqdm cachetools pip
+  - and then pip install gpxpy
+
