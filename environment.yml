@@ -10,7 +10,6 @@ dependencies:
   - sqlite
   - folium
   - tqdm
-  - gpxpy
   - cachetools
   - pip
   - pip:
