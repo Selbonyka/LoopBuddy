@@ -35,7 +35,7 @@ def preferenced_smoothing_eval(distance, smoothing_increase, pavement_pref, stop
         print(dashes)
 
         # Preference dict that's dependent on the function call:
-        preference_dict = {"total_length": distance, "elevation_requested": 0, "elevation_error": 200,
+        preference_dict = {"total_length": distance, "elevation_requested": 0, "elevation_error": 10000, # high elevation error because it's not the point of the test
                            "pavement_preferences": pavement_pref,
                            "stoplights_preference": stoplight_pref, "steps_preference": steps_pref, "sharing_allowance": 0.3,
                            "node_simplification_status": "False", "allowed_distance_between_nodes": 25,
@@ -93,31 +93,31 @@ def preferenced_smoothing_eval(distance, smoothing_increase, pavement_pref, stop
 
 
 
-# dash_printer("*****************************************Analyzing 5k!*****************************************")
-# distance = 5000
-# smoothing_increase = 0.05
-# results_neutral5k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
-# results_avoid5k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
-# results_prefer5k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-# results_paved5k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
-#
-# dash_printer("*****************************************Results 5k!*****************************************")
-# name = "5ksmoothing005"
-# processing_smoothing_and_simplification_eval(results_neutral5k, results_avoid5k, results_prefer5k, results_paved5k, name)
-#
-#
-# dash_printer("*****************************************Analyzing 10k!*****************************************")
-# distance = 10000
-# smoothing_increase = 0.05
-# results_neutral10k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
-# results_avoid10k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
-# results_prefer10k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-# results_paved10k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
+dash_printer("*****************************************Analyzing 5k!*****************************************")
+distance = 5000
+smoothing_increase = 0.05
+results_neutral5k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+results_avoid5k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+results_prefer5k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+results_paved5k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
+
+dash_printer("*****************************************Results 5k!*****************************************")
+name = "5ksmoothing005"
+processing_smoothing_and_simplification_eval(results_neutral5k, results_avoid5k, results_prefer5k, results_paved5k, name)
 
 
-# dash_printer("*****************************************Results 10k!*****************************************")
-# name = "10ksmoothing005"
-# processing_smoothing_and_simplification_eval(results_neutral10k, results_avoid10k, results_prefer10k, results_paved10k,name)
+dash_printer("*****************************************Analyzing 10k!*****************************************")
+distance = 10000
+smoothing_increase = 0.05
+results_neutral10k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+results_avoid10k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+results_prefer10k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+results_paved10k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
+
+
+dash_printer("*****************************************Results 10k!*****************************************")
+name = "10ksmoothing005"
+processing_smoothing_and_simplification_eval(results_neutral10k, results_avoid10k, results_prefer10k, results_paved10k,name)
 
 dash_printer("*****************************************Analyzing 15k!*****************************************")
 distance = 15000
