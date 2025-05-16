@@ -1,10 +1,6 @@
 
-import networkx as nx
 import osmnx as ox
-import matplotlib.pyplot as plt
-from itertools import islice
-import pickle
-import copy
+
 
 from finalizing.finalize_path import concatenate_path,select_paths
 from utils.penalizing import edge_penalizing

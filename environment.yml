@@ -3,10 +3,12 @@ channels:
   - https://repo.anaconda.com/pkgs/main
   - https://repo.anaconda.com/pkgs/r
 dependencies:
-  - jupyterlab
+  - pandas
+  - networkx
   - osmnx
   - python=3.12
   - sqlite
+  - folium
   - tqdm
   - gpxpy
   - cachetools
