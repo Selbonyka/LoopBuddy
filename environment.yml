@@ -12,4 +12,7 @@ dependencies:
   - tqdm
   - gpxpy
   - cachetools
+  - pip
+  - pip:
+      - gpxpy
 prefix: /opt/anaconda3/envs/thesis_RunningRoutes
