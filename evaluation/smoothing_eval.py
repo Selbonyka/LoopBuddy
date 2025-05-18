@@ -1,6 +1,9 @@
+import csv
 import pickle
 import pprint
 import time
+
+import pandas
 import pandas as pd
 
 import networkx as nx
@@ -94,8 +97,6 @@ def preferenced_smoothing_eval(distance, smoothing_increase, pavement_pref, stop
 
 
 
-
-
 # dash_printer("*****************************************Analyzing 5k!*****************************************")
 # distance = 5000
 # smoothing_increase = 0.05
@@ -108,46 +109,78 @@ def preferenced_smoothing_eval(distance, smoothing_increase, pavement_pref, stop
 # name = "5ksmoothing005"
 # processing_smoothing_and_simplification_eval(results_neutral5k, results_avoid5k, results_prefer5k, results_paved5k, name)
 #
-
-dash_printer("*****************************************Analyzing 10k!*****************************************")
-distance = 10000
-smoothing_increase = 0.05
-
-results_neutral10k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
-saving_intermediate(results_neutral10k, "neutral_10k", "intermediate_10k")
-
-results_avoid10k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
-saving_intermediate(results_neutral10k, "avoid_10k", "intermediate_10k")
-
-results_prefer10k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-saving_intermediate(results_prefer10k, "prefer_10k", "intermediate_10k")
-
-
-results_paved10k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
-saving_intermediate(results_prefer10k, "paved_10k", "intermediate_10k")
-
-
-dash_printer("*****************************************Results 10k!*****************************************")
-name = "10ksmoothing005"
-processing_smoothing_and_simplification_eval(results_neutral10k, results_avoid10k, results_prefer10k, results_paved10k,name)
-
-dash_printer("*****************************************Analyzing 15k!*****************************************")
+#
+# dash_printer("*****************************************Analyzing 10k!*****************************************")
+# distance = 10000
+# smoothing_increase = 0.05
+#
+# results_neutral10k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+# saving_intermediate(results_neutral10k, "neutral_10k", "intermediate_10k")
+#
+# results_avoid10k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+# saving_intermediate(results_neutral10k, "avoid_10k", "intermediate_10k")
+#
+# results_prefer10k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+# saving_intermediate(results_prefer10k, "prefer_10k", "intermediate_10k")
+#
+#
+# results_paved10k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
+# saving_intermediate(results_prefer10k, "paved_10k", "intermediate_10k")
+#
+#
+# dash_printer("*****************************************Results 10k!*****************************************")
+# name = "10ksmoothing005"
+# processing_smoothing_and_simplification_eval(results_neutral10k, results_avoid10k, results_prefer10k, results_paved10k,name)
+#
+# dash_printer("*****************************************Analyzing 15k!*****************************************")
 distance = 15000
 smoothing_increase = 0.05
-results_neutral15k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
-saving_intermediate(results_neutral15k, "neutral_15k", "intermediate_15k")
-
-results_avoid15k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
-saving_intermediate(results_avoid15k, "avoid_15k", "intermediate_15k")
-
+# results_neutral15k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+# saving_intermediate(results_neutral15k, "neutral_15k", "intermediate_15k")
+#
+# results_avoid15k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+# saving_intermediate(results_avoid15k, "avoid_15k", "intermediate_15k")
+#
 results_prefer15k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
 saving_intermediate(results_prefer15k, "prefer_15k", "intermediate_15k")
 
 results_paved15k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
-saving_intermediate(results_prefer15k, "prefer_15k", "intermediate_15k")
+saving_intermediate(results_prefer15k, "paved_15k", "intermediate_15k")
 
 
 dash_printer("*****************************************Results 15k!*****************************************")
+
+file_path_neutral = "/home/h12227338/LoopBuddy/intermediate_15k/neutral_15k.csv"
+file_path_avoid = "/home/h12227338/LoopBuddy/intermediate_15k/avoid_15k.csv"
+# reading in the files that were completed:
+with open(file_path_neutral, mode='r', encoding='utf-8') as file:
+    reader = csv.DictReader(file)
+    results_neutral15k = list(reader)
+
+
+with open(file_path_avoid, mode='r', encoding='utf-8') as file:
+    reader = csv.DictReader(file)
+    results_avoid15k = list(reader)
+#
+# #
+# neutral = pd.DataFrame.from_dict(results_neutral15k)
+# # avoid = pd.DataFrame.from_dict(results_avoid15k)
+#
+
+#
+# neutral = pandas.read_csv(file_path_neutral)
+
+#
+# # Printing:
+# print("Neutral results:")
+# print(neutral.to_string())
+# print("\n\n")
+#
+# print("Avoiding steps and stoplights results:")
+# print(avoid.to_string())
+# print("\n\n")
+#
+#
 name = "15ksmoothing005"
 processing_smoothing_and_simplification_eval(results_neutral15k, results_avoid15k, results_prefer15k, results_paved15k, name)
 

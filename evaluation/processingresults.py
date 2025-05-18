@@ -4,8 +4,13 @@ import pandas as pd
 
 #  Data processing:
 def processing_smoothing_and_simplification_eval(results_neutral, results_avoid, results_prefer, results_paved, name):
+
+
+
     neutral = pd.DataFrame.from_dict(results_neutral)
+    neutral.set_index(neutral.columns[0], inplace=True) # for reading in existing files
     avoid = pd.DataFrame.from_dict(results_avoid)
+    avoid.set_index(avoid.columns[0], inplace=True)  # for reading in existing files
     preferred = pd.DataFrame.from_dict(results_prefer)
     paved = pd.DataFrame.from_dict(results_paved)
 
