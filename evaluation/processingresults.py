@@ -87,7 +87,7 @@ def loading_csv_results(file_path_neutral, file_path_avoid, file_path_prefer, fi
     preferred = pd.read_csv(file_path_prefer, index_col=0)
     paved = pd.read_csv(file_path_paved, index_col=0)
 
-    processing_smoothing_and_simplifying_results(neutral, avoid, preferred, paved, name)
+    processing_smoothing_and_simplifying_results(neutral, avoid, preferred, paved, name)    
 
 
 def dash_printer(text):

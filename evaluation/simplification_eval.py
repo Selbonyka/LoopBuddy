@@ -5,7 +5,7 @@ import pandas as pd
 
 import networkx as nx
 
-from evaluation.processingresults import dash_printer, loading_full_results
+from evaluation.processingresults import dash_printer, loading_full_results, saving_intermediate
 from main import main
 from utils.length import length
 
@@ -18,9 +18,6 @@ def simplification_evaluation(distance, simplification_increase,max_simplificati
     starting_point = (16.3725042, 48.2083537)  # Historical center of Vienna - Stephansdom. Chosen due to a dense street network
 
     while simplification_dist <= max_simplification_dist: # just looping around the smoothing factor values, 1.1 because computational rounding error
-        # if allowed_distance > 100:
-        #     smoothing_factor = 1 # to fix the rounding error thing
-        # For clarity when analyzing:
         dashes = "".join(["-"] * 200)
         print(dashes)
         print("Analyzing simplification distance :", simplification_dist, "\nMode:", pavement_pref, stoplight_pref, steps_pref)
@@ -35,7 +32,8 @@ def simplification_evaluation(distance, simplification_increase,max_simplificati
                            "pavement_penalty_strength": 1.05, "error": 60,
                            "alpha": 0.55}
         # Loading the graph:
-        graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
+        # graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
+        graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
 
         # Normal execution
         print("\nLoading the graph!\n")
@@ -72,8 +70,6 @@ def simplification_evaluation(distance, simplification_increase,max_simplificati
 
             results[simplification_dist]["Average paths badness"] = true_badness_sum / len(paths)
 
-
-
         simplification_dist = simplification_dist + 2.5
 
         print(dashes)
@@ -86,30 +82,86 @@ dash_printer("*****************************************Analyzing 5k!************
 distance = 5000
 simplification_increase = 5
 max_simplification_dist  = 50
-results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
-results_avoid = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Avoid", "Avoid")
-results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
+name_distance = "5k_simplification_" + str(simplification_increase) + "_" + str(max_simplification_dist)
 
-loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, )
+state = "neutral"
+name_state= name_distance + state
+results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
+saving_intermediate(results_neutral, name_state, "intermediate_" + name_distance)
+
+state = "avoid"
+name_state= name_distance + state
+results_avoid = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Avoid", "Avoid")
+saving_intermediate(results_avoid, name_state, "intermediate_" + name_distance)
+
+state = "prefer"
+name_state= name_distance + state
+results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+saving_intermediate(results_prefer, name_state, "intermediate_" + name_distance)
+
+state = "paved"
+name_state= name_distance + state
+results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
+saving_intermediate(results_paved, name_state, "intermediate_" + name_distance)
+
+loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, name_distance)
 
 
 dash_printer("*****************************************Analyzing 10k!*****************************************")
 distance = 10000
-results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
-results_avoid = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Avoid", "Avoid")
-results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
+name_distance = "10k_simplification_" + str(simplification_increase) + "_" + str(max_simplification_dist)
 
-loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, )
+
+state = "neutral"
+name_state= name_distance + state
+results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
+saving_intermediate(results_neutral, name_state, "intermediate_" + name_distance)
+
+state = "avoid"
+name_state= name_distance + state
+results_avoid = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Avoid", "Avoid")
+saving_intermediate(results_avoid, name_state, "intermediate_" + name_distance)
+
+
+state = "prefer"
+name_state= name_distance + state
+results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+saving_intermediate(results_prefer, name_state, "intermediate_" + name_distance)
+
+state = "paved"
+name_state= name_distance + state
+results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
+saving_intermediate(results_paved, name_state, "intermediate_" + name_distance)
+
+loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, name_distance)
+
 
 dash_printer("*****************************************Analyzing 15k!*****************************************")
 distance = 15000
-results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
-results_avoid = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Avoid", "Avoid")
-results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
+name_distance = "15k_simplification_" + str(simplification_increase) + "_" + str(max_simplification_dist)
 
-loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, )
+
+state = "neutral"
+name_state= name_distance + state
+results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
+saving_intermediate(results_neutral, name_state, "intermediate_" + name_distance)
+
+state = "avoid"
+name_state= name_distance + state
+results_avoid = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Avoid", "Avoid")
+saving_intermediate(results_avoid, name_state, "intermediate_" + name_distance)
+
+state = "prefer"
+name_state= name_distance + state
+results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+saving_intermediate(results_prefer, name_state, "intermediate_" + name_distance)
+
+
+state = "paved"
+name_state= name_distance + state
+results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
+saving_intermediate(results_paved, name_state, "intermediate_" + name_distance)
+
+loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, name_distance)
 
 
