@@ -4,9 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="created the csv reader">
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="made smoothing_eval granular">
+      <change afterPath="$PROJECT_DIR$/evaluation/alpha_visualization.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/processingresults.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/processingresults.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10ksmoothing005/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10ksmoothing005/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10ksmoothing005/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10ksmoothing005/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10ksmoothing005/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10ksmoothing005/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10ksmoothing005/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15ksmoothing005/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15ksmoothing005/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15ksmoothing005/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15ksmoothing005/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15ksmoothing005/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15ksmoothing005/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15ksmoothing005/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5ksmoothing005/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5ksmoothing005/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5ksmoothing005/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5ksmoothing005/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5ksmoothing005/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5ksmoothing005/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5ksmoothing005/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/preferred.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/simplification_eval.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +118,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/evaluation" />
       <recent name="$PROJECT_DIR$/evaluation/old eval" />
       <recent name="$PROJECT_DIR$/visualization/visualization_results" />
     </key>
@@ -284,7 +306,8 @@
       <workItem from="1747428387608" duration="600000" />
       <workItem from="1747569079487" duration="2236000" />
       <workItem from="1747582430447" duration="3900000" />
-      <workItem from="1747594536560" duration="2456000" />
+      <workItem from="1747594536560" duration="3032000" />
+      <workItem from="1747602500752" duration="2665000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -534,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747585702355</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="made smoothing_eval granular">
+      <option name="closed" value="true" />
+      <created>1747597015771</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1747597015772</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="starting to get the button to work" />
     <MESSAGE value="settings and button work" />
     <MESSAGE value="this version isn't working that well but backing it up just in case" />
     <MESSAGE value="here main actually works" />
@@ -589,7 +619,8 @@
     <MESSAGE value="added intermidiate saving" />
     <MESSAGE value="added reading in the partially created results" />
     <MESSAGE value="created the csv reader" />
-    <option name="LAST_COMMIT_MESSAGE" value="created the csv reader" />
+    <MESSAGE value="made smoothing_eval granular" />
+    <option name="LAST_COMMIT_MESSAGE" value="made smoothing_eval granular" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -608,7 +639,7 @@
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1746378386122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1747595628485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1747603066759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1747569504055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/LoopBuddy$finalize_path.coverage" NAME="finalize_path Coverage Results" MODIFIED="1744661077416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/finalizing" />

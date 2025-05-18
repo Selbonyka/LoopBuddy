@@ -30,7 +30,7 @@ def simplification_evaluation(distance, simplification_increase,max_simplificati
                            "node_simplification_status": "True", "allowed_distance_between_nodes": simplification_dist,
                            "stoplight_penalty_strength": 1.1, "steps_penalty_strength": 1.2,
                            "pavement_penalty_strength": 1.05, "error": 60,
-                           "alpha": 0.55}
+                           "alpha": 0.85}
         # Loading the graph:
         # graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
         graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
