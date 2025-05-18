@@ -3,17 +3,7 @@ import os
 import pandas as pd
 
 #  Data processing:
-def processing_smoothing_and_simplification_eval(results_neutral, results_avoid, results_prefer, results_paved, name):
-
-
-
-    neutral = pd.DataFrame.from_dict(results_neutral)
-    neutral.set_index(neutral.columns[0], inplace=True) # for reading in existing files
-    avoid = pd.DataFrame.from_dict(results_avoid)
-    avoid.set_index(avoid.columns[0], inplace=True)  # for reading in existing files
-    preferred = pd.DataFrame.from_dict(results_prefer)
-    paved = pd.DataFrame.from_dict(results_paved)
-
+def processing_smoothing_and_simplifying_results (neutral, avoid, preferred,paved, name):
     # Printing:
     print("Neutral results:")
     print(neutral.to_string())
@@ -82,6 +72,22 @@ def processing_smoothing_and_simplification_eval(results_neutral, results_avoid,
     badness.to_csv(os.path.join(name, "badness.csv"))
 
 
+def loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, name):
+
+    neutral = pd.DataFrame.from_dict(results_neutral)
+    avoid = pd.DataFrame.from_dict(results_avoid)
+    preferred = pd.DataFrame.from_dict(results_prefer)
+    paved = pd.DataFrame.from_dict(results_paved)
+    processing_smoothing_and_simplifying_results(neutral, avoid, preferred, paved, name)
+
+
+def loading_csv_results(file_path_neutral, file_path_avoid, file_path_prefer, file_path_paved, name):
+    neutral = pd.read_csv(file_path_neutral, index_col=0)
+    avoid = pd.read_csv(file_path_avoid, index_col=0)
+    preferred = pd.read_csv(file_path_prefer, index_col=0)
+    paved = pd.read_csv(file_path_paved, index_col=0)
+
+    processing_smoothing_and_simplifying_results(neutral, avoid, preferred, paved, name)
 
 
 def dash_printer(text):
@@ -94,3 +100,6 @@ def saving_intermediate(result,name, savedir):
     os.makedirs(savedir, exist_ok=True)
     result = pd.DataFrame.from_dict(result)
     result.to_csv(os.path.join(savedir, name + ".csv"))
+
+
+

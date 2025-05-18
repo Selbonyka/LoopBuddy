@@ -5,7 +5,7 @@ import pandas as pd
 
 import networkx as nx
 
-from evaluation.processingresults import dash_printer, processing_smoothing_and_simplification_eval
+from evaluation.processingresults import dash_printer, loading_full_results
 from main import main
 from utils.length import length
 
@@ -91,7 +91,7 @@ results_avoid = simplification_evaluation(distance, simplification_increase,max_
 results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
 results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
 
-processing_smoothing_and_simplification_eval(results_neutral, results_avoid, results_prefer, results_paved)
+loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, )
 
 
 dash_printer("*****************************************Analyzing 10k!*****************************************")
@@ -101,7 +101,7 @@ results_avoid = simplification_evaluation(distance, simplification_increase,max_
 results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
 results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
 
-processing_smoothing_and_simplification_eval(results_neutral, results_avoid, results_prefer, results_paved)
+loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, )
 
 dash_printer("*****************************************Analyzing 15k!*****************************************")
 distance = 15000
@@ -110,6 +110,6 @@ results_avoid = simplification_evaluation(distance, simplification_increase,max_
 results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
 results_paved = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Paved", "Neutral", "Neutral")
 
-processing_smoothing_and_simplification_eval(results_neutral, results_avoid, results_prefer, results_paved)
+loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, )
 
 

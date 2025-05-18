@@ -10,7 +10,7 @@ import networkx as nx
 
 from main import main
 from utils.length import length
-from evaluation.processingresults import processing_smoothing_and_simplification_eval, saving_intermediate
+from evaluation.processingresults import loading_full_results, saving_intermediate, loading_csv_results
 from evaluation.processingresults import dash_printer
 
 """
@@ -135,33 +135,41 @@ def preferenced_smoothing_eval(distance, smoothing_increase, pavement_pref, stop
 # dash_printer("*****************************************Analyzing 15k!*****************************************")
 distance = 15000
 smoothing_increase = 0.05
-# results_neutral15k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
-# saving_intermediate(results_neutral15k, "neutral_15k", "intermediate_15k")
+# # results_neutral15k = preferenced_smoothing_eval(distance, smoothing_increase, "Neutral", "Neutral", "Neutral")
+# # saving_intermediate(results_neutral15k, "neutral_15k", "intermediate_15k")
+# #
+# # results_avoid15k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
+# # saving_intermediate(results_avoid15k, "avoid_15k", "intermediate_15k")
+# #
+# results_prefer15k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
+# saving_intermediate(results_prefer15k, "prefer_15k", "intermediate_15k")
 #
-# results_avoid15k = preferenced_smoothing_eval(distance,smoothing_increase, "Neutral", "Avoid", "Avoid")
-# saving_intermediate(results_avoid15k, "avoid_15k", "intermediate_15k")
-#
-results_prefer15k = preferenced_smoothing_eval(distance,smoothing_increase,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps
-saving_intermediate(results_prefer15k, "prefer_15k", "intermediate_15k")
-
 results_paved15k = preferenced_smoothing_eval(distance,smoothing_increase,"Paved", "Neutral", "Neutral")
-saving_intermediate(results_prefer15k, "paved_15k", "intermediate_15k")
+saving_intermediate(results_paved15k, "paved_15k", "intermediate_15k")
 
 
 dash_printer("*****************************************Results 15k!*****************************************")
 
 file_path_neutral = "/home/h12227338/LoopBuddy/intermediate_15k/neutral_15k.csv"
 file_path_avoid = "/home/h12227338/LoopBuddy/intermediate_15k/avoid_15k.csv"
-# reading in the files that were completed:
-with open(file_path_neutral, mode='r', encoding='utf-8') as file:
-    reader = csv.DictReader(file)
-    results_neutral15k = list(reader)
+file_path_prefer = "/home/h12227338/LoopBuddy/intermediate_15k/prefer_15k.csv"
+file_path_paved = "/home/h12227338/LoopBuddy/intermediate_15k/paved_15k.csv"
 
+# file_path_avoid = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/intermediate_15k/avoid_15k.csv"
+# file_path_neutral = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/intermediate_15k/neutral_15k.csv"
+# file_path_paved = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/intermediate_15k/paved_15k.csv"
+# file_path_prefer = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/intermediate_15k/prefer_15k.csv"
 
-with open(file_path_avoid, mode='r', encoding='utf-8') as file:
-    reader = csv.DictReader(file)
-    results_avoid15k = list(reader)
+# # reading in the files that were completed:
+# with open(file_path_neutral, mode='r', encoding='utf-8') as file:
+#     reader = csv.DictReader(file)
+#     results_neutral15k = list(reader)
 #
+#
+# with open(file_path_avoid, mode='r', encoding='utf-8') as file:
+#     reader = csv.DictReader(file)
+#     results_avoid15k = list(reader)
+# #
 # #
 # neutral = pd.DataFrame.from_dict(results_neutral15k)
 # # avoid = pd.DataFrame.from_dict(results_avoid15k)
@@ -180,7 +188,8 @@ with open(file_path_avoid, mode='r', encoding='utf-8') as file:
 # print(avoid.to_string())
 # print("\n\n")
 #
-#
+# #
 name = "15ksmoothing005"
-processing_smoothing_and_simplification_eval(results_neutral15k, results_avoid15k, results_prefer15k, results_paved15k, name)
-
+# loading_full_results(results_neutral15k, results_avoid15k, results_prefer15k, results_paved15k, name)
+#
+loading_csv_results(file_path_neutral,file_path_avoid,file_path_prefer,file_path_paved,name)
