@@ -141,12 +141,12 @@ max_simplification_dist  = 50
 dash_printer("*****************************************Analyzing 15k!*****************************************")
 distance = 15000
 name_distance = "15k_simplification_" + str(simplification_increase) + "_" + str(max_simplification_dist)
-
-
-state = "neutral"
-name_state= name_distance + state
-results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
-saving_intermediate(results_neutral, name_state, "intermediate_" + name_distance)
+#
+#
+# state = "neutral"
+# name_state= name_distance + state
+# results_neutral = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Neutral", "Neutral")
+# saving_intermediate(results_neutral, name_state, "intermediate_" + name_distance)
 
 state = "avoid"
 name_state= name_distance + state
