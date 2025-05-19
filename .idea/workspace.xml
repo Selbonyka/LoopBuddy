@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="made smoothing_eval granular">
-      <change afterPath="$PROJECT_DIR$/evaluation/alpha_visualization.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10ksmoothing005/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10ksmoothing005/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/badness.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10ksmoothing005/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/elapsed_time.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10ksmoothing005/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10ksmoothing005/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/path_number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10ksmoothing005/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10ksmoothing005/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10ksmoothing005/preferred.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15ksmoothing005/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15ksmoothing005/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/badness.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15ksmoothing005/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/elapsed_time.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15ksmoothing005/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15ksmoothing005/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/path_number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15ksmoothing005/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15ksmoothing005/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15ksmoothing005/preferred.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5ksmoothing005/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5ksmoothing005/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/badness.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5ksmoothing005/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/elapsed_time.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5ksmoothing005/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5ksmoothing005/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/path_number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5ksmoothing005/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5ksmoothing005/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5ksmoothing005/preferred.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/simplification_eval.py" afterDir="false" />
-    </list>
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="finalized alpha value" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,7 +282,7 @@
       <workItem from="1747569079487" duration="2236000" />
       <workItem from="1747582430447" duration="3900000" />
       <workItem from="1747594536560" duration="3032000" />
-      <workItem from="1747602500752" duration="2665000" />
+      <workItem from="1747602500752" duration="3556000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -565,7 +540,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747597015772</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="finalized alpha value">
+      <option name="closed" value="true" />
+      <created>1747605921303</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1747605921303</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +578,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="settings and button work" />
     <MESSAGE value="this version isn't working that well but backing it up just in case" />
     <MESSAGE value="here main actually works" />
     <MESSAGE value="Issue was just in Capitalizing preferences lol" />
@@ -620,7 +602,8 @@
     <MESSAGE value="added reading in the partially created results" />
     <MESSAGE value="created the csv reader" />
     <MESSAGE value="made smoothing_eval granular" />
-    <option name="LAST_COMMIT_MESSAGE" value="made smoothing_eval granular" />
+    <MESSAGE value="finalized alpha value" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalized alpha value" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
