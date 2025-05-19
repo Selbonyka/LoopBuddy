@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="15k smoothign eval setup" />
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="commented out 15k neutral">
+      <change afterPath="$PROJECT_DIR$/evaluation/simplification_eval15k.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_50/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_50/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_50/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_50/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_50/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_50/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_50/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_50/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_50/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_50/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_50/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_50/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_50/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_50/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/simplification_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_10k_simplification_5_50/10k_simplification_5_50avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_10k_simplification_5_50/10k_simplification_5_50neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_10k_simplification_5_50/10k_simplification_5_50paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_10k_simplification_5_50/10k_simplification_5_50prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50prefer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_15k_simplification_5_50/15k_simplification_5_50neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_15k_simplification_5_50/15k_simplification_5_50neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_5k_simplification_5_50/5k_simplification_5_50avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_5k_simplification_5_50/5k_simplification_5_50neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_5k_simplification_5_50/5k_simplification_5_50paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intermediate_5k_simplification_5_50/5k_simplification_5_50prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50prefer.csv" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,32 +92,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.home.html.executor&quot;: &quot;Run&quot;,
-    &quot;Python.finalize_path.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.overall_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.processingresults.executor&quot;: &quot;Run&quot;,
-    &quot;Python.simplification_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.smoothing_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testing_elevation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.views.executor&quot;: &quot;Run&quot;,
-    &quot;Python.visualization.executor&quot;: &quot;Run&quot;,
-    &quot;Python.website_main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.home.html.executor": "Run",
+    "Python.finalize_path.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.overall_eval.executor": "Run",
+    "Python.processingresults.executor": "Run",
+    "Python.simplification_eval.executor": "Run",
+    "Python.smoothing_eval.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.testing_elevation.executor": "Run",
+    "Python.views.executor": "Run",
+    "Python.visualization.executor": "Run",
+    "Python.website_main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/evaluation" />
@@ -285,6 +313,7 @@
       <workItem from="1747602500752" duration="3556000" />
       <workItem from="1747644775895" duration="3666000" />
       <workItem from="1747658494411" duration="217000" />
+      <workItem from="1747663240056" duration="2039000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -574,7 +603,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747658642931</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="made the simplification resilient to no paths being found">
+      <option name="closed" value="true" />
+      <created>1747663383134</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1747663383134</updated>
+    </task>
+    <task id="LOCAL-00038" summary="commented out 15k neutral">
+      <option name="closed" value="true" />
+      <created>1747670867423</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1747670867423</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,8 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finalize_path.py wasn't here for some reason" />
-    <MESSAGE value="i got confused, but now it works" />
     <MESSAGE value="fixed inconsistensies in the parameters that are chosed" />
     <MESSAGE value="removed elevation_grade approach, and instead added a different pre-processed graph with only elevation at the nodes. calculation of appropriate calculation is through elevation_calculation.py" />
     <MESSAGE value="fixed the input from frontend to backend" />
@@ -629,7 +672,9 @@
     <MESSAGE value="added the time_path csv" />
     <MESSAGE value="fixed simplification_eval.py bug" />
     <MESSAGE value="15k smoothign eval setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="15k smoothign eval setup" />
+    <MESSAGE value="made the simplification resilient to no paths being found" />
+    <MESSAGE value="commented out 15k neutral" />
+    <option name="LAST_COMMIT_MESSAGE" value="commented out 15k neutral" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
