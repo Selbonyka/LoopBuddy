@@ -13,7 +13,7 @@ from utils.length import length
 # Setting up the evaluation:
 def simplification_evaluation(distance, simplification_increase,max_simplification_dist, pavement_pref, stoplight_pref, steps_pref):
 
-    simplification_dist = 0
+    simplification_dist = 50
     results = {}
     starting_point = (16.3725042, 48.2083537)  # Historical center of Vienna - Stephansdom. Chosen due to a dense street network
 
@@ -82,8 +82,8 @@ def simplification_evaluation(distance, simplification_increase,max_simplificati
 
 # dash_printer("*****************************************Analyzing 5k!*****************************************")
 distance = 5000
-simplification_increase = 5
-max_simplification_dist  = 50
+simplification_increase = 10
+max_simplification_dist  = 300
 name_distance = "5k_simplification_" + str(simplification_increase) + "_" + str(max_simplification_dist)
 
 state = "neutral"
