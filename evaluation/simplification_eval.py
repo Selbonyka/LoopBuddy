@@ -68,8 +68,10 @@ def simplification_evaluation(distance, simplification_increase,max_simplificati
                 true_badness = badness[i] - path_length
                 true_badness_sum += true_badness
 
-            results[simplification_dist]["Average paths badness"] = true_badness_sum / len(paths)
-
+            if len(paths) > 0:
+                results[simplification_dist]["Average paths badness"] = true_badness_sum / len(paths)
+            else:
+                results[simplification_dist]["Average paths badness"] = 0
         simplification_dist = simplification_dist + simplification_increase
 
         print(dashes)

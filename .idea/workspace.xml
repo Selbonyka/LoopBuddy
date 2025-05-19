@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="fixed simplification_eval.py bug" />
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="15k smoothign eval setup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -284,6 +284,7 @@
       <workItem from="1747594536560" duration="3032000" />
       <workItem from="1747602500752" duration="3556000" />
       <workItem from="1747644775895" duration="3666000" />
+      <workItem from="1747658494411" duration="217000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -565,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747648295597</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="15k smoothign eval setup">
+      <option name="closed" value="true" />
+      <created>1747658642931</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1747658642931</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +604,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Issue was just in Capitalizing preferences lol" />
     <MESSAGE value="finalize_path.py wasn't here for some reason" />
     <MESSAGE value="i got confused, but now it works" />
     <MESSAGE value="fixed inconsistensies in the parameters that are chosed" />
@@ -620,7 +628,8 @@
     <MESSAGE value="finalized alpha value" />
     <MESSAGE value="added the time_path csv" />
     <MESSAGE value="fixed simplification_eval.py bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed simplification_eval.py bug" />
+    <MESSAGE value="15k smoothign eval setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="15k smoothign eval setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
