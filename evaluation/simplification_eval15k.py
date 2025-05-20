@@ -82,8 +82,8 @@ def simplification_evaluation(distance, simplification_increase,max_simplificati
 
 # dash_printer("*****************************************Analyzing 5k!*****************************************")
 distance = 5000
-simplification_increase = 10
-max_simplification_dist  = 300
+simplification_increase = 5
+max_simplification_dist  = 200
 # name_distance = "5k_simplification_" + str(simplification_increase) + "_" + str(max_simplification_dist)
 #
 # state = "neutral"
