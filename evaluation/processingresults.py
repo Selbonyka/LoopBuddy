@@ -101,5 +101,89 @@ def saving_intermediate(result,name, savedir):
     result = pd.DataFrame.from_dict(result)
     result.to_csv(os.path.join(savedir, name + ".csv"))
 
+def individual_overall_results(result, neutral=False):
+    means = pd.DataFrame({
+        "Elapsed time": [result.loc["Elapsed time"].mean()],
+        "N Paths": [result.loc["Number of paths"].mean()],
+        "N stoplights": [result.loc["Avg. number of stoplights"].mean()],
+        "N steps": [result.loc["Avg. number of steps"].mean()],
+        "N paved edges": [result.loc["Avg. number of paved edges"].mean()],
+        "N unpaved edges": [result.loc["Avg. number of unpaved edges"].mean()],
+        "N unknown edge surfaces": [result.loc["Avg. number of edges with unknown surface"].mean()]
+    })
+
+    if not neutral:
+        means["Path badness"] = result.loc["Average paths badness"].mean()
+
+    no_paths = (result.loc["Number of paths"] == 0).sum() / result.shape[1] # number of 0s divided by columns because of result shape
+    return means, no_paths
+
+def processing_overall(results_neutral, results_avoid,results_prefer, results_paved, name_distance):
+    """ So what do we want here?
+    - Avg number of paths generated
+    - Avg elapsed time
+    - How many runs coords has 0 paths generated
+    - Avg number of stoplights
+    - Avg number of steps
+    - Avg number of paths paved
+    - Avg number of paths unpaved
+    - Results_avoid-results_neutral stoplight and steps wise
+    """
+
+
+    # Loading in here because I don't wanna mess up that pipeline:
+    neutral = pd.DataFrame.from_dict(results_neutral)
+    prefer = pd.DataFrame.from_dict(results_prefer)
+    avoid = pd.DataFrame.from_dict(results_avoid)
+    paved = pd.DataFrame.from_dict(results_paved)
+
+    # Making the save dir:
+    os.makedirs(name_distance, exist_ok=True)
+
+    # Computing individual stats:
+    means_neutral, no_paths_neutral = individual_overall_results(neutral, True)
+    means_neutral.to_csv(os.path.join(name_distance, "means_neutral.csv"))
+
+    means_avoid, no_paths_avoid = individual_overall_results(avoid)
+    means_avoid.to_csv(os.path.join(name_distance, "means_avoid.csv"))
+
+    means_prefer, no_paths_prefer = individual_overall_results(prefer)
+    means_prefer.to_csv(os.path.join(name_distance, "means_prefer.csv"))
+
+    means_paved, no_paths_paved = individual_overall_results(paved)
+    means_paved.to_csv(os.path.join(name_distance, "means_paved.csv"))
+
+    # How many failed to get paths
+    failed = pd.DataFrame({
+        "Neutral": [no_paths_neutral],
+        "Avoid": [no_paths_avoid],
+        "Prefer":[no_paths_prefer],
+        "Paved": [no_paths_paved]
+    })
+
+    failed.to_csv(os.path.join(name_distance, "failed.csv"))
+
+    # And counting the difference between neutral and avoid
+
+    pref_diff_neutral_avoid = pd.DataFrame({
+        "stoplights_diff": [means_neutral["N stoplights"].iloc[0] - means_avoid["N stoplights"].iloc[0]],
+        "steps_diff": [means_neutral["N steps"].iloc[0] - means_avoid["N steps"].iloc[0]]
+    })
+
+    pref_diff_neutral_avoid.to_csv(os.path.join(name_distance, "pref_diff_neutral_avoid.csv"))
+
+    pref_diff_prefer_avoid = pd.DataFrame({
+        "stoplights_diff": [means_prefer["N stoplights"].iloc[0] - means_avoid["N stoplights"].iloc[0]],
+        "steps_diff": [means_prefer["N steps"].iloc[0] - means_avoid["N steps"].iloc[0]]
+    })
+
+    pref_diff_prefer_avoid.to_csv(os.path.join(name_distance, "pref_diff_prefer_avoid.csv"))
+
+
+
+
+
+
+
 
 

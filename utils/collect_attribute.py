@@ -22,12 +22,12 @@ def attribute_collector(G, path,edges_data):
                 break
 
        # If no value for this edge:
-        if value is None:
-            print(f"Warning: Value for edge ({u}, {v}) not found!")
+        if value is None: # is this happens for pavement: nothing to worry about :D Just osm lacking data
+            # print(f"Warning: Value for edge ({u}, {v}) not found for data {edges_data}")  # uncomment it for debugging
             continue
 
 
         attribute_values.append(value)
-    print('from colector:')
-    print(attribute_values)
+    # print('from colector:')
+    # print(attribute_values)
     return attribute_values

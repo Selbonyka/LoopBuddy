@@ -124,7 +124,6 @@ name_state= name_distance + state
 results_avoid = simplification_evaluation(distance, simplification_increase,max_simplification_dist, "Neutral", "Avoid", "Avoid")
 saving_intermediate(results_avoid, name_state, "intermediate_" + name_distance)
 
-
 state = "prefer"
 name_state= name_distance + state
 results_prefer = simplification_evaluation(distance, simplification_increase,max_simplification_dist,"Neutral", "Prefer", "Prefer") # skews data a lot due to rarity of stoplights and steps

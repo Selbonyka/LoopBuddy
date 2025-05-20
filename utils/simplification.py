@@ -16,7 +16,7 @@ def node_simplification(G, nodes_to_simplify, node_closeness):
 
     nodes, data = zip(*simplification_subgraph.nodes(data=True))# getting the data about the nodes
 
-    # Extracting x (longitude) and y (latitude) separately
+    # Extracting x (longitude) and y (latitude) separately:
     x_coords, y_coords = zip(*[(d['x'], d['y']) for d in data])
 
     removal = list()

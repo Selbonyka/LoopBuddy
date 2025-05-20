@@ -4,32 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="50 to 300 eval setup">
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="50 to 200 eval setup">
+      <change afterPath="$PROJECT_DIR$/evaluation/overall_eval_part2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10k_simplification_10_300/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_10_300/avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10k_simplification_10_300/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_10_300/badness.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10k_simplification_10_300/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_10_300/elapsed_time.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10k_simplification_10_300/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_10_300/neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10k_simplification_10_300/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_10_300/path_number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10k_simplification_10_300/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_10_300/paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/10k_simplification_10_300/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_10_300/preferred.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15k_simplification_10_300/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_10_300/avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15k_simplification_10_300/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_10_300/badness.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15k_simplification_10_300/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_10_300/elapsed_time.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15k_simplification_10_300/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_10_300/neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15k_simplification_10_300/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_10_300/path_number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15k_simplification_10_300/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_10_300/paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/15k_simplification_10_300/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_10_300/preferred.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5k_simplification_10_300/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_10_300/avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5k_simplification_10_300/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_10_300/badness.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5k_simplification_10_300/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_10_300/elapsed_time.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5k_simplification_10_300/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_10_300/neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5k_simplification_10_300/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_10_300/path_number.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5k_simplification_10_300/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_10_300/paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5k_simplification_10_300/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_10_300/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_200/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_5_200/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_200/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_5_200/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_200/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_5_200/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_200/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_5_200/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_200/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_5_200/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_200/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_5_200/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10k_simplification_5_200/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/10k_simplification_5_200/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15k_simplification_5_200/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_5_200/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15k_simplification_5_200/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_5_200/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15k_simplification_5_200/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_5_200/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15k_simplification_5_200/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_5_200/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15k_simplification_5_200/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_5_200/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15k_simplification_5_200/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_5_200/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15k_simplification_5_200/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/15k_simplification_5_200/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_200/avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_5_200/avoid.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_200/badness.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_5_200/badness.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_200/elapsed_time.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_5_200/elapsed_time.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_200/neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_5_200/neutral.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_200/path_number.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_5_200/path_number.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_200/paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_5_200/paved.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5k_simplification_5_200/preferred.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/5k_simplification_5_200/preferred.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/alpha_visualization.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/alpha_visualization.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/overall_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/overall_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/processingresults.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/processingresults.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/simplification_eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval15k.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/simplification_eval15k.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluation/simplification_visualization.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/simplification_visualization.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/collect_attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/collect_attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/simplification.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/simplification.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +66,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="TestingSelectionAddition" />
+        <entry key="$PROJECT_DIR$" value="overall_eval_setup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,33 +96,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.home.html.executor&quot;: &quot;Run&quot;,
-    &quot;Python.finalize_path.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.overall_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.processingresults.executor&quot;: &quot;Run&quot;,
-    &quot;Python.simplification_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.smoothing_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testing_elevation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.views.executor&quot;: &quot;Run&quot;,
-    &quot;Python.visualization.executor&quot;: &quot;Run&quot;,
-    &quot;Python.website_main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.home.html.executor": "Run",
+    "Python.finalize_path.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.overall_eval.executor": "Run",
+    "Python.overall_eval_part2.executor": "Run",
+    "Python.processingresults.executor": "Run",
+    "Python.simplification_eval.executor": "Run",
+    "Python.smoothing_eval.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.testing_elevation.executor": "Run",
+    "Python.views.executor": "Run",
+    "Python.visualization.executor": "Run",
+    "Python.website_main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/evaluation" />
@@ -129,7 +135,7 @@
       <recent name="$PROJECT_DIR$/visualization/visualization_results" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.smoothing_eval">
+  <component name="RunManager" selected="Python.overall_eval">
     <configuration name="overall_eval" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LoopBuddy" />
       <option name="ENV_FILES" value="" />
@@ -153,7 +159,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="processingresults" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="overall_eval_part2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LoopBuddy" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,7 +173,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/processingresults.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/overall_eval_part2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -247,11 +253,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.smoothing_eval" />
-        <item itemvalue="Python.website_main" />
         <item itemvalue="Python.overall_eval" />
+        <item itemvalue="Python.overall_eval_part2" />
+        <item itemvalue="Python.website_main" />
+        <item itemvalue="Python.smoothing_eval" />
         <item itemvalue="Python.simplification_eval" />
-        <item itemvalue="Python.processingresults" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +323,9 @@
       <workItem from="1747644775895" duration="3666000" />
       <workItem from="1747658494411" duration="217000" />
       <workItem from="1747663240056" duration="2846000" />
-      <workItem from="1747688401294" duration="4051000" />
+      <workItem from="1747688401294" duration="4283000" />
+      <workItem from="1747741961572" duration="2901000" />
+      <workItem from="1747745876506" duration="9893000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -639,7 +647,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747690862269</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="50 to 200 eval setup">
+      <option name="closed" value="true" />
+      <created>1747734070632</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1747734070632</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed the input from frontend to backend" />
     <MESSAGE value="now there is a loading popup as well as a Generation failed button. as well the resulting map now pops up (for now static)" />
     <MESSAGE value="The waiting for the paths now works" />
     <MESSAGE value="Ah, perfect, the sessions work and the height of the map box scales" />
@@ -694,19 +709,21 @@
     <MESSAGE value="commented out 15k neutral" />
     <MESSAGE value="parrallelized and made elevation error work" />
     <MESSAGE value="50 to 300 eval setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="50 to 300 eval setup" />
+    <MESSAGE value="50 to 200 eval setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="50 to 200 eval setup" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/LoopBuddy$views.coverage" NAME="views Coverage Results" MODIFIED="1745530801718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$simplification_eval.coverage" NAME="simplification_eval Coverage Results" MODIFIED="1746393726206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1746378386122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1747603066759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval_part2.coverage" NAME="overall_eval_part2 Coverage Results" MODIFIED="1747768567342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval.coverage" NAME="overall_eval Coverage Results" MODIFIED="1747768469325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$views.coverage" NAME="views Coverage Results" MODIFIED="1745530801718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$simplification_eval.coverage" NAME="simplification_eval Coverage Results" MODIFIED="1746393726206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1747569504055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/LoopBuddy$finalize_path.coverage" NAME="finalize_path Coverage Results" MODIFIED="1744661077416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/finalizing" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval.coverage" NAME="overall_eval Coverage Results" MODIFIED="1746609658080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
   </component>
 </project>
