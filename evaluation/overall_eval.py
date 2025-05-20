@@ -19,8 +19,8 @@ Ok so what do we evaluate:
 - Number of steps
 - Number of pavement types
 """
-graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
-
+# graph_filepath = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/preloadedmap/Wien.pkl"
+graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
 def load_graph(graph_filepath):
     # Normal execution
     print("\nLoading the graph!\n")
