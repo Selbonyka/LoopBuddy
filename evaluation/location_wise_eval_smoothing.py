@@ -1,5 +1,6 @@
 import os
 
+from evaluation.eval_utils.eval_utils import generate_random_coordinates
 from evaluation.overall_eval import run_overall_evaluation, load_graph
 
 
@@ -14,9 +15,9 @@ alpha = range(50, 95,10)
 alpha = [x/100 for x in alpha]
 distances = [2000,15000]
 smoothing_dir = "smoothing_results"
-# coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
+coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
 smoothing_param = 0
 print(alpha)
-#
-# if __name__ == "__main__": # so it doesnt run on import
-#     run_smoothing_eval(distances, graph_filepath, coordinates, alpha, smoothing_param, smoothing_dir)
+
+if __name__ == "__main__": # so it doesnt run on import
+    run_smoothing_eval(distances, graph_filepath, coordinates, alpha, smoothing_param, smoothing_dir)
