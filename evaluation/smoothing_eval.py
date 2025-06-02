@@ -1,17 +1,12 @@
-import csv
 import pickle
-import pprint
 import time
-
-import pandas
-import pandas as pd
 
 import networkx as nx
 
 from main import main
 from utils.length import length
-from evaluation.processingresults import loading_full_results, saving_intermediate, loading_csv_results
-from evaluation.processingresults import dash_printer
+from evaluation.eval_utils.processingresults import saving_intermediate, loading_csv_results
+from evaluation.eval_utils.processingresults import dash_printer
 
 """
 To do:

@@ -1,11 +1,10 @@
 import pickle
 import pprint
 import time
-import pandas as pd
 
 import networkx as nx
 
-from evaluation.processingresults import dash_printer, loading_full_results, saving_intermediate
+from evaluation.eval_utils.processingresults import dash_printer, loading_full_results, saving_intermediate
 from main import main
 from utils.length import length
 
