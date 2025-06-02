@@ -132,10 +132,10 @@ def processing_overall(results_neutral, results_avoid,results_prefer, results_pa
 
 
     # Loading in here because I don't wanna mess up that pipeline:
-    neutral = pd.DataFrame.from_dict(results_neutral,index_col=0)
-    prefer = pd.DataFrame.from_dict(results_prefer,index_col=0)
-    avoid = pd.DataFrame.from_dict(results_avoid,index_col=0)
-    paved = pd.DataFrame.from_dict(results_paved,index_col=0)
+    neutral = pd.DataFrame.from_dict(results_neutral)
+    prefer = pd.DataFrame.from_dict(results_prefer)
+    avoid = pd.DataFrame.from_dict(results_avoid)
+    paved = pd.DataFrame.from_dict(results_paved)
 
     # Making the save dir:
     os.makedirs(name_distance, exist_ok=True)
