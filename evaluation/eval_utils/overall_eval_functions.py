@@ -95,12 +95,12 @@ def coordinate_wise_evaluation(pavement_pref, stoplight_pref, steps_pref, graph_
                                                                                      "unpaved")) / len(paths)
         else:
             # If no paths, all of the values should be set to NaN, so the means are calculated cleanly
-            results[coordinate]["Average paths badness"] = np.NaN
-            results[coordinate]["Avg. number of stoplights"] = np.NaN
-            results[coordinate]["Avg. number of steps"] = np.NaN
-            results[coordinate]["Avg. number of paved edges"] = np.NaN
-            results[coordinate]["Avg. number of unpaved edges"] = np.NaN
-            results[coordinate]["Avg. number of edges with unknown surface"] = np.NaN
+            results[coordinate]["Average paths badness"] = np.nan
+            results[coordinate]["Avg. number of stoplights"] = np.nan
+            results[coordinate]["Avg. number of steps"] = np.nan
+            results[coordinate]["Avg. number of paved edges"] = np.nan
+            results[coordinate]["Avg. number of unpaved edges"] = np.nan
+            results[coordinate]["Avg. number of edges with unknown surface"] = np.nan
 
         print(dashes)
         pprint.pprint(results)

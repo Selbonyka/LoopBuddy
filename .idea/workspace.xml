@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="created the location-dependant alpha eval">
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="more fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/overall_eval_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/overall_eval_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/evaluation/location_wise_eval_smoothing.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/location_wise_eval_smoothing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -303,7 +305,7 @@
       <workItem from="1748455490499" duration="23000" />
       <workItem from="1748553465489" duration="1282000" />
       <workItem from="1748866204445" duration="604000" />
-      <workItem from="1748869456068" duration="4656000" />
+      <workItem from="1748869456068" duration="5515000" />
     </task>
     <task id="LOCAL-00001" summary="Testing commit">
       <option name="closed" value="true" />
@@ -657,7 +659,31 @@
       <option name="project" value="LOCAL" />
       <updated>1748877450467</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fixed alpha thing">
+      <option name="closed" value="true" />
+      <created>1748877886701</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1748877886701</updated>
+    </task>
+    <task id="LOCAL-00046" summary="forgot to add execution oops">
+      <option name="closed" value="true" />
+      <created>1748877942080</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1748877942080</updated>
+    </task>
+    <task id="LOCAL-00047" summary="more fixes">
+      <option name="closed" value="true" />
+      <created>1748878155463</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1748878155463</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -687,9 +713,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed the elevation failure and reworked the failure system :D (note: i also tried to do user sessions but gave up so there might be some leftover code)" />
-    <MESSAGE value="added node closeness simplification" />
-    <MESSAGE value="cleaning up code but broke session managment :(" />
     <MESSAGE value="Cleaned up and i think the sessions are working" />
     <MESSAGE value="basically evalutions stuff is mostly ready" />
     <MESSAGE value="ready to run smoothing eval" />
@@ -712,23 +735,16 @@
     <MESSAGE value="overall_eval setup" />
     <MESSAGE value="corrected graph filepath" />
     <MESSAGE value="created the location-dependant alpha eval" />
-    <option name="LAST_COMMIT_MESSAGE" value="created the location-dependant alpha eval" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/evaluation/overall_eval.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fixed alpha thing" />
+    <MESSAGE value="forgot to add execution oops" />
+    <MESSAGE value="more fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="more fixes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1746378386122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1747603066759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$location_wise_eval_smoothing.coverage" NAME="location_wise_eval_smoothing Coverage Results" MODIFIED="1748877767021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$location_wise_eval_smoothing.coverage" NAME="location_wise_eval_smoothing Coverage Results" MODIFIED="1748878263934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval_part2.coverage" NAME="overall_eval_part2 Coverage Results" MODIFIED="1747768745495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval.coverage" NAME="overall_eval Coverage Results" MODIFIED="1747768805888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
