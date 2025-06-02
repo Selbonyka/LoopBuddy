@@ -18,6 +18,6 @@ smoothing_dir = "smoothing_results"
 coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
 smoothing_param = 0
 print(alpha)
-#
-# if __name__ == "__main__": # so it doesnt run on import
-#     run_smoothing_eval(distances, graph_filepath, coordinates, alpha, smoothing_param, smoothing_dir)
+
+if __name__ == "__main__": # so it doesnt run on import
+    run_smoothing_eval(distances, graph_filepath, coordinates, alpha, smoothing_param, smoothing_dir)
