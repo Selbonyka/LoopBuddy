@@ -11,7 +11,6 @@ def node_simplification(G, nodes_to_simplify, node_closeness):
     :return: dict of the format {u':u} so it can be used for R_s_prime
     """
 
-
     simplification_subgraph = G.subgraph(nodes_to_simplify) # generating the subgraph of the nodes to be simplified
 
     nodes, data = zip(*simplification_subgraph.nodes(data=True))# getting the data about the nodes
