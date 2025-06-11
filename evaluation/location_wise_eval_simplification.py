@@ -16,7 +16,7 @@ simplification_list = range(0,150,10)
 distances = [2000,15000]
 alpha = 0.85
 simplifications_dir = "simplification_results"
-coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
+coordinates = generate_random_coordinates(10,11111,load_graph(graph_filepath))
 smoothing_param = 0
 
 if __name__ == "__main__": # so it doesnt run on import
