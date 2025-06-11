@@ -4,245 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="fixed the dict thing">
-      <change afterPath="$PROJECT_DIR$/evaluation/results_processing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation/results_processing/gathering_smoothing_results.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/15_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/15_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/15_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/16_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/16_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/16_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/16_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/17_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/17_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/22_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/23_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/23_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/24_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/24_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/24_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/24_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/25_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/25_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/25_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/25_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/26_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/26_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/26_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/26_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/27_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/27_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/27_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/27_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/28_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/32_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/32_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/33_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/33_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/33_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/33_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/34_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/34_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/34_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/34_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/35_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/35_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/35_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/35_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/36_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/36_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/36_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/36_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/37_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/37_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/37_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/37_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/38_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/38_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/42_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/42_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/43_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/43_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/43_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/43_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/44_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/44_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/44_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/44_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/45_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/45_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/45_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/45_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/46_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/46_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/46_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/46_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/47_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/47_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/47_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/47_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/48_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/48_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/48_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/53_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/53_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/53_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/53_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/54_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/54_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/54_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/54_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/55_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/55_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/55_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/55_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/56_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/56_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/56_3_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/56_4_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/57_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/57_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/58_1_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Elevation tifs/58_2_dgm.tif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graph_preprocessing/Graph_preprocessing.ipynb" afterDir="false" />
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="first processing of the result yippee">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/alpha_visualization.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/alpha_visualization.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/overall_aggregation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/overall_aggregation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/simplification_visualization.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/simplification_visualization.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/website_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/website_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/avoid.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/badness.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/elapsed_time.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/neutral.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/path_number.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/paved.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/10k_simplification_5_50/preferred.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/avoid.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/badness.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/elapsed_time.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/neutral.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/path_number.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/paved.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/5k_simplification_5_50/preferred.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50avoid.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50neutral.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50paved.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_10k_simplification_5_50/10k_simplification_5_50prefer.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_15k_simplification_5_50/15k_simplification_5_50neutral.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50avoid.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50neutral.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50paved.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messedupelevation/intermediate_5k_simplification_5_50/5k_simplification_5_50prefer.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_10000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_10000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_10000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_10000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_10000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_10000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_10000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_15000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_15000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_15000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_15000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_15000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_15000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_15000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_2000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_2000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_2000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_2000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_2000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_2000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_2000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_5000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_5000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_5000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_5000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_5000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_5000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_overall_results/overall_5000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_10000/overall_10000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_15000/overall_15000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_2000/overall_2000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/50.0/intermediate_/overall_5000/overall_5000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_10000/overall_10000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_15000/overall_15000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_2000/overall_2000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/60.0/intermediate_/overall_5000/overall_5000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_10000/overall_10000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_15000/overall_15000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_2000/overall_2000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/70.0/intermediate_/overall_5000/overall_5000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_10000/overall_10000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_15000/overall_15000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_2000/overall_2000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/80.0/intermediate_/overall_5000/overall_5000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_10000/overall_10000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_15000/overall_15000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_2000/overall_2000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/smoothing_results/90.0/intermediate_/overall_5000/overall_5000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/simplification.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/simplification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/gathering_smoothing_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/gathering_smoothing_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +94,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -544,15 +308,8 @@
       <workItem from="1748866204445" duration="604000" />
       <workItem from="1748869456068" duration="6087000" />
       <workItem from="1748879567873" duration="25303000" />
-      <workItem from="1749245362549" duration="4632000" />
-    </task>
-    <task id="LOCAL-00002" summary="Got out the coordinates from the map">
-      <option name="closed" value="true" />
-      <created>1744473149363</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1744473149363</updated>
+      <workItem from="1749245362549" duration="5302000" />
+      <workItem from="1749635705327" duration="4631000" />
     </task>
     <task id="LOCAL-00003" summary="starting to get the button to work">
       <option name="closed" value="true" />
@@ -938,7 +695,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748879653689</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="first processing of the result yippee">
+      <option name="closed" value="true" />
+      <created>1749393739101</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1749393739101</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -968,7 +733,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="basically evalutions stuff is mostly ready" />
     <MESSAGE value="ready to run smoothing eval" />
     <MESSAGE value="Added the environment file" />
     <MESSAGE value="updated the env file" />
@@ -993,12 +757,13 @@
     <MESSAGE value="forgot to add execution oops" />
     <MESSAGE value="more fixes" />
     <MESSAGE value="fixed the dict thing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the dict thing" />
+    <MESSAGE value="first processing of the result yippee" />
+    <option name="LAST_COMMIT_MESSAGE" value="first processing of the result yippee" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1746378386122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1747603066759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$location_wise_eval_smoothing.coverage" NAME="location_wise_eval_smoothing Coverage Results" MODIFIED="1748878263934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval_part2.coverage" NAME="overall_eval_part2 Coverage Results" MODIFIED="1747768745495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -1008,7 +773,7 @@
     <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1749331958044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$gathering_smoothing_results.coverage" NAME="gathering_smoothing_results Coverage Results" MODIFIED="1749335158464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$gathering_smoothing_results.coverage" NAME="gathering_smoothing_results Coverage Results" MODIFIED="1749640312833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$finalize_path.coverage" NAME="finalize_path Coverage Results" MODIFIED="1744661077416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/finalizing" />
   </component>
 </project>

@@ -11,9 +11,10 @@ def run_smoothing_eval(distances, graph_filepath, coordinates_list, alphalist, s
 
 
 graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
-alpha = range(50, 95,10)
-alpha = [x/100 for x in alpha]
+# alpha = range(50, 95,10)
+# alpha = [x/100 for x in alpha]
 distances = [2000,15000]
+alpha = 85
 smoothing_dir = "smoothing_results"
 coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
 smoothing_param = 0

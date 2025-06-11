@@ -2,20 +2,19 @@
 import pandas as pd
 import numpy as np
 import os
+import matplotlib.pyplot as plt
 
-distances = [2000,5000,10000,15000]#distance analyzed
+from IPython.core.display_functions import display
+
 
 result_dir = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/results/smoothing_results"
 
 factor_folders = os.listdir(result_dir) # getting the upper layer of results
+
 print(os.listdir(result_dir))
 
-# Creating the data frames for each of the distances:
-column_names = ['State', 'Factor', 'N paths', 'Time','Badness', 'Stoplights', 'Steps', 'Paved', 'Unpaved', 'Unknown', 'Failed']
-# all_2000 = pd.DataFrame(columns= column_names)
-# all_5000 = pd.DataFrame(columns= column_names)
-# all_10000 = pd.DataFrame(columns= column_names)
-# all_15000 = pd.DataFrame(columns= column_names)
+
+column_names = ['State', 'Alpha', 'N paths', 'Time','Badness', 'Stoplights', 'Steps', 'Paved', 'Unpaved', 'Unknown', 'Failed']
 
 distance_dfs = {
     '2000': pd.DataFrame(columns=column_names),
@@ -36,7 +35,6 @@ for factor in factor_folders: # list the factor folders
         files_dir = os.path.join(current_factor_dir, dist)
         for file in files: # now we get to individual files
             setting_mode = (file.split('.')[0]).split('_')[2]
-            print(factor,numerical_distance , setting_mode)
             current_file_dir = os.path.join(files_dir, file)
 
             # creating a row that we will later append
@@ -62,17 +60,105 @@ for factor in factor_folders: # list the factor folders
             )
 
 
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', None)
+
+averaged_results = {} # just stuck with the dict format for some reason
+combined_averaged_df = []
+
+# Creating the average values dfs (i did create the dict one first but then also createn one with a list to export to csv easier)
+
+for key in distance_dfs:
+
+    distance_dfs[key].sort_values(by=['Factor', 'State'], inplace=True)
+    distance_dfs[key].reset_index(drop=True, inplace=True)
+    print("\n\n\n\n")
+    print(key)
+    display(distance_dfs[key])
+
+    ## Adding the average values
+    averaged_df = distance_dfs[key]
+    averaged_df.drop(columns = ['State'], inplace = True)
+    averaged_df = averaged_df.groupby(by=['Factor']).mean()
+
+    averaged_results[key] = averaged_df
+
+    # Creating a list of dfs so we can then concatenate it into one with avg values
+    averaged_df_with_dist = averaged_df.copy()
+    averaged_df_with_dist['Distance'] = int(key)  # or keep as string if preferred
+    combined_averaged_df.append(averaged_df_with_dist.reset_index())
+
+# Just displaying the avg values
+for key in averaged_results:
+    print("\n\n\n\n")
+    print(key)
+    display(averaged_results[key])
 
 
+# Plot the values for each alpha for each dist separately:
+all_factors = sorted(list(set().union(*[df.index for df in averaged_results.values()])))
 
-print(distance_dfs["2000"])
+x = np.arange(len(all_factors))  # numeric x positions for factors
+bar_width = 0.15
+
+plt.figure(figsize=(12, 6))
+ax1 = plt.gca()
+ax2 = ax1.twinx()
+
+colors = plt.cm.viridis(np.linspace(0, 1, len(averaged_results)))
+
+for i, (distance, df) in enumerate(averaged_results.items()):
+    df = df.reindex(all_factors)
+
+    ax1.plot(x, df['N paths'], label=f'{distance}m - Paths', color=colors[i], marker='o')
+
+    offset = (i - len(averaged_results) / 2) * bar_width
+    ax2.bar(x + offset, df['Time'], width=bar_width, alpha=0.5, label=f'{distance}m - Time', color=colors[i])
+
+ax1.set_xticks(x)
+ax1.set_xticklabels(all_factors, rotation=45)
+ax1.set_xlabel('Factor')
+ax1.set_ylabel('Number of paths')
+ax2.set_ylabel('Time (s)')
+
+plt.title('Paths (line) and Time (bar) per Factor and Distance')
+lines_labels, lines_handles = ax1.get_legend_handles_labels()
+bars_labels, bars_handles = ax2.get_legend_handles_labels()
+plt.legend(lines_labels + bars_labels, lines_handles + bars_handles, loc='upper left')
 
 
+plt.tight_layout()
+plt.grid(True, axis='y', linestyle='--', alpha=0.4)
+plt.show()
 
 
+final_combined_df = pd.concat(combined_averaged_df, ignore_index=True)
+display(final_combined_df)
 
 
+# Let's add some averaging over the distance as well:
+factor_avg = final_combined_df.groupby('Factor')[['N paths', 'Time']].mean().reset_index()
+
+x = np.arange(len(factor_avg['Factor']))
+
+fig, ax1 = plt.subplots(figsize=(10, 6))
+
+# Number of paths:
+ax1.plot(x, factor_avg['N paths'], color='#00008B', marker='o', label='Avg. N paths')
+ax1.set_ylabel('Number of paths')
+ax1.tick_params(axis='y')
+
+# Time:
+ax2 = ax1.twinx()
+ax2.bar(x, factor_avg['Time'], alpha=0.5, color='tab:green', label='Avg. Time', width=0.4)
+ax2.set_ylabel('Time (s)')
+ax2.tick_params(axis='y')
 
 
-
-
+plt.xticks(x, factor_avg['Factor'], rotation=45)
+plt.title('Average Number of Paths and Time per Factor (Across All Distances)')
+fig.tight_layout()
+plt.grid(True, axis='x', linestyle='--', alpha=0.4)
+plt.show()
