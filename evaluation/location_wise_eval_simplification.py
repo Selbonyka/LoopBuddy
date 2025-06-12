@@ -12,7 +12,7 @@ def run_simplification_eval(distances, graph_filepath, coordinates_list, alpha, 
 
 graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
 
-simplification_list = range(0,150,10)
+simplification_list = [150]
 distances = [2000,15000]
 alpha = 0.85
 simplifications_dir = "simplification_results"
