@@ -38,7 +38,7 @@ for factor in factor_folders: # list the factor folders
             current_file_dir = os.path.join(files_dir, file)
 
             # creating a row that we will later append
-            row = {'State': setting_mode, 'Factor': factor, 'N paths': 0, 'Time': 0,'Badness':0,
+            row = {'State': setting_mode, 'Alpha': factor, 'N paths': 0, 'Time': 0,'Badness':0,
                    'Stoplights': 0, 'Steps': 0, 'Paved': 0, 'Unpaved': 0, 'Unknown': 0, 'Failed': 0}
 
             # processing the data
@@ -72,7 +72,7 @@ combined_averaged_df = []
 
 for key in distance_dfs:
 
-    distance_dfs[key].sort_values(by=['Factor', 'State'], inplace=True)
+    distance_dfs[key].sort_values(by=['Alpha', 'State'], inplace=True)
     distance_dfs[key].reset_index(drop=True, inplace=True)
     print("\n\n\n\n")
     print(key)
@@ -81,7 +81,7 @@ for key in distance_dfs:
     ## Adding the average values
     averaged_df = distance_dfs[key]
     averaged_df.drop(columns = ['State'], inplace = True)
-    averaged_df = averaged_df.groupby(by=['Factor']).mean()
+    averaged_df = averaged_df.groupby(by=['Alpha']).mean()
 
     averaged_results[key] = averaged_df
 
@@ -119,11 +119,11 @@ for i, (distance, df) in enumerate(averaged_results.items()):
 
 ax1.set_xticks(x)
 ax1.set_xticklabels(all_factors, rotation=45)
-ax1.set_xlabel('Factor')
+ax1.set_xlabel('Alpha')
 ax1.set_ylabel('Number of paths')
 ax2.set_ylabel('Time (s)')
 
-plt.title('Paths (line) and Time (bar) per Factor and Distance')
+plt.title('Paths (line) and Time (bar) per Alpha and Distance')
 lines_labels, lines_handles = ax1.get_legend_handles_labels()
 bars_labels, bars_handles = ax2.get_legend_handles_labels()
 plt.legend(lines_labels + bars_labels, lines_handles + bars_handles, loc='upper left')
@@ -139,9 +139,9 @@ display(final_combined_df)
 
 
 # Let's add some averaging over the distance as well:
-factor_avg = final_combined_df.groupby('Factor')[['N paths', 'Time']].mean().reset_index()
+factor_avg = final_combined_df.groupby('Alpha')[['N paths', 'Time']].mean().reset_index()
 
-x = np.arange(len(factor_avg['Factor']))
+x = np.arange(len(factor_avg['Alpha']))
 
 fig, ax1 = plt.subplots(figsize=(10, 6))
 
@@ -157,8 +157,8 @@ ax2.set_ylabel('Time (s)')
 ax2.tick_params(axis='y')
 
 
-plt.xticks(x, factor_avg['Factor'], rotation=45)
-plt.title('Average Number of Paths and Time per Factor (Across All Distances)')
+plt.xticks(x, factor_avg['Alpha'], rotation=45)
+plt.title('Average Number of Paths and Time per Alpha (Across All Distances)')
 fig.tight_layout()
 plt.grid(True, axis='x', linestyle='--', alpha=0.4)
 plt.show()
