@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from IPython.core.display_functions import display
 
 
-result_dir = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/results/simplification_results"
+result_dir = "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/results/simplification_results_20"
 
 factor_folders = os.listdir(result_dir) # getting the upper layer of results
 

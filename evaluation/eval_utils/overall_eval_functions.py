@@ -120,7 +120,7 @@ def run_overall_evaluation(distances, graph_filepath, coordinates_list, alpha, s
         name_state = name_distance + "_"+state
         results_neutral = coordinate_wise_evaluation("Neutral", "Neutral", "Neutral", graph_filepath, distance,
                                                      coordinates_list, alpha, simplification_param)
-        saving_intermediate(results_neutral, name_state, os.path.join(dir, os.path.join("intermediate_", name_distance)))
+        saving_intermediate(results_neutral, name_state, os.path.join(dir, os.path.join("intermediate_", name_distance))) # messed up here, but i didn't wanna re-run or change the whole structure when I caught it, so it made sense to keep it this way
 
         state = "avoid"
         name_state = name_distance + "_"+ state

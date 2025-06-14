@@ -13,9 +13,9 @@ Ok so what do we evaluate:
 graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
 
 # Settings
-distances = [2000, 5000, 20000]
-coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
+distances = [2000,15000]
+coordinates = generate_random_coordinates(100,12345,load_graph(graph_filepath)) # changed the seed to get other data
 alpha = 0.85
-node_closeness = 65
+node_closeness = 40
 if __name__ == "__main__": # so it doesnt run on import
     run_overall_evaluation(distances, graph_filepath, coordinates, alpha, node_closeness)
