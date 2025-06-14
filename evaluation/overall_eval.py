@@ -19,4 +19,4 @@ alpha = 0.85
 node_closeness = 40
 overall_dir = "overall_results"
 if __name__ == "__main__": # so it doesnt run on import
-    run_overall_evaluation(distances, graph_filepath, coordinates, alpha, overall_dir)
+    run_overall_evaluation(distances, graph_filepath, coordinates, alpha,node_closeness, overall_dir)
