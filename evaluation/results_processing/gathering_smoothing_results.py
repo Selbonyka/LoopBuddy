@@ -38,7 +38,7 @@ for factor in factor_folders: # list the factor folders
             current_file_dir = os.path.join(files_dir, file)
 
             # creating a row that we will later append
-            row = {'State': setting_mode, 'Alpha': factor, 'N paths': 0, 'Time': 0,'Badness':0,
+            row = {'State': setting_mode, 'Alpha': float(factor) / 100, 'N paths': 0, 'Time': 0,'Badness':0,
                    'Stoplights': 0, 'Steps': 0, 'Paved': 0, 'Unpaved': 0, 'Unknown': 0, 'Failed': 0}
 
             # processing the data
@@ -113,6 +113,9 @@ for i, (distance, df) in enumerate(averaged_results.items()):
     df = df.reindex(all_factors)
 
     ax1.plot(x, df['N paths'], label=f'{distance}m - Paths', color=colors[i], marker='o')
+    # line = ax1.plot(x, df['N paths'], label=f'{distance}m - Paths', color=colors[i], marker='o')
+    # for xi, yi in zip(x, df['N paths']):
+    #     ax1.annotate(f'{yi:.0f}', (xi, yi), textcoords="offset points", xytext=(0, 5), ha='center', fontsize=8)
 
     offset = (i - len(averaged_results) / 2) * bar_width
     ax2.bar(x + offset, df['Time'], width=bar_width, alpha=0.5, label=f'{distance}m - Time', color=colors[i])
@@ -147,6 +150,9 @@ fig, ax1 = plt.subplots(figsize=(10, 6))
 
 # Number of paths:
 ax1.plot(x, factor_avg['N paths'], color='#00008B', marker='o', label='Avg. N paths')
+for xi, yi in zip(x, factor_avg['N paths']):
+    ax1.annotate(f'{yi:.1f}', (xi, yi), textcoords="offset points", xytext=(0, 12),
+                 ha='center', va='top', fontsize=8)
 ax1.set_ylabel('Number of paths')
 ax1.tick_params(axis='y')
 

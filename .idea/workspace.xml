@@ -4,54 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="forgot da dir?">
-      <change afterPath="$PROJECT_DIR$/evaluation/results_processing/var_analysis_overall_results.py" afterDir="false" />
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="messy var analysis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/overall_aggregation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/overall_distance_aggregation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_10000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_10000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_10000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_10000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_10000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_10000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_10000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_10000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_15000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_15000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_15000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_15000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_15000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_15000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_15000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_15000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_2000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_2000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_2000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_2000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_2000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_2000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_2000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_2000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/failed.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_5000/failed.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_5000/means_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_5000/means_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_5000/means_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/means_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_5000/means_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/pref_diff_neutral_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_5000/pref_diff_neutral_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_5000/pref_diff_prefer_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_5000/pref_diff_prefer_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_10000/overall_10000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_10000/overall_10000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_10000/overall_10000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_10000/overall_10000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_10000/overall_10000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_10000/overall_10000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_10000/overall_10000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_10000/overall_10000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_15000/overall_15000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_15000/overall_15000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_15000/overall_15000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_15000/overall_15000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_15000/overall_15000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_15000/overall_15000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_15000/overall_15000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_15000/overall_15000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_2000/overall_2000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_2000/overall_2000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_2000/overall_2000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_2000/overall_2000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_2000/overall_2000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_2000/overall_2000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_2000/overall_2000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_2000/overall_2000_prefer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_5000/overall_5000_avoid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_5000/overall_5000_avoid.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_5000/overall_5000_neutral.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_5000/overall_5000_neutral.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_5000/overall_5000_paved.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_5000/overall_5000_paved.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/overall_results/intermediate_/overall_5000/overall_5000_prefer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results/overall_results_intermediate/intermediate_/overall_5000/overall_5000_prefer.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/eval_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/eval_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/gathering_smoothing_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/gathering_smoothing_results.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/overall_distance_aggregation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/overall_distance_aggregation.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/var_analysis_overall_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/var_analysis_overall_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +75,7 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.home.html.executor": "Run",
+    "Python.eval_utils.executor": "Run",
     "Python.finalize_path.executor": "Run",
     "Python.gathering_simplification_results.executor": "Run",
     "Python.gathering_smoothing_results.executor": "Run",
@@ -159,7 +118,7 @@
       <recent name="$PROJECT_DIR$/evaluation/results/smoothing_results" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.var_analysis_overall_results">
+  <component name="RunManager">
     <configuration name="gathering_simplification_results" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LoopBuddy" />
       <option name="ENV_FILES" value="" />
@@ -277,8 +236,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.var_analysis_overall_results" />
         <item itemvalue="Python.gathering_simplification_results" />
+        <item itemvalue="Python.var_analysis_overall_results" />
         <item itemvalue="Python.gathering_smoothing_results" />
         <item itemvalue="Python.website_main" />
         <item itemvalue="Python.smoothing_eval" />
@@ -361,15 +320,9 @@
       <workItem from="1749676326966" duration="6105000" />
       <workItem from="1749827576830" duration="792000" />
       <workItem from="1749925674371" duration="1777000" />
-      <workItem from="1749983051564" duration="4709000" />
-    </task>
-    <task id="LOCAL-00015" summary="now there is a loading popup as well as a Generation failed button. as well the resulting map now pops up (for now static)">
-      <option name="closed" value="true" />
-      <created>1745513531348</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1745513531348</updated>
+      <workItem from="1749983051564" duration="11661000" />
+      <workItem from="1750338625501" duration="757000" />
+      <workItem from="1750413718762" duration="860000" />
     </task>
     <task id="LOCAL-00016" summary="The waiting for the paths now works">
       <option name="closed" value="true" />
@@ -755,7 +708,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749927214547</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="messy var analysis">
+      <option name="closed" value="true" />
+      <created>1749988881566</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1749988881566</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -785,7 +746,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="made the simplification resilient to no paths being found" />
     <MESSAGE value="commented out 15k neutral" />
     <MESSAGE value="parrallelized and made elevation error work" />
     <MESSAGE value="50 to 300 eval setup" />
@@ -810,13 +770,14 @@
     <MESSAGE value="let's run the overall !!!" />
     <MESSAGE value="forgot da dir" />
     <MESSAGE value="forgot da dir?" />
-    <option name="LAST_COMMIT_MESSAGE" value="forgot da dir?" />
+    <MESSAGE value="messy var analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="messy var analysis" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/LoopBuddy$var_analysis_overall_results.coverage" NAME="var_analysis_overall_results Coverage Results" MODIFIED="1749988727566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$var_analysis_overall_results.coverage" NAME="var_analysis_overall_results Coverage Results" MODIFIED="1749996322581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1746378386122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1747603066759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$location_wise_eval_smoothing.coverage" NAME="location_wise_eval_smoothing Coverage Results" MODIFIED="1748878263934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval_part2.coverage" NAME="overall_eval_part2 Coverage Results" MODIFIED="1747768745495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -826,8 +787,9 @@
     <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1749331958044" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$gathering_simplification_results.coverage" NAME="gathering_simplification_results Coverage Results" MODIFIED="1749983323733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$gathering_smoothing_results.coverage" NAME="gathering_smoothing_results Coverage Results" MODIFIED="1749926290169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$eval_utils.coverage" NAME="eval_utils Coverage Results" MODIFIED="1750414549932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/eval_utils" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$gathering_simplification_results.coverage" NAME="gathering_simplification_results Coverage Results" MODIFIED="1750414020686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$gathering_smoothing_results.coverage" NAME="gathering_smoothing_results Coverage Results" MODIFIED="1749997792499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$finalize_path.coverage" NAME="finalize_path Coverage Results" MODIFIED="1744661077416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/finalizing" />
   </component>
 </project>
