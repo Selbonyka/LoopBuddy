@@ -20,7 +20,7 @@ def generate_random_coordinates(number, seed, G):
     # Getting the coords that we will test
     coords = [(float(d['x']), float(d['y'])) for d in data]
     # we need the float() here ^ cuz we get np.float as a return, usage ofwhich is discouraged from what i undestand
-    return nodes,coords, street_count
+    return nodes,coords
 
 
 def generate_random_filtered_coordinates(number, seed, G, min_street_count):
