@@ -36,7 +36,7 @@ def coordinate_wise_evaluation(pavement_pref, stoplight_pref, steps_pref, graph_
         # Neutral settings
         preference_dict = {"total_length": distance, "elevation_requested": 0, "elevation_error": 10000,
                            "pavement_preferences": pavement_pref,
-                           "stoplights_preference": stoplight_pref, "steps_preference": steps_pref, "sharing_allowance": 0.3,
+                           "stoplights_preference": stoplight_pref, "steps_preference": steps_pref, "sharing_allowance": 1,
                            "node_simplification_status": "True", "allowed_distance_between_nodes": simplfication_param,
                            "stoplight_penalty_strength": 1.1, "steps_penalty_strength": 1.2,
                            "pavement_penalty_strength": 1.05, "error": 60,

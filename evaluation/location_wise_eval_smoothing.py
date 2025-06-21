@@ -16,7 +16,7 @@ graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
 distances = [2000,15000]
 alpha = [85/100]
 smoothing_dir = "smoothing_results"
-coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
+nodes, coordinates = generate_random_coordinates(20,11111,load_graph(graph_filepath))
 smoothing_param = 0
 print(alpha)
 
