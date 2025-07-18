@@ -112,21 +112,18 @@ colors = plt.cm.viridis(np.linspace(0, 1, len(averaged_results)))
 for i, (distance, df) in enumerate(averaged_results.items()):
     df = df.reindex(all_factors)
 
-    ax1.plot(x, df['N paths'], label=f'{distance}m - Paths', color=colors[i], marker='o')
-    # line = ax1.plot(x, df['N paths'], label=f'{distance}m - Paths', color=colors[i], marker='o')
-    # for xi, yi in zip(x, df['N paths']):
-    #     ax1.annotate(f'{yi:.0f}', (xi, yi), textcoords="offset points", xytext=(0, 5), ha='center', fontsize=8)
+    ax1.plot(x, df['N paths'], label=f' $n_P$: {distance}m', color=colors[i], marker='o')
 
     offset = (i - len(averaged_results) / 2) * bar_width
-    ax2.bar(x + offset, df['Time'], width=bar_width, alpha=0.5, label=f'{distance}m - Time', color=colors[i])
+    ax2.bar(x + offset, df['Time'], width=bar_width, alpha=0.5, label=f'$T$: {distance}m', color=colors[i])
 
 ax1.set_xticks(x)
 ax1.set_xticklabels(all_factors, rotation=45)
-ax1.set_xlabel('Alpha')
-ax1.set_ylabel('Number of paths')
-ax2.set_ylabel('Time (s)')
+ax1.set_xlabel('Alpha - $\\alpha$')
+ax1.set_ylabel('Number of paths - $n_P$')
+ax2.set_ylabel('Time - $T$ (s)')
 
-plt.title('Paths (line) and Time (bar) per Alpha and Distance')
+plt.title('$n_P$ (line) and $T$ (bar) per $\\alpha$ and $d$')
 lines_labels, lines_handles = ax1.get_legend_handles_labels()
 bars_labels, bars_handles = ax2.get_legend_handles_labels()
 plt.legend(lines_labels + bars_labels, lines_handles + bars_handles, loc='upper left')
@@ -153,18 +150,18 @@ ax1.plot(x, factor_avg['N paths'], color='#00008B', marker='o', label='Avg. N pa
 for xi, yi in zip(x, factor_avg['N paths']):
     ax1.annotate(f'{yi:.1f}', (xi, yi), textcoords="offset points", xytext=(0, 12),
                  ha='center', va='top', fontsize=8)
-ax1.set_ylabel('Number of paths')
+ax1.set_ylabel('Number of paths - $n_P$')
 ax1.tick_params(axis='y')
 
 # Time:
 ax2 = ax1.twinx()
 ax2.bar(x, factor_avg['Time'], alpha=0.5, color='tab:green', label='Avg. Time', width=0.4)
-ax2.set_ylabel('Time (s)')
+ax2.set_ylabel('Time - $T$ (s)')
 ax2.tick_params(axis='y')
 
 
 plt.xticks(x, factor_avg['Alpha'], rotation=45)
-plt.title('Average Number of Paths and Time per Alpha (Across All Distances)')
+plt.title('Avg. $n_P$ (line) and $T$ (bar) per $\\alpha$ (for all $d$ values)')
 fig.tight_layout()
 plt.grid(True, axis='x', linestyle='--', alpha=0.4)
 plt.show()

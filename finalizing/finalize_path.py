@@ -28,6 +28,7 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
     paths_elevations = []
     paths_badness = []
     elevation_appropriate = 0
+    distance_filter_passed = False
 
     # filtering out the nodes that only have both u and v
     valid_m_nodes = [m[0] for m in G.nodes(data=True) if "Mm" in m[1] and len(m[1]["Mm"]) > 1]
@@ -68,6 +69,8 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
             length_path = length(G, combinedPath,lengths_data )
 
             if total_length_bounds[0]<=length_path <= total_length_bounds[1]: # checking if the path is in bounds
+                distance_filter_passed = True
+
 
                 # checking elevation changes
                 pos_change, neg_change = compute_elevation_change(G, combinedPath)
@@ -85,7 +88,7 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
                     elevation_appropriate -=1 # the path did not path the elevation condition
 
     # this is needed for the appropriate error statement
-    if elevation_appropriate == 0:
+    if elevation_appropriate == 0 & distance_filter_passed == True:
         elevation_failure = True
     else:
         elevation_failure = False
