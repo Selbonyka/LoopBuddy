@@ -87,7 +87,7 @@ for key in distance_dfs:
 
     # Creating a list of dfs so we can then concatenate it into one with avg values
     averaged_df_with_dist = averaged_df.copy()
-    averaged_df_with_dist['Distance'] = int(key)  # or keep as string if preferred
+    averaged_df_with_dist['Distance'] = int(key)
     combined_averaged_df.append(averaged_df_with_dist.reset_index())
 
 # Just displaying the avg values
@@ -103,30 +103,20 @@ all_factors = sorted(list(set().union(*[df.index for df in averaged_results.valu
 x = np.arange(len(all_factors))  # numeric x positions for factors
 bar_width = 0.15
 
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(12, 6), dpi = 300)
 ax1 = plt.gca()
 ax2 = ax1.twinx()
 
-colors = plt.cm.Set2(np.linspace(0, 1, len(averaged_results)))
-
-# for i, (distance, df) in enumerate(averaged_results.items()):
-#     df = df.reindex(all_factors)
-#
-#     ax1.plot(x, df['N paths'], label=f'{distance}m - Paths', color=colors[i], marker='o')
-#
-#     offset = (i - len(averaged_results) / 2) * bar_width
-#     ax2.bar(x + offset, df['Time'], width=bar_width, alpha=0.5, label=f'{distance}m - Time', color=colors[i])
+colors = plt.cm.Paired(np.linspace(0, 0.5, len(averaged_results)))
 
 ## Version with number labels:
 for i, (distance, df) in enumerate(averaged_results.items()):
     df = df.reindex(all_factors)
 
-    # Plot line and annotate points
     line = ax1.plot(x, df['N paths'], label=f'$n_P$: {distance}m', color=colors[i], marker='o')
     for xi, yi in zip(x, df['N paths']):
         ax1.annotate(f'{yi:.1f}', (xi, yi), textcoords="offset points", xytext=(0, 4), ha='center', fontsize=8)
 
-    # Plot bars
     offset = (i - len(averaged_results) / 2) * bar_width
     bars = ax2.bar(x + offset, df['Time'], width=bar_width, alpha=0.5, label=f'$T$: {distance}', color=colors[i])
 
@@ -136,7 +126,7 @@ ax1.set_xlabel('Simplification Distance - $d_S$ (m)')
 ax1.set_ylabel('Number of paths - $n_P$')
 ax2.set_ylabel('Time - $T$ (s)')
 
-plt.title('$n_P$ (line) and $T$ (bar) values per $d_S$ and $d$')
+plt.title('$n_P$ (line) and $T$ (bar) values per $d_S$')
 lines_labels, lines_handles = ax1.get_legend_handles_labels()
 bars_labels, bars_handles = ax2.get_legend_handles_labels()
 
@@ -151,40 +141,12 @@ plt.show()
 final_combined_df = pd.concat(combined_averaged_df, ignore_index=True)
 display(final_combined_df)
 
-
-
-
-#
-# # Let's add some averaging over the distance as well:
-# factor_avg = final_combined_df.groupby('Simplification Distance')[['N paths', 'Time']].mean().reset_index()
-#
-# x = np.arange(len(factor_avg['Simplification Distance']))
-#
-# fig, ax1 = plt.subplots(figsize=(10, 6))
-#
-# # Number of paths:
-# ax1.plot(x, factor_avg['N paths'], color='#00008B', marker='o', label='Avg. N paths')
-# ax1.set_ylabel('Number of paths')
-# ax1.tick_params(axis='y')
-#
-# # Time:
-# ax2 = ax1.twinx()
-# ax2.bar(x, factor_avg['Time'], alpha=0.5, color='tab:green', label='Avg. Time', width=0.4)
-# ax2.set_ylabel('Time (s)')
-# ax2.tick_params(axis='y')
-#
-#
-# plt.xticks(x, factor_avg['Simplification Distance'], rotation=45)
-# plt.title('Average Number of Paths and Time per Simplification Distance (Across All Distances)')
-# fig.tight_layout()
-# plt.grid(True, axis='x', linestyle='--', alpha=0.4)
-# plt.show()
 # Let's add some averaging over the distance as well:
 factor_avg = final_combined_df.groupby('Simplification Distance')[['N paths', 'Time']].mean().reset_index()
 
 x = np.arange(len(factor_avg['Simplification Distance']))
 
-fig, ax1 = plt.subplots(figsize=(10, 6))
+fig, ax1 = plt.subplots(figsize=(10, 6), dpi = 300)
 
 # Number of paths:
 ax1.plot(x, factor_avg['N paths'], color='#00008B', marker='o', label='Avg. N paths')
@@ -197,13 +159,16 @@ ax1.tick_params(axis='y')
 
 # Time:
 ax2 = ax1.twinx()
-ax2.bar(x, factor_avg['Time'], alpha=0.5, color='tab:pink', label='Avg. Time', width=0.4)
+ax2.bar(x, factor_avg['Time'], alpha=0.5, color='salmon', label='Avg. Time', width=0.4)
 ax2.set_ylabel('Time - $T$ (s)')
+ax1.set_xlabel('Simplification Distance - $d_S$ (m)')
 ax2.tick_params(axis='y')
+ax1.grid(True, axis='y', linestyle='--', alpha=0.4)  # <- Enable grid with same style
+
 
 plt.xticks(x, factor_avg['Simplification Distance'], rotation=45)
-plt.title('Avg. $n_P$ (line) and $T$ (bar) values per $d_S$ (for all $d$ values)')
+plt.title('Avg. $n_P$ (line) and $T$ (bar) values per $d_S$')
 fig.tight_layout()
-plt.grid(True, axis='x', linestyle='--', alpha=0.4)
+# plt.grid(True, axis='x', linestyle='--', alpha=0.4)
 
 plt.show()
