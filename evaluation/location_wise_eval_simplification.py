@@ -9,7 +9,6 @@ def run_simplification_eval(distances, graph_filepath, coordinates_list, alpha, 
         current_dir = os.path.join(dir, str(s))#multiplying by 100 just to make it more computer friendy
         run_overall_evaluation(distances, graph_filepath, coordinates_list, alpha, s, current_dir)
 
-
 graph_filepath = "/home/h12227338/LoopBuddy/preloadedmap/Wien.pkl"
 
 simplification_list = [150]
