@@ -3,7 +3,6 @@ import os
 from evaluation.eval_utils.eval_utils import generate_random_coordinates
 from evaluation.eval_utils.overall_eval_functions import run_overall_evaluation, load_graph
 
-
 def run_simplification_eval(distances, graph_filepath, coordinates_list, alpha, simplification_list, dir):
     for s in simplification_list:
         current_dir = os.path.join(dir, str(s))#multiplying by 100 just to make it more computer friendy
