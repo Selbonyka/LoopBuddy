@@ -47,14 +47,3 @@ def ring_s_and_sprime_handling(G, point_s,bounds_Rs_penalized, bounds_Rs_prime_t
                     R_s_prime[uprime].append(u)
 
     return  R_s_lengthwise, R_s_prime, penalized_distances,paths_R_s
-
-
-
-
-
-
-
-
-
-
-

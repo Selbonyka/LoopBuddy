@@ -1,8 +1,7 @@
 from flask import Flask, views
 from views import views
-from datetime import timedelta
 
-from secretkey import stored_secret_key # importing the secret key to hash user sessions
+from secretkey import stored_secret_key # importing the secret key to hash user sessions - should not be uploaded to github or such
 
 
 app = Flask(__name__)

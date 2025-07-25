@@ -1,8 +1,6 @@
 from tqdm import tqdm
 
-
-# function below handles stoplights and stairs
-
+# Function below handles stoplights and stairs
 def feature_penalizing(feature_handling, feature_status, feature_penalty_strength):
     """
     Helper function to penalize edges in relation to the feature's presence (currently used for stoplights and steps)

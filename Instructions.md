@@ -18,8 +18,10 @@ First pick all the basic settings in the box on the left:
 Now if you want to tinker around with the advanced settings, here's the description of what they do:
 - Distance error [0,∞]: sets the error boundaries for the distance parameter 
 - Elevation error [0, ∞]: sets the error boundaries for the elevation parameter
-- Smoothing factor [0.5, 1]: parameter alpha from Gemsa et al. (2013) which affects how the circle-like the routes are, higher values -> more circular routes
-- Sharing allowance [0, 1]: defines the permissible about of edge sharing (when the route goes over the same street more then once), lower values -> less routes, but they have less edge sharing
+- Smoothing factor [0.5, 1]: parameter alpha from Gemsa et al. (2013) which affects how the circle-like the routes are, higher values -> more circular routes and more route options but higher execution time
+- Sharing allowance [0, 1]: defines the permissible about of edge sharing (when the route goes over the same street more than once), lower values -> less routes, but they have less edge sharing
   - I wouldn't set that at 0, as in real world scenarios there is often sharing around the starting point when the starting point is not in the center of the city
 - Stoplight/Steps/Pavement type penalties[1,10]: affect how the routing engine works. Higher values lead to these features being avoided/preferred more strongly, however lead to slower performance times
   - Note on the pavement preferences: sadly the OpenStreetMap is rather sparsely populated with the pavement data, so I wouldn't recommend setting the pavement type penalty too high.
+- Node simplification status: Activates/Deactivates node simplification optimization, which reduces the number of nodes evaluated, by removing nodes that are too close to each other in Rs' are removed.
+- Allowed distance between nodes: The minimum required distance between nodes for them not to be filtered out when node simplification optimization is activated.

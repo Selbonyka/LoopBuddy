@@ -2,9 +2,8 @@ import os
 
 import pandas as pd
 
-#  Data processing:
 def processing_smoothing_and_simplifying_results (neutral, avoid, preferred,paved, name):
-    # Printing:
+
     print("Neutral results:")
     print(neutral.to_string())
     print("\n\n")
@@ -37,7 +36,6 @@ def processing_smoothing_and_simplifying_results (neutral, avoid, preferred,pave
     print(elapsed_time.to_string())
 
     # Number of paths analysis:
-
     path_number = pd.DataFrame({
         "Neutral": avoid.loc["Number of paths"],
         "Avoid": avoid.loc["Number of paths"],
@@ -51,8 +49,7 @@ def processing_smoothing_and_simplifying_results (neutral, avoid, preferred,pave
     print("Number of paths results:")
     print(path_number.to_string())
 
-    # Badness
-
+    # Badness:
     badness = pd.DataFrame({
         "Avoid": avoid.loc["Average paths badness"],
         # "Preferred": preferred.loc["Average paths badness"],
@@ -62,6 +59,7 @@ def processing_smoothing_and_simplifying_results (neutral, avoid, preferred,pave
     print("Badness results:")
     print(badness.to_string())
 
+    # Making CSVs:
     os.makedirs(name, exist_ok=True)
     neutral.to_csv(os.path.join(name, "neutral.csv"))
     avoid.to_csv(os.path.join(name, "avoid.csv"))
@@ -73,6 +71,10 @@ def processing_smoothing_and_simplifying_results (neutral, avoid, preferred,pave
 
 
 def loading_full_results(results_neutral, results_avoid, results_prefer, results_paved, name):
+    """
+    Facilitates loading full results when everything went smoothly and no necessity for loading partial resuls from csv has arisen.
+    Used for smoothing and simplifying evaluation. Passes the results onto the procesing pipeline.
+    """
 
     neutral = pd.DataFrame.from_dict(results_neutral)
     avoid = pd.DataFrame.from_dict(results_avoid)
@@ -82,6 +84,9 @@ def loading_full_results(results_neutral, results_avoid, results_prefer, results
 
 
 def loading_csv_results(file_path_neutral, file_path_avoid, file_path_prefer, file_path_paved, name):
+    """
+    Used for smoothing and simplifying result processing in case that raw results have to be loaded from csv files.
+    """
     neutral = pd.read_csv(file_path_neutral, index_col=0)
     avoid = pd.read_csv(file_path_avoid, index_col=0)
     preferred = pd.read_csv(file_path_prefer, index_col=0)
@@ -119,19 +124,15 @@ def individual_overall_results(result, neutral=False):
     return means, no_paths
 
 def processing_overall(results_neutral, results_avoid,results_prefer, results_paved, name_distance, dir):
-    """ So what do we want here?
-    - Avg number of paths generated
-    - Avg elapsed time
-    - How many runs coords has 0 paths generated
-    - Avg number of stoplights
-    - Avg number of steps
-    - Avg number of paths paved
-    - Avg number of paths unpaved
-    - Results_avoid-results_neutral stoplight and steps wise
+    """
+    Processes the results from the overall evaluation function into several csv files that contain the following information:
+    - means for each setting state
+    - number of failures per state
+    - differences in number of stoplight and steps betweene the following combinations: "neutral & avoid" and "prefer & avoid"
     """
 
 
-    # Loading in here because I don't wanna mess up that pipeline:
+    # Loading in here because I don't want to mess up that pipeline:
     neutral = pd.DataFrame.from_dict(results_neutral)
     prefer = pd.DataFrame.from_dict(results_prefer)
     avoid = pd.DataFrame.from_dict(results_avoid)

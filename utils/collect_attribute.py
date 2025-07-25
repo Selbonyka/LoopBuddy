@@ -1,7 +1,7 @@
 
 def attribute_collector(G, path,edges_data):
     """
-    Get's the values of an attribute in a list attribute throughout the whoe path.
+    Gets the values of an attribute in a list attribute throughout the whoe path.
 
     :param G: MultiDiGraph to be worked with
     :param path: path for which the attribute values are to be gather
@@ -23,11 +23,9 @@ def attribute_collector(G, path,edges_data):
 
        # If no value for this edge:
         if value is None: # is this happens for pavement: nothing to worry about :D Just osm lacking data
-            # print(f"Warning: Value for edge ({u}, {v}) not found for data {edges_data}")  # uncomment it for debugging
             continue
 
 
         attribute_values.append(value)
-    # print('from colector:')
-    # print(attribute_values)
+
     return attribute_values

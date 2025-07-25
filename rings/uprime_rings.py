@@ -63,17 +63,17 @@ def generate_uprime_rings(G, R_s_prime, bounds_Ru_prime_penalized, bounds_Ru_pri
                     lengths_SG_Ring_u_prime = nx.get_edge_attributes(G.subgraph(path_m_u), "length")  # lengths necessary to calculate true length
                     length_cache_Ru_prime = length(G, path_m_u, lengths_SG_Ring_u_prime)  # true length
 
-                    # Checking penalized length
+                    # Checking penalized length:
                     pen_weight_SG_Ring_u_prime = nx.get_edge_attributes(G.subgraph(path_m_u), "penalized_weight")
                     pen_weight_cache_SG_Ring_u_prime = length(G, path_m_u, pen_weight_SG_Ring_u_prime)  # penalized weight of the path
 
-                    # Calculating badness for path m -> u as penalized weight - actual length
+                    # Calculating badness for path m -> u as penalized weight - actual length:
                     badness_m_u = pen_weight_cache_SG_Ring_u_prime-length_cache_Ru_prime
 
-                    # Calculating the badness of the path m_s
+                    # Calculating the badness of the path m_s:
                     total_badness = badness_m_u + pen_dist_Rs[intersection_node]
 
-                    # Assigning the value to storage
+                    # Assigning the value to storage:
                     m_u_paths[intersection_node] = path_m_u
                     m_s_badness[intersection_node] = total_badness
 

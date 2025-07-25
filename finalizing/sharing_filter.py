@@ -1,6 +1,11 @@
 from collections import Counter
 
 def sharing_filter(path, sharing_allowance):
+    """
+    Returns true if a path inputted does not exceed the sharing allowance
+    :param path: a list containing the nodes that make up a specific path
+    :param sharing_allowance: [0,1] limit on the amount of sharing
+    """
 
     # this checks for sharing:
 

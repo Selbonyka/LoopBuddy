@@ -4,12 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="updated the graphs">
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="deleted the point visualization file">
+      <change afterPath="$PROJECT_DIR$/evaluation/results/Var_Elapsed_Time.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation/results/Var_Num_Paths.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation/results/diff_in_fails.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_distance_aggregatedmeans_combined_distance_state_only.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/gathering_simplification_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/gathering_simplification_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/gathering_smoothing_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/gathering_smoothing_results.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/overall_distance_aggregation.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/overall_distance_aggregation.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/results_processing/overall_distance_aggregation_no_sharing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/results_processing/overall_distance_aggregation_no_sharing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Instructions.md" beforeDir="false" afterPath="$PROJECT_DIR$/Instructions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/eval_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/eval_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/overall_eval_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/overall_eval_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/processingresults.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/processingresults.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/simplification_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval15k.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/simplification_eval15k.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/smoothing_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/smoothing_eval.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalizing/finalize_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalizing/finalize_path.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalizing/sharing_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalizing/sharing_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/website_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/website_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph_preprocessing/Graph_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/graph_preprocessing/Graph_preprocessing.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rings/s_and_s_prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/rings/s_and_s_prime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rings/uprime_rings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rings/uprime_rings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/collect_attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/collect_attribute.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/elevation_calculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/elevation_calculation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/length.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/length.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/path_attributes.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/penalizing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/penalizing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,39 +95,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.home.html.executor&quot;: &quot;Run&quot;,
-    &quot;Python.eval_utils.executor&quot;: &quot;Run&quot;,
-    &quot;Python.finalize_path.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gathering_simplification_results.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gathering_smoothing_results.executor&quot;: &quot;Run&quot;,
-    &quot;Python.location_wise_eval_smoothing.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.overall_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.overall_eval_part2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.processingresults.executor&quot;: &quot;Run&quot;,
-    &quot;Python.simplification_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.smoothing_eval.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.testing_elevation.executor&quot;: &quot;Run&quot;,
-    &quot;Python.var_analysis_overall_results.executor&quot;: &quot;Run&quot;,
-    &quot;Python.views.executor&quot;: &quot;Run&quot;,
-    &quot;Python.visualization.executor&quot;: &quot;Run&quot;,
-    &quot;Python.website_main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/results_processing&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.home.html.executor": "Run",
+    "Python.eval_utils.executor": "Run",
+    "Python.finalize_path.executor": "Run",
+    "Python.gathering_simplification_results.executor": "Run",
+    "Python.gathering_smoothing_results.executor": "Run",
+    "Python.location_wise_eval_smoothing.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.overall_eval.executor": "Run",
+    "Python.overall_eval_part2.executor": "Run",
+    "Python.processingresults.executor": "Run",
+    "Python.simplification_eval.executor": "Run",
+    "Python.smoothing_eval.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.testing_elevation.executor": "Run",
+    "Python.var_analysis_overall_results.executor": "Run",
+    "Python.views.executor": "Run",
+    "Python.visualization.executor": "Run",
+    "Python.website_main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/results_processing",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/evaluation/results_processing" />
@@ -111,14 +135,14 @@
       <recent name="$PROJECT_DIR$/graph_preprocessing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/evaluation/single_point_evaluation" />
+      <recent name="$PROJECT_DIR$/evaluation" />
       <recent name="$PROJECT_DIR$/evaluation/results/overall_results_no_sharing_limit_intermidiate" />
       <recent name="$PROJECT_DIR$/evaluation/results" />
       <recent name="$PROJECT_DIR$/evaluation/results/overall_results" />
-      <recent name="$PROJECT_DIR$/evaluation/results/simplification_overal_results_20" />
-      <recent name="$PROJECT_DIR$/evaluation/results/simplification_overal_results" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gathering_simplification_results">
+  <component name="RunManager" selected="Python.website_main">
     <configuration name="eval_utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LoopBuddy" />
       <option name="ENV_FILES" value="" />
@@ -236,10 +260,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.website_main" />
         <item itemvalue="Python.gathering_simplification_results" />
         <item itemvalue="Python.gathering_smoothing_results" />
         <item itemvalue="Python.var_analysis_overall_results" />
-        <item itemvalue="Python.website_main" />
         <item itemvalue="Python.eval_utils" />
       </list>
     </recent_temporary>
@@ -332,31 +356,8 @@
       <workItem from="1752771525815" duration="5222000" />
       <workItem from="1753016317406" duration="2476000" />
       <workItem from="1753018908228" duration="2617000" />
-      <workItem from="1753197776588" duration="610000" />
-    </task>
-    <task id="LOCAL-00020" summary="cleaning up code but broke session managment :(">
-      <option name="closed" value="true" />
-      <created>1746103094469</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1746103094469</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Cleaned up and i think the sessions are working">
-      <option name="closed" value="true" />
-      <created>1746104540368</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1746104540368</updated>
-    </task>
-    <task id="LOCAL-00022" summary="basically evalutions stuff is mostly ready">
-      <option name="closed" value="true" />
-      <created>1746981446876</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1746981446876</updated>
+      <workItem from="1753197776588" duration="5759000" />
+      <workItem from="1753475603316" duration="1931000" />
     </task>
     <task id="LOCAL-00023" summary="ready to run smoothing eval">
       <option name="closed" value="true" />
@@ -726,7 +727,31 @@
       <option name="project" value="LOCAL" />
       <updated>1752827762179</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="standardised the graphs and sent them to kiesling">
+      <option name="closed" value="true" />
+      <created>1753198904513</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1753198904514</updated>
+    </task>
+    <task id="LOCAL-00070" summary="removed the old results to lighten up the repository">
+      <option name="closed" value="true" />
+      <created>1753199057173</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1753199057173</updated>
+    </task>
+    <task id="LOCAL-00071" summary="deleted the point visualization file">
+      <option name="closed" value="true" />
+      <created>1753199468509</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1753199468509</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -756,9 +781,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="overall_eval setup" />
-    <MESSAGE value="corrected graph filepath" />
-    <MESSAGE value="created the location-dependant alpha eval" />
     <MESSAGE value="fixed alpha thing" />
     <MESSAGE value="forgot to add execution oops" />
     <MESSAGE value="more fixes" />
@@ -781,19 +803,17 @@
     <MESSAGE value="let's run it with no sharing limit" />
     <MESSAGE value="removed street count thing" />
     <MESSAGE value="updated the graphs" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the graphs" />
+    <MESSAGE value="standardised the graphs and sent them to kiesling" />
+    <MESSAGE value="removed the old results to lighten up the repository" />
+    <MESSAGE value="deleted the point visualization file" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted the point visualization file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/evaluation/eval_utils/eval_utils.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="jupyter-line">
           <url>notebook:///Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/eval_utils/point_visialization.ipynb</url>
-          <line>1</line>
+          <line>4</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -802,8 +822,8 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LoopBuddy$var_analysis_overall_results.coverage" NAME="var_analysis_overall_results Coverage Results" MODIFIED="1752828012707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$test.coverage" NAME="test Coverage Results" MODIFIED="1746378386122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$smoothing_eval.coverage" NAME="smoothing_eval Coverage Results" MODIFIED="1747603066759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$main.coverage" NAME="main Coverage Results" MODIFIED="1744742255822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LoopBuddy$location_wise_eval_smoothing.coverage" NAME="location_wise_eval_smoothing Coverage Results" MODIFIED="1748878263934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$overall_eval_part2.coverage" NAME="overall_eval_part2 Coverage Results" MODIFIED="1747768745495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$testing_elevation.coverage" NAME="testing_elevation Coverage Results" MODIFIED="1744811176372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -812,7 +832,7 @@
     <SUITE FILE_PATH="coverage/LoopBuddy$simplification_eval.coverage" NAME="simplification_eval Coverage Results" MODIFIED="1746393726206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1751831590845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1753476898302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/LoopBuddy$eval_utils.coverage" NAME="eval_utils Coverage Results" MODIFIED="1750431617459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/eval_utils" />
     <SUITE FILE_PATH="coverage/LoopBuddy$gathering_simplification_results.coverage" NAME="gathering_simplification_results Coverage Results" MODIFIED="1753028794123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$gathering_smoothing_results.coverage" NAME="gathering_smoothing_results Coverage Results" MODIFIED="1753027998211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />

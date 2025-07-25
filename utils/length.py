@@ -5,7 +5,7 @@
 
 def length(G, path,edges_data):
     """
-    Efficiently sums the values of a particulae numerical attribute throughout the whoe path. Intended for length, however can be used with any numerical attribute.
+    Efficiently sums the values of a particulate numerical attribute throughout the whoe path. Intended for length, however can be used with any numerical attribute.
 
     :param G: MultiDiGraph to be worked with
     :param path: path for which the length is to be calculaed

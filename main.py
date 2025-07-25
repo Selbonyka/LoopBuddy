@@ -33,7 +33,6 @@ def main(start_point, preferences, G):
     :return: returns a list of lists with path options
     """
 
-    # <editor-fold desc="Setup">
 
     # starting point:
     point_s = ox.distance.nearest_nodes(G,start_point[0], start_point[1])
@@ -53,7 +52,7 @@ def main(start_point, preferences, G):
     total_length = preferences['total_length']
     error = preferences['error']
 
-    # used as a cutoff point when running penalized djinkstra
+    # used as a cutoff point when running penalized dijkstra
     length_adjustment = stoplight_penalty_strength * steps_penalty_strength * pavement_penalty_strength
 
     total_length_bounds = [total_length - error, total_length + error]
@@ -91,9 +90,6 @@ def main(start_point, preferences, G):
 
     # sharing
     sharing_allowance = preferences['sharing_allowance']
-
-
-    # </editor-fold>
 
 
     # adds the penalties to the edges based on user's inputs and the edge status

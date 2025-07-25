@@ -1,5 +1,10 @@
 
 def compute_elevation_change(G, path):
+    """
+    Computes the positive and negative elevation changes in the path provided
+    :param G: Graph which containes the nodes with the path and elevation data
+    :param path: Path to be analyzed
+    """
     elevations = [G.nodes[n]["elevation"] for n in path]
 
     pos_change = 0

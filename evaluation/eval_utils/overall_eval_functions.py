@@ -109,10 +109,6 @@ def coordinate_wise_evaluation(pavement_pref, stoplight_pref, steps_pref, graph_
 
 
 
-
-
-
-
 def run_overall_evaluation(distances, graph_filepath, coordinates_list, alpha, simplification_param, dir):
     for distance in distances:
         name_distance = "overall_" + str(distance)

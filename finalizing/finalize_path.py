@@ -30,7 +30,7 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
     elevation_appropriate = 0
     distance_filter_passed = False
 
-    # filtering out the nodes that only have both u and v
+    # filtering out the nodes that only have both u and v:
     valid_m_nodes = [m[0] for m in G.nodes(data=True) if "Mm" in m[1] and len(m[1]["Mm"]) > 1]
 
     for m in tqdm(valid_m_nodes,desc = "Concatenating and filtering paths", total=len(valid_m_nodes)):
@@ -75,7 +75,6 @@ def concatenate_path(G, m_paths_storage, paths_R_s, sharing_allowance, point_s, 
                 # checking elevation changes
                 pos_change, neg_change = compute_elevation_change(G, combinedPath)
                 elevation_appropriate += 1 # this needs to be placed here, otherwise paths that don't count based on length will still count as appropriate
-                # if neg_change >= elevation_bounds[0] and pos_change <= elevation_bounds[1]:
                 if elevation_bounds[0]<=pos_change<=elevation_bounds[1]: # based on the logic that since it's a looped route if you come up you must come down
                     badness_data = nx.get_edge_attributes(G.subgraph(combinedPath), "penalized_weight")
                     badness_path = length(G, combinedPath, badness_data)
