@@ -4,36 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="deleted the point visualization file">
-      <change afterPath="$PROJECT_DIR$/evaluation/results/Var_Elapsed_Time.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation/results/Var_Num_Paths.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation/results/diff_in_fails.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation/results/overall_results/overall_distance_aggregatedmeans_combined_distance_state_only.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/__init__.py" afterDir="false" />
+    <list default="true" id="72f8d094-24b0-4149-8856-ad49a263b483" name="Changes" comment="Added the relevant single_point results">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Instructions.md" beforeDir="false" afterPath="$PROJECT_DIR$/Instructions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/eval_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/eval_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/overall_eval_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/overall_eval_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/eval_utils/processingresults.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/eval_utils/processingresults.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/simplification_eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/simplification_eval15k.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/simplification_eval15k.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/smoothing_eval.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/single_point_evaluation/smoothing_eval.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalizing/finalize_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalizing/finalize_path.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalizing/sharing_filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/finalizing/sharing_filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/templates/evaluation.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/website_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/website_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graph_preprocessing/Graph_preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/graph_preprocessing/Graph_preprocessing.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rings/s_and_s_prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/rings/s_and_s_prime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rings/uprime_rings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rings/uprime_rings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/collect_attribute.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/collect_attribute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/elevation_calculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/elevation_calculation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/length.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/length.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/path_attributes.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/penalizing.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/penalizing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +92,7 @@
     "Python.website_main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/results_processing",
+    "last_opened_file_path": "/Users/sofiiashome/Documents/Studying at WU/Bachelor's Thesis/Bachelor Thesis Coding/LoopBuddy/evaluation/results_single_point",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -130,6 +104,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/evaluation/results_single_point" />
       <recent name="$PROJECT_DIR$/evaluation/results_processing" />
       <recent name="$PROJECT_DIR$/evaluation" />
       <recent name="$PROJECT_DIR$/graph_preprocessing" />
@@ -357,23 +332,7 @@
       <workItem from="1753016317406" duration="2476000" />
       <workItem from="1753018908228" duration="2617000" />
       <workItem from="1753197776588" duration="5759000" />
-      <workItem from="1753475603316" duration="1931000" />
-    </task>
-    <task id="LOCAL-00023" summary="ready to run smoothing eval">
-      <option name="closed" value="true" />
-      <created>1747407978880</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1747407978880</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Added the environment file">
-      <option name="closed" value="true" />
-      <created>1747408511069</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1747408511069</updated>
+      <workItem from="1753475603316" duration="4031000" />
     </task>
     <task id="LOCAL-00025" summary="updated the env file">
       <option name="closed" value="true" />
@@ -751,7 +710,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753199468509</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="cleaned it all up quite a bit">
+      <option name="closed" value="true" />
+      <created>1753477566585</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1753477566586</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Added the relevant single_point results">
+      <option name="closed" value="true" />
+      <created>1753479269206</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1753479269206</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -781,8 +756,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed alpha thing" />
-    <MESSAGE value="forgot to add execution oops" />
     <MESSAGE value="more fixes" />
     <MESSAGE value="fixed the dict thing" />
     <MESSAGE value="first processing of the result yippee" />
@@ -806,7 +779,9 @@
     <MESSAGE value="standardised the graphs and sent them to kiesling" />
     <MESSAGE value="removed the old results to lighten up the repository" />
     <MESSAGE value="deleted the point visualization file" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted the point visualization file" />
+    <MESSAGE value="cleaned it all up quite a bit" />
+    <MESSAGE value="Added the relevant single_point results" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the relevant single_point results" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -832,7 +807,7 @@
     <SUITE FILE_PATH="coverage/LoopBuddy$simplification_eval.coverage" NAME="simplification_eval Coverage Results" MODIFIED="1746393726206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$processingresults.coverage" NAME="processingresults Coverage Results" MODIFIED="1746384112532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/LoopBuddy$visualization.coverage" NAME="visualization Coverage Results" MODIFIED="1744832388529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
-    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1753476898302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
+    <SUITE FILE_PATH="coverage/LoopBuddy$website_main.coverage" NAME="website_main Coverage Results" MODIFIED="1753511989602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/frontend" />
     <SUITE FILE_PATH="coverage/LoopBuddy$eval_utils.coverage" NAME="eval_utils Coverage Results" MODIFIED="1750431617459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/eval_utils" />
     <SUITE FILE_PATH="coverage/LoopBuddy$gathering_simplification_results.coverage" NAME="gathering_simplification_results Coverage Results" MODIFIED="1753028794123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
     <SUITE FILE_PATH="coverage/LoopBuddy$gathering_smoothing_results.coverage" NAME="gathering_smoothing_results Coverage Results" MODIFIED="1753027998211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation/results_processing" />
