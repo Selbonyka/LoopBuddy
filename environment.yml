@@ -1,0 +1,14 @@
+channels:
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - pandas
+  - networkx
+  - flask
+  - python=3.12
+  - folium
+  - tqdm
+  - cachetools
+  - pip
+  - pip:
+      - gpxpy

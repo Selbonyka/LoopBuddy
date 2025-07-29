@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LoopBuddy</title>
+
+   <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baumans&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- leaflet setup start -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+  <!-- leaflet setup emd -->
+
+
+  <style>
+
+    #map {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Baumans', cursive;
+      background-color: #fdfdf6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top-box {
+      margin-top: 10px;
+      padding: 15px 30px;
+      border: 4px solid black;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .settings-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 95%;
+      gap: 40px; /* spacing between columns */
+    }
+
+    .map-box {
+      width: 100%;
+      max-width: 3000px;
+      height: 75vh;
+      border: 4px solid black;
+      border-radius: 15px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+
+    .map-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .settings-box {
+      width: 270px;
+      border: 4px solid black;
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .settings-box .label {
+      font-size: 20px;
+      font-family: 'Baumans', cursive;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .settings-box-content input[type="number"] {
+      width: 100%;
+      padding: 6px;
+      font-size: 16px;
+      border: 2px solid black;
+      border-radius: 6px;
+      margin-top: 5px;
+    }
+
+
+    .input-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .input-row label {
+      font-family: "Courier Prime", monospace;
+      font-size: 14px;
+      margin-right: 10px;
+      width: 140px;
+      text-align: left;
+    }
+
+
+    .input-row input,
+    .input-row select {
+      width: 100%;
+      padding: 6px;
+      font-size: 15px;
+      border: 2px solid black;
+      border-radius: 6px;
+      font-family: "Courier Prime", monospace;
+    }
+
+
+    .advanced-toggle {
+      font-family: 'Baumans', cursive;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 6px;
+      border-top: 2px solid black;
+      text-align: left;
+    }
+
+    .advanced-settings {
+      display: none;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+
+    .route-button-container {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    #create-route {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Baumans', cursive;
+      transition: background-color 0.2s;
+    }
+
+    #create-route:hover {
+      background-color: #333;
+    }
+
+    #create-route:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+
+  .loading-content {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+
+  .fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+
+  .button-clean {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-family: 'Baumans', cursive;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease;
+  }
+
+  .button-clean:hover {
+    background-color: #f0f0f0;
+  }
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="top-box">Loop buddy</div>
+
+  <div class="settings-container">
+    <div class="settings-box">
+      <div class="label">Settings:</div>
+      <div class="input-row">
+        <label for="distance">Distance (m):</label>
+        <input type="number" id="distance" name="distance" value = "5000" min = "0">
+      </div>
+
+      <div class="input-row">
+        <label for="elevation_target">Target elevation change (m):</label>
+        <input type="number" id="elevation_target" name="elevation_target" value = "0">
+      </div>
+
+      <div class="input-row">
+        <label for="surface_preference">Surface type:</label>
+        <select id="surface_preference" name="surface_preference">
+          <option value="Neutral">Any</option>
+          <option value="Paved">Paved</option>
+          <option value="Unpaved">Unpaved</option>
+        </select>
+      </div>
+
+      <div class="input-row">
+        <label for="stoplight_preference">Stoplights handling:</label>
+        <select id="stoplight_preference" name="stoplight_preference">
+          <option value="Neutral">Neutral</option>
+          <option value="Avoid">Avoid</option>
+          <option value="Prefer">Prefer</option>
+        </select>
+      </div>
+
+      <div class="input-row">
+        <label for="steps_preference">Steps handling:</label>
+        <select id="steps_preference" name="steps_preference">
+          <option value="Neutral">Neutral</option>
+          <option value="Avoid">Avoid</option>
+          <option value="Prefer">Prefer</option>
+        </select>
+      </div>
+
+      <div class="advanced-toggle" onclick="toggleAdvanced()">
+        Advanced settings ▾
+      </div>
+
+      <div class="advanced-settings" id="advanced-settings">
+
+        <div class="input-row">
+          <label for="distance_error"> Distance error (m):</label>
+          <input type="number" id="distance_error" name="distance_error" value = "60" min = "0">
+        </div>
+
+
+        <div class="input-row">
+          <label for="elevation_error">Elevation error (m):</label>
+          <input type="number" id="elevation_error" name="elevation_error" value = "100" min = "0">
+        </div>
+
+        <div class="input-row">
+          <label for="alpha">Smoothing factor:</label>
+          <input type="number" id="alpha" name="alpha" value = "0.85" min = "0" max = "1">
+        </div>
+
+        <div class="input-row">
+          <label for="sharing_allowance">Sharing allowance:</label>
+          <input type="number" id="sharing_allowance" name="sharing_allowance" value="0.3" step="0.1" min="0" max="1">
+        </div>
+
+        <div class="input-row">
+          <label for="stoplight_penalty">Stoplight penalty:</label>
+          <input type="number" id="stoplight_penalty" name="stoplight_penalty" value="1.1" step="0.1" min = "1">
+        </div>
+
+        <div class="input-row">
+          <label for="steps_penalty">Steps penalty:</label>
+          <input type="number" id="steps_penalty" name="steps_penalty" value="1.2" step="0.1" min="1">
+        </div>
+
+        <div class="input-row">
+          <label for="pavement_penalty">Pavement type penalty:</label>
+          <input type="number" id="pavement_penalty" name="pavement_penalty" value="1.05" step="0.1" min="1">
+        </div>
+
+        <div class="input-row">
+        <label for="node_simplification_status">Node simplification status:</label>
+        <select id="node_simplification_status" name="node_simplification_status">
+          <option value="True">Activated</option>
+          <option value="False">Deactivated</option>
+        </select>
+        </div>
+
+        <div class="input-row">
+          <label for="allowed_distance_between_nodes">Allowed distance between node:</label>
+          <input type="number" id="allowed_distance_between_nodes" name="allowed_distance_between_nodes" value="40" step="5" min="1">
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+
+   <div class="map-column">
+      <div class="map-box">
+        <div id="map"></div>
+      </div>
+      <div class="route-button-container">
+       <button id="create-route" disabled>Create route</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Adding the popups--->
+  <div id="loading-overlay" class="fullscreen-overlay" style="display: none;">
+  <div class="loading-content">Loading...</div>
+  </div>
+
+  <div id="failure-overlay" class="fullscreen-overlay" style="display: none;">
+  <div class="loading-content" style="text-align: center;">
+    Generation Failed
+    <div style="margin-top: 10px;">
+      <button onclick="hideFailure()" class="button-clean">Close</button>
+    </div>
+  </div>
+  </div>
+
+  <div id="elevation-failure-overlay" class="fullscreen-overlay" style="display: none;">
+    <div class="loading-content" style="text-align: center;">
+      Generation Failed <br> Reason: Elevation bounds
+      <div style="margin-top: 10px;">
+        <button onclick="hideFailure()" class="button-clean">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+
+  console.log("Script loaded");
+
+  function toggleAdvanced() {
+    const advanced = document.getElementById("advanced-settings");
+    const toggleText = document.querySelector(".advanced-toggle");
+
+    if (advanced.style.display === "none" || advanced.style.display === "") {
+      advanced.style.display = "block";
+      toggleText.innerHTML = "Advanced settings ▴";
+    } else {
+      advanced.style.display = "none";
+      toggleText.innerHTML = "Advanced settings ▾";
+    }
+  }
+
+  const map = L.map('map').setView([48.2082, 16.3738], 13); // Vienna coords
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  let marker;
+  map.on('click', function(e) {
+    const latlng = e.latlng;
+
+    if (marker) {
+      map.removeLayer(marker);
+    }
+
+    marker = L.marker(latlng).addTo(map);
+
+    document.getElementById("create-route").disabled = false;
+
+    fetch('/clicked', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        lat: latlng.lat,
+        lng: latlng.lng
+      })
+    });
+  });
+
+
+  // Popups
+  function showLoading() {
+    document.getElementById('loading-overlay').style.display = 'flex';
+  }
+
+  function hideLoading() {
+    document.getElementById('loading-overlay').style.display = 'none';
+  }
+
+  function showFailure() {
+  document.getElementById('failure-overlay').style.display = 'flex';
+}
+
+  function hideFailure() {
+  document.getElementById('failure-overlay').style.display = 'none';
+  document.getElementById('elevation-failure-overlay').style.display = 'none';
+
+  }
+
+   function showFailureElevation() {
+  document.getElementById('elevation-failure-overlay').style.display = 'flex';
+}
+
+  document.getElementById("create-route").addEventListener("click", async function () {
+    if (!marker) {
+      alert("Please click on the map first!");
+      return;
+    }
+
+    const latlng = marker.getLatLng();
+
+    const distance = document.getElementById("distance").value;
+    const elevation_target = document.getElementById("elevation_target").value;
+    const pavement_preference = document.getElementById("surface_preference").value;
+    const stoplight_preference = document.getElementById("stoplight_preference").value;
+    const steps_preference = document.getElementById("steps_preference").value;
+    const distance_error = document.getElementById("distance_error").value;
+    const elevation_error = document.getElementById("elevation_error").value;
+    const alpha = document.getElementById("alpha").value;
+    const sharing_allowance = document.getElementById("sharing_allowance").value;
+    const stoplight_penalty = document.getElementById("stoplight_penalty").value;
+    const steps_penalty = document.getElementById("steps_penalty").value;
+    const pavement_penalty = document.getElementById("pavement_penalty").value;
+    const node_simplification_status = document.getElementById("node_simplification_status").value;
+    const allowed_distance_between_nodes = document.getElementById("allowed_distance_between_nodes").value;
+
+    showLoading();
+
+    try {
+      const res = await fetch("/create-route", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          lat: latlng.lat,
+          lng: latlng.lng,
+          distance: distance,
+          elevation_target: elevation_target,
+          pavement_preference: pavement_preference,
+          stoplight_preference: stoplight_preference,
+          steps_preference: steps_preference,
+          distance_error: distance_error,
+          elevation_error: elevation_error,
+          alpha: alpha,
+          sharing_allowance: sharing_allowance,
+          stoplight_penalty: stoplight_penalty,
+          steps_penalty: steps_penalty,
+          pavement_penalty: pavement_penalty,
+          node_simplification_status: node_simplification_status,
+          allowed_distance_between_nodes: allowed_distance_between_nodes
+        })
+      });
+
+      const text = await res.text(); // get raw text
+      console.log("Raw response text:", text);
+
+      let data;
+      try {
+        data = JSON.parse(text); // manually parse JSON
+      } catch (parseError) {
+        console.error("Failed to parse JSON response:", parseError);
+        showFailure();
+        return;
+      }
+
+      console.log("Parsed response data:", data);
+      console.log("Type of status:", typeof data.status);
+
+      if (data.status === "success") {
+        window.location.href = "/result";
+      } else if(data.status === "elevation_failure"){
+        showFailureElevation();
+      }else {
+        showFailure();
+    }
+
+  } catch (err) {
+    console.error("Route generation failed:", err);
+    alert("Something went wrong while generating the route.");
+  } finally {
+    hideLoading();
+
+  }
+
+  });
+
+</script>
+</body>
+</html>
