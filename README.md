@@ -53,15 +53,15 @@ In regard to smoothing results the incremental change in alpha is 0.05 from 0.5 
 Second approach provides more data and can be found in the evaluation folder. The files have been adapted for parallelization 
 by splitting different groups of distances into different files to be executed on different CPU cores, which is the reason for some files to contain the "_2" postfix
 
-#### finalizing
+### finalizing
 
 Contains files with functions that are used in finalizing the path in `main.py`
 
-#### frontend
+### frontend
 Contains the files that denote frontend's behaviour as well as outputs of the generated maps for the users in `frontend/templates/maps`.
 Additionally, it is the place to store the variable `stored_secret_key` in the file `secretkey.py` which enables user session management
 
-#### gpx_files
+### gpx_files
 Contains gpx files generated for the users.
 
 ### graph_preprocessing
